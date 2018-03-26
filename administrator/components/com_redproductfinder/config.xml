@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config addfieldpath="/administrator/components/com_redproductfinder/elements">
+	<fieldset name="basic">
+		<field 
+			name="search_by" 
+			type="radio" 
+			default="0" 
+			label="COM_REDPRODUCTFINDER_SEARCH_BY" 
+			description="COM_REDPRODUCTFINDER_SEARCH_BY_TIP"
+			class="btn-group">
+			<option value="0">COM_REDPRODUCTFINDER_TAG_TYPE</option>
+		    <option value="1">COM_REDPRODUCTFINDER_ATTRIBUTE</option>
+		</field>
+
+		<field
+			name="search_box"
+			class="btn-group"
+			type="radio"
+			default="0"
+			label="COM_REDPRODUCTFINDER_PRODUCT_SEARCH_BOX"
+			description="COM_REDPRODUCTFINDER_PRODUCT_SEARCH_BOX_TIP">
+		    <option value="0">JNO</option>
+		    <option value="1">JYES</option>
+		</field>
+
+		<field
+			name="show_max_min"
+			class="btn-group"
+			type="radio"
+			default="0"
+			label="COM_REDPRODUCTFINDER_PRODUCT_SHOW_MAX_MIN"
+			description="COM_REDPRODUCTFINDER_PRODUCT_SHOW_MAX_MIN_TIP">
+		    <option value="0">JNO</option>
+		    <option value="1">JYES</option>
+		</field>
+
+		<field
+			name="show_attribute"
+			class="btn-group"
+			type="radio"
+			default="0"
+			label="COM_REDPRODUCTFINDER_PRODUCT_SHOW_ATTRIBUTE"
+			description="COM_REDPRODUCTFINDER_PRODUCT_SHOW_ATTRIBUTE_TIP">
+		    <option value="0">JNO</option>
+		    <option value="1">JYES</option>
+		</field>
+
+		<field
+			name="search_manufacturer"
+			class="btn-group"
+			type="radio"
+			default="0"
+			label="COM_REDPRODUCTFINDER_PRODUCT_SEARCH_MANUFACTURER"
+			description="COM_REDPRODUCTFINDER_PRODUCT_SEARCH_MANUFACTURER_TIP">
+		    <option value="0">JNO</option>
+		    <option value="1">JYES</option>
+		</field>
+
+		<field
+			name="search_categories"
+			class="btn-group"
+			type="radio"
+			default="0"
+			label="COM_REDPRODUCTFINDER_PRODUCT_SEARCH_CATEGORIES"
+			description="COM_REDPRODUCTFINDER_PRODUCT_SEARCH_CATEGORIER_TIP">
+		    <option value="0">JNO</option>
+		    <option value="1">JYES</option>
+		</field>
+
+		<field
+			name="is_available"
+			class="btn-group"
+			type="radio"
+			default="0"
+			label="COM_REDPRODUCTFINDER_PRODUCT_SEARCH_IS_AVAILABLE"
+			description="COM_REDPRODUCTFINDER_PRODUCT_SEARCH_IS_AVAILABLE_TIP">
+		    <option value="0">JNO</option>
+		    <option value="1">JYES</option>
+		</field>
+
+		<field
+			name="order_by"
+			class="btn-group"
+			type="radio"
+			default="0"
+			label="COM_REDPRODUCTFINDER_PRODUCT_ORDER_BY"
+			description="COM_REDPRODUCTFINDER_PRODUCT_ORDER_BY_TIP">
+		    <option value="0">JNO</option>
+		    <option value="1">JYES</option>
+		</field>
+
+		<field
+			name="product_description"
+			class="btn-group"
+			type="radio"
+			default="short"
+			label="COM_REDPRODUCTFINDER_PRODUCT_DESCRIPTION"
+			description="COM_REDPRODUCTFINDER_PRODUCT_DESCRIPTION_TIP">
+		    <option value="short">COM_REDPRODUCTFINDER_SHORT_PRODUCT_DESCRIPTION</option>
+		    <option value="long">COM_REDPRODUCTFINDER_LONG_PRODUCT_DESCRIPTION</option>
+		</field>
+
+		<field
+			name="search_relation"
+			class="btn-group"
+			type="radio"
+			default="or"
+			label="COM_REDPRODUCTFINDER_SEARCH_RELATION_DESCRIPTION"
+			description="COM_REDPRODUCTFINDER_SEARCH_RELATION_DESCRIPTION_TIP">
+			<option value="or">COM_REDPRODUCTFINDER_RVP_OR</option>
+		    <option value="and">COM_REDPRODUCTFINDER_RVP_AND</option>
+		</field>
+
+		<field
+			name="show_price"
+			class="btn-group"
+			type="radio"
+			default="1"
+			label="COM_REDPRODUCTFINDER_SHOW_PRICE_DESCRIPTION"
+			description="COM_REDPRODUCTFINDER_SHOW_PRICE_DESCRIPTION_TIP">
+			<option value="0">JNO</option>
+		    <option value="1">JYES</option>
+		</field>
+
+		<field
+			name="show_add_to_cart"
+			class="btn-group"
+			type="radio"
+			default="0"
+			label="COM_REDPRODUCTFINDER_SHOW_ADD_TO_CART_DESCRIPTION"
+			description="COM_REDPRODUCTFINDER_SHOW_ADD_TO_CART_DESCRIPTION_TIP">
+			<option value="0">JNO</option>
+		    <option value="1">JYES</option>
+		</field>
+
+		<field
+			name="consider_all_tags"
+			class="btn-group"
+			type="radio"
+			default="0"
+			label="COM_REDPRODUCTFINDER_CONSIDER_ALL_TAG_LABEL"
+			description="COM_REDPRODUCTFINDER_CONSIDER_ALL_TAG_DESC">
+		   <option value="0">JNO</option>
+		   <option value="1">JYES</option>
+		</field>
+
+		<field
+			name="redshop_filter_option"
+			class="btn-group"
+			type="radio"
+			default="0"
+			label="COM_REDPRODUCTFINDER_FILTER_OPTION_LABEL"
+			description="COM_REDPRODUCTFINDER_FILTER_OPTION_DESC">
+		   <option value="0">COM_REDPRODUCTFINDER_FILTER_OPTION_VALUE_MATCH</option>
+		   <option value="1">COM_REDPRODUCTFINDER_FILTER_OPTION_VALUE_MATCHING</option>
+		</field>
+
+		<field
+			name="prod_template"
+			type="redproductfindertemplate"
+			size="1"
+			label="COM_REDPRODUCTFINDER_PROD_TEMPLATE_RESULT_TEMPLATE_LABEL"
+			description="COM_REDPRODUCTFINDER_PROD_TEMPLATE_RESULT_TEMPLATE_DESC" />
+
+		<field
+			name="search_tag_display"
+			class="btn-group"
+			type="radio"
+			default="0"
+			label="COM_REDPRODUCTFINDER_DISPLAY_SEARCH_TAG_LABEL"
+			description="COM_REDPRODUCTFINDER_DISPLAY_SEARCH_TAG_DESC">
+		   <option value="0">JNO</option>
+		   <option value="1">JYES</option>
+		</field>
+		<field
+			name="show_main_product"
+			class="btn-group"
+			type="radio"
+			default="0"
+			label="COM_REDPRODUCTFINDER_SHOW_MAIN_PRODUCT_LABEL"
+			description="COM_REDPRODUCTFINDER_SHOW_MAIN_PRODUCT_DESC">
+		    <option value="0">JNO</option>
+		    <option value="1">JYES</option>
+		</field>
+		<field
+			name="search_child_product"
+			class="btn-group"
+			type="radio"
+			default="0"
+			label="COM_REDPRODUCTFINDER_SEARCH_CHILD_PRODUCT_LABEL"
+			description="COM_REDPRODUCTFINDER_SEARCH_CHILD_PRODUCT_DESC">
+		   	<option value="0">JNO</option>
+		    <option value="1">JYES</option>
+		</field>
+		<field
+			name="use_quality_score"
+			class="btn-group"
+			type="radio"
+			default="0"
+			label="COM_REDPRODUCTFINDER_USE_QUALITY_SCORE_LABEL"
+			description="COM_REDPRODUCTFINDER_USE_QUALITY_SCORE_DESC" >
+			<option value="0">JNO</option>
+		    <option value="1">JYES</option>
+		</field>
+		<field
+			name="product_per_page"
+			class="required validate-numeric"
+			type="number"
+			min="0"
+			default="0"
+			label="COM_REDPRODUCTFINDER_PRODUCT_PER_PAGE_VALUE_LABEL"
+			description="COM_REDPRODUCTFINDER_PRODUCT_PER_PAGE_VALUE_DESC">
+		</field>
+		<field
+			name="filter_price_min_value"
+			class="required validate-numeric"
+			type="number"
+			min="0"
+			default="0"
+			label="COM_REDPRODUCTFINDER_FILTER_PRICE_MIN_VALUE_LABEL"
+			description="COM_REDPRODUCTFINDER_FILTER_PRICE_MIN_VALUE_DESC">
+		</field>
+		<field
+			name="filter_price_max_value"
+			class="required validate-numeric"
+			type="number"
+			min="0"
+			default="100"
+			label="COM_REDPRODUCTFINDER_FILTER_PRICE_MAX_VALUE_LABEL"
+			description="COM_REDPRODUCTFINDER_FILTER_PRICE_MAX_VALUE_DESC">
+		</field>
+	</fieldset>
+
+</config>

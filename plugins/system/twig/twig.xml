@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" client="site" type="plugin" group="system" method="upgrade">
+	<name>PLG_SYSTEM_TWIG</name>
+	<version>1.0.0</version>
+	<creationDate>May 2015</creationDate>
+	<author>redCOMPONENT.com</author>
+	<copyright>redCOMPONENT.com</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>PLG_SYSTEM_TWIG_DESC</description>
+	<files>
+		<folder>extensions</folder>
+		<filename plugin="twig">twig.php</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_system_twig.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_twig.sys.ini</language>
+		<language tag="da-DK">da-DK/da-DK.plg_system_twig.ini</language>
+		<language tag="da-DK">da-DK/da-DK.plg_system_twig.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="debug"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="PLG_SYSTEM_TWIG_DEBUG_LBL"
+					description="PLG_SYSTEM_TWIG_DEBUG_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="extensions"
+					type="textarea"
+					label="PLG_SYSTEM_TWIG_EXTENSIONS_LBL"
+					description="PLG_SYSTEM_TWIG_EXTENSIONS_DESC"
+					default="reditem"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

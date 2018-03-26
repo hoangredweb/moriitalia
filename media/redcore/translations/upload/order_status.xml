@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<contentelement type="contentelement">
+    <name>redSHOP - Order status</name>
+    <author>redCOMPONENT</author>
+    <copyright>Copyright (C) 2008 - 2016 redCOMPONENT.com. All rights reserved.</copyright>
+    <version>1.0.0</version>
+    <description>Translation definition for redSHOP component</description>
+    <reference>
+        <table name="redshop_order_status">
+            <field type="referenceid" name="order_status_id" translate="0">Order status id</field>
+            <field type="titletext" name="order_status_name" length="50" maxlength="250" translate="1">Name</field>
+        </table>
+        <component>
+            <form>com_redshop#order_status_detail#cid#task#!edit</form>
+        </component>
+    </reference>
+</contentelement>

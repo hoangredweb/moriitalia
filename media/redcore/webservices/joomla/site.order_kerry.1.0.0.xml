@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<apiservice client="site">
+  <name>order_kerry</name>
+  <author>Order Kerry Webservice</author>
+  <copyright>Copyright (C) 20017 - 2018 redCOMPONENT.com. All rights reserved.</copyright>
+  <description>Api HAL configurationa for Joomla Administrator Kerry Express update order status</description>
+  <config>
+    <name>order_kerry</name>
+    <version>1.0.0</version>
+    <authorizationAssetName>com_{webserviceName}</authorizationAssetName>
+  </config>
+  <operations>
+    <documentation authorizationNeeded="false" source="auto" url=""/>
+    <create authorizationNeeded="false" strictFields="false" authorization="" dataMode="table" optionName="" modelClassName="" modelClassPath="" isAdminClass="false" functionName="" functionArgs="" validateData="none" validateDataFunction="validate" tableName="redshop_order_status_log">
+      <fields>
+        <field name="customer_note" transform="string" defaultValue="" isRequiredField="false" isPrimaryField="false"/>
+        <field name="date_changed" transform="string" defaultValue="" isRequiredField="false" isPrimaryField="false"/>
+        <field name="order_status" transform="string" defaultValue="" isRequiredField="true" isPrimaryField="false"/>
+        <field name="order_id" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="false"/>
+      </fields>
+      <resources>
+        <resource displayGroup="_links" displayName="documentation" fieldFormat="{webserviceUrlPath}&amp;format=doc#{rel}" linkTitle="Documentation" linkName="{webserviceName}" hrefLang="" linkTemplated="true" linkRel="curies"/>
+        <resource displayGroup="_links" displayName="base" fieldFormat="/" linkTitle="Default page"/>
+        <resource displayGroup="_links" displayName="{webserviceName}:list" fieldFormat="{webserviceUrlPath}"/>
+        <resource displayGroup="_links" displayName="{webserviceName}:self" fieldFormat="{webserviceUrlPath}&amp;id={id}"/>
+        <resource displayName="result" fieldFormat="{result}" transform="boolean"/>
+      </resources>
+    </create>
+  </operations>
+  <complexArrays/>
+</apiservice>

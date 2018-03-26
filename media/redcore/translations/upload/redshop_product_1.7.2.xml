@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<contentelement type="contentelement">
+  <name>redSHOP - Product</name>
+  <author>redCOMPONENT</author>
+  <copyright>Copyright (C) 2008 - 2016 redCOMPONENT.com. All rights reserved.</copyright>
+  <version>1.7.2</version>
+  <description>Translation definition for redSHOP component</description>
+  <reference>
+    <table name="redshop_product">
+      <field name="product_id" type="referenceid" translate="0" alwaysFallback="false" filter="RAW" description="">Product ID</field>
+      <field name="product_name" type="titletext" translate="1" alwaysFallback="false" filter="RAW" description="" length="50" maxlength="250">Product name</field>
+      <field name="product_desc" type="htmltext" translate="1" alwaysFallback="false" filter="RAW" description="" ebuttons="ignore">Article Text</field>
+      <field name="product_s_desc" type="htmltext" translate="1" alwaysFallback="false" filter="RAW" description="" ebuttons="readmore">Fulltext</field>
+      <field name="metakey" type="htmltext" translate="1" alwaysFallback="false" filter="RAW" description="" ebuttons="readmore">Meta keywords</field>
+      <field name="metadesc" type="htmltext" translate="1" alwaysFallback="false" filter="RAW" description="" ebuttons="readmore">Meta description</field>
+      <field name="pagetitle" type="htmltext" translate="1" alwaysFallback="false" filter="RAW" description="" ebuttons="readmore">Page title</field>
+      <filter><![CDATA[]]></filter>
+    </table>
+    <component>
+      <editForm admin="false" option="com_redshop" view="product_detail" layout="edit" identifier="cid" showbutton="true" htmlposition=".btn-toolbar:first" checkoriginalid="false"/>
+    </component>
+  </reference>
+</contentelement>

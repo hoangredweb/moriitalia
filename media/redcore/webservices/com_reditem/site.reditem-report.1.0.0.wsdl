@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://moriitalia.web1.redhost.vn/new/media/redcore/webservices/com_reditem/site.reditem-report.1.0.0.wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://moriitalia.web1.redhost.vn/new/media/redcore/webservices/com_reditem/site.reditem-report.1.0.0.wsdl">
+  <wsdl:types>
+    <s:schema targetNamespace="http://moriitalia.web1.redhost.vn/new/media/redcore/webservices/com_reditem/site.reditem-report.1.0.0.wsdl" elementFormDefault="unqualified">
+      <s:complexType name="ArrayOfStringType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="task_unReportComment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_unReportCommentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_reportComment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="reason" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_reportCommentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_unReportItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="itemId" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_unReportItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_reportItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="itemId" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="reason" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_reportItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:service name="site.reditem-report.1.0.0">
+    <wsdl:documentation>Api HAL configuration for Report webservice of redITEM component</wsdl:documentation>
+    <wsdl:port name="site.reditem-report.1.0.0_Soap" binding="tns:site.reditem-report.1.0.0">
+      <soap:address location="http://moriitalia.web1.redhost.vn/new/administrator/index.php?webserviceClient=site&amp;webserviceVersion=1.0.0&amp;option=reditem&amp;view=report&amp;api=soap"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="task_unReportCommentRequest">
+    <wsdl:part name="parameters" element="tns:task_unReportComment"/>
+  </wsdl:message>
+  <wsdl:message name="task_unReportCommentResponse">
+    <wsdl:part name="parameters" element="tns:task_unReportCommentResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="site.reditem-report.1.0.0">
+    <wsdl:operation name="task_unReportComment">
+      <wsdl:input message="tns:task_unReportCommentRequest"/>
+      <wsdl:output message="tns:task_unReportCommentResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_reportComment">
+      <wsdl:input message="tns:task_reportCommentRequest"/>
+      <wsdl:output message="tns:task_reportCommentResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_unReportItem">
+      <wsdl:input message="tns:task_unReportItemRequest"/>
+      <wsdl:output message="tns:task_unReportItemResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_reportItem">
+      <wsdl:input message="tns:task_reportItemRequest"/>
+      <wsdl:output message="tns:task_reportItemResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="site.reditem-report.1.0.0" type="tns:site.reditem-report.1.0.0">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="task_unReportComment">
+      <soap:operation soapAction="task_unReportComment" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_reportComment">
+      <soap:operation soapAction="task_reportComment" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_unReportItem">
+      <soap:operation soapAction="task_unReportItem" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_reportItem">
+      <soap:operation soapAction="task_reportItem" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="task_reportCommentRequest">
+    <wsdl:part name="parameters" element="tns:task_reportComment"/>
+  </wsdl:message>
+  <wsdl:message name="task_reportCommentResponse">
+    <wsdl:part name="parameters" element="tns:task_reportCommentResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_unReportItemRequest">
+    <wsdl:part name="parameters" element="tns:task_unReportItem"/>
+  </wsdl:message>
+  <wsdl:message name="task_unReportItemResponse">
+    <wsdl:part name="parameters" element="tns:task_unReportItemResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_reportItemRequest">
+    <wsdl:part name="parameters" element="tns:task_reportItem"/>
+  </wsdl:message>
+  <wsdl:message name="task_reportItemResponse">
+    <wsdl:part name="parameters" element="tns:task_reportItemResponse"/>
+  </wsdl:message>
+</wsdl:definitions>

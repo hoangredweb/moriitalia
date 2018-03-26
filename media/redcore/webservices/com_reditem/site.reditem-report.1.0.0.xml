@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<apiservice client="site">
+    <name>redITEM - Report Webservice</name>
+    <author>redCOMPONENT</author>
+    <copyright>Copyright (C) 2008 - 2014 redCOMPONENT.com. All rights reserved.</copyright>
+    <description>Api HAL configuration for Report webservice of redITEM component</description>
+    <config>
+        <name>reditem-report</name>
+        <version>1.0.0</version>
+        <authorizationAssetName>com_{webserviceName}</authorizationAssetName>
+    </config>
+    <operations>
+        <documentation authorizationNeeded="false" source="auto" url=""/>
+        <task>
+            <unReportComment useOperation="" authorizationNeeded="true" strictFields="false" authorization="" dataMode="model" optionName="com_reditem" modelClassName="Comment" modelClassPath="" isAdminClass="false" functionName="" functionArgs="id{int}" validateData="none" validateDataFunction="validate" tableName="">
+                <fields>
+                    <field name="id" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="false">
+                        <description><![CDATA[ID of comment]]></description>
+                    </field>
+                </fields>
+                <resources>
+                    <resource displayName="result" transform="boolean" fieldFormat="{result}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                </resources>
+            </unReportComment>
+            <reportComment useOperation="" authorizationNeeded="true" strictFields="false" authorization="" dataMode="model" optionName="com_reditem" modelClassName="Comment" modelClassPath="" isAdminClass="false" functionName="" functionArgs="id{int},reason{string}" validateData="none" validateDataFunction="validate" tableName="">
+                <fields>
+                    <field name="id" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="false">
+                        <description><![CDATA[ID of comment]]></description>
+                    </field>
+                    <field name="reason" transform="string" defaultValue="" isRequiredField="true" isPrimaryField="false"/>
+                </fields>
+                <resources>
+                    <resource displayName="result" transform="int" fieldFormat="{result}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                </resources>
+            </reportComment>
+            <unReportItem useOperation="" authorizationNeeded="true" strictFields="false" authorization="" dataMode="model" optionName="com_reditem" modelClassName="Item" modelClassPath="" isAdminClass="false" functionName="unReportItem" functionArgs="itemId{int}" validateData="none" validateDataFunction="validate" tableName="">
+                <fields>
+                    <field name="itemId" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="false">
+                        <description><![CDATA[ID of item.]]></description>
+                    </field>
+                </fields>
+                <resources>
+                    <resource displayName="result" transform="boolean" fieldFormat="{result}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                </resources>
+            </unReportItem>
+            <reportItem useOperation="" authorizationNeeded="true" strictFields="false" authorization="" dataMode="model" optionName="com_reditem" modelClassName="Item" modelClassPath="" isAdminClass="false" functionName="reportItem" functionArgs="itemId{int},reason{string}" validateData="none" validateDataFunction="validate" tableName="">
+                <fields>
+                    <field name="itemId" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="false"/>
+                    <field name="reason" transform="string" defaultValue="" isRequiredField="true" isPrimaryField="false">
+                        <description><![CDATA[Reason for why you report]]></description>
+                    </field>
+                </fields>
+                <resources>
+                    <resource displayName="result" transform="int" fieldFormat="{result}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                </resources>
+            </reportItem>
+        </task>
+    </operations>
+</apiservice>

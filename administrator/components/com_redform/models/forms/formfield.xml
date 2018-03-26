@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset
+			addfieldpath="/libraries/redform/form/fields"
+			name="details">
+		<field
+				name="id"
+				type="hidden"
+				default="0"
+				label=""
+				description=""
+				readonly="true"
+				/>
+		<field
+				name="field_id"
+				type="redform.field"
+				label="COM_REDFORM_FORMS_XML_FORMFIELD_FIELD"
+				description="COM_REDFORM_FORMS_XML_FORMFIELD_FIELD_DESC"
+				required="true"
+				excludeFormFields="true"
+				/>
+		<field
+				name="section_id"
+				type="redform.section"
+				label="COM_REDFORM_FORMS_XML_FORMFIELD_SECTION"
+				description="COM_REDFORM_FORMS_XML_FORMFIELD_SECTION_DESC"
+				required="true"
+		/>
+        <field
+                name="validate"
+                type="radio"
+				class="btn-group btn-group-yesno"
+                label="COM_REDFORM_FORMS_XML_FIELD_REQUIRED"
+                description="COM_REDFORM_FORMS_XML_FIELD_REQUIRED_DESC"
+                default="0"
+                >
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field
+                name="unique"
+                type="radio"
+				class="btn-group btn-group-yesno"
+                label="COM_REDFORM_FORMS_XML_FIELD_UNIQUE"
+                description="COM_REDFORM_FORMS_XML_FIELD_UNIQUE_DESC"
+                default="0"
+                >
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field
+                name="readonly"
+                type="radio"
+				class="btn-group btn-group-yesno"
+                label="COM_REDFORM_FORMS_XML_FIELD_READONLY"
+                description="COM_REDFORM_FORMS_XML_FIELD_READONLY_DESC"
+                default="0"
+                >
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field
+                name="published"
+                type="rpublished"
+                label="COM_REDFORM_FORMS_XML_FIELD_PUBLISHED"
+                description="COM_REDFORM_FORMS_XML_FIELD_PUBLISHED_DESC"
+                />
+        <field
+                name="form_id"
+                type="hidden"
+                required="true"
+                />
+	</fieldset>
+</form>

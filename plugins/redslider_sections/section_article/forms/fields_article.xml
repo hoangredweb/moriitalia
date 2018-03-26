@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form enctype="multipart/form-data">
+	<fields name="params" addfieldpath="plugins/redslider_sections/section_article/fields">
+		<field
+			name="article_id"
+			type="modal_article"
+			label="COM_REDSLIDER_SECTION_ARTICLE_FIELD_ARTICLE_ID"
+			description="COM_REDSLIDER_SECTION_ARTICLE_FIELD_ARTICLE_ID_DESC"
+		/>
+		<field
+			name="background_image"
+			type="rmedia"
+			label="COM_REDSLIDER_SECTION_ARTICLE_FIELD_ARTICLE_IMAGE"
+			description="COM_REDSLIDER_SECTION_ARTICLE_FIELD_ARTICLE_IMAGE_DESC"
+		/>
+		<field
+			name="slide_class"
+			type="text"
+			default="article_slide"
+			label="COM_REDSLIDER_SECTION_ARTICLE_FIELD_ARTICLE_SLIDE_CLASS"
+			description="COM_REDSLIDER_SECTION_ARTICLE_FIELD_ARTICLE_SLIDE_CLASS_DESC"
+		/>
+	</fields>
+</form>

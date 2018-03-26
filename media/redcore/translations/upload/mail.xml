@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<contentelement type="contentelement">
+    <name>redSHOP - Mail</name>
+    <author>redCOMPONENT</author>
+    <copyright>Copyright (C) 2008 - 2016 redCOMPONENT.com. All rights reserved.</copyright>
+    <version>1.0.0</version>
+    <description>Translation definition for redSHOP component</description>
+    <reference>
+        <table name="redshop_mail">
+            <field type="referenceid" name="mail_id" translate="0">Mail ID</field>
+            <field type="titletext" name="mail_subject" length="50" maxlength="250" translate="1">Subject</field>
+            <field type="htmltext" name="mail_body" translate="1" ebuttons="readmore">Body</field>
+        </table>
+        <component>
+            <form>com_redshop#mail_detail#cid#task#!edit</form>
+        </component>
+    </reference>
+</contentelement>

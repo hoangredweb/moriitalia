@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" client="admin" type="plugin" group="reditem_quickicon" method="upgrade">
+	<name>PLG_REDITEM_QUICKICON_REDITEM</name>
+	<version>1.0</version>
+	<creationDate>January 2015</creationDate>
+	<author>redCOMPONENT.com</author>
+	<copyright>redCOMPONENT.com</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>PLG_REDITEM_QUICKICON_REDITEM_DESCRIPTION</description>
+	<files>
+		<filename plugin="reditem">reditem.php</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_reditem_quickicon_reditem.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_reditem_quickicon_reditem.sys.ini</language>
+	</languages>
+</extension>

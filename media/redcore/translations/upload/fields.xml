@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<contentelement type="contentelement">
+    <name>redSHOP - Custom Fields</name>
+    <author>redCOMPONENT</author>
+    <copyright>Copyright (C) 2008 - 2016 redCOMPONENT.com. All rights reserved.</copyright>
+    <version>1.0.0</version>
+    <description>Translation definition for redSHOP component</description>
+    <reference>
+        <table name="redshop_fields">
+            <field type="referenceid" name="id" translate="0">Field ID</field>
+            <field type="titletext" name="title" length="50" maxlength="250" translate="1">Field Title</field>
+        </table>
+        <component>
+            <form>com_redshop#fields_detail#cid#task#!edit</form>
+        </component>
+    </reference>
+</contentelement>

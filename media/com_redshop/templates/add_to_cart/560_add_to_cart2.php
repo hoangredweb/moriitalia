@@ -1,0 +1,1 @@
+<div class="product-cart-link"><label>{quantity_lbl}</label>{addtocart_quantity}{addtocart_link}</div>

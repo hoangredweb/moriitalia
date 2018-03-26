@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="library" method="upgrade" version="2.5">
+	<name>IP2Location library</name>
+	<libraryname>ip2location</libraryname>
+	<creationDate>May 2015</creationDate>
+	<author>redCOMPONENT.com</author>
+	<authorEmail>email@redcomponent.com</authorEmail>
+	<authorUrl>www.redcomponent.com</authorUrl>
+	<copyright>Copyright (C) 2008 - 2015 redCOMPONENT.com. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later, see LICENSE.</license>
+	<version>1.0.0</version>
+	<description>IP2Location library for getting location based on ip address. BIN files from database folder contains locations based on ip address. Solution is based on ip2location.com databases</description>
+	<files>
+		<folder>class</folder>
+		<folder>databases</folder>
+		<filename>library.php</filename>
+		<filename>ip2location.xml</filename>
+	</files>
+	<languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.lib_ip2location.ini</language>
+    </languages>
+</extension>

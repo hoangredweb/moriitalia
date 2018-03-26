@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>MOD_REDITEM_ITEMS</name>
+	<version>2.1.3</version>
+	<creationDate>October 2013</creationDate>
+	<author>redCOMPONENT.com</author>
+	<authorEmail>thong@redweb.dk</authorEmail>
+	<copyright>redCOMPONENT.com</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>MOD_REDITEM_ITEMS_DESCRIPTION</description>
+	<redcore version="1.6.3" />
+	<files>
+		<filename module="mod_reditem_items">helper.php</filename>
+		<filename module="mod_reditem_items">mod_reditem_items.php</filename>
+		<filename module="mod_reditem_items">tmpl/default.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_reditem_items.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_reditem_items.sys.ini</language>
+		<language tag="da-DK">language/da-DK/da-DK.mod_reditem_items.ini</language>
+		<language tag="da-DK">language/da-DK/da-DK.mod_reditem_items.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params" addfieldpath="/libraries/reditem/form/fields">
+			<fieldset name="basic">
+				<field name="templateId"
+					type="RedTypeTemplate"
+					label="MOD_REDITEM_ITEMS_FIELD_TEMPLATE"
+					description="MOD_REDITEM_ITEMS_FIELD_TEMPLATE_DESC"
+					required="true" />
+				<field name="categoriesIds"
+					type="RedTypeCategories"
+					label="MOD_REDITEM_ITEMS_FIELD_CATEGORIES"
+					description="MOD_REDITEM_ITEMS_FIELD_CATEGORIES_DESC"
+					multiple="true"
+					required="true" />
+				<field name="include_sub"
+					type="radio"
+					class="btn-group"
+					label="MOD_REDITEM_ITEMS_FIELD_INCLUDE_SUB"
+					description="MOD_REDITEM_ITEMS_FIELD_INCLUDE_SUB_DESC"
+					default="0">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="featured_items"
+					type="radio"
+					class="btn-group"
+					label="MOD_REDITEM_ITEMS_FIELD_INCLUDE_FEATURED"
+					description="MOD_REDITEM_ITEMS_FIELD_INCLUDE_FEATURED_DESC"
+					default="0">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="items_ordering"
+					type="list"
+					label="MOD_REDITEM_ITEMS_FIELD_ORDERING"
+					description="MOD_REDITEM_ITEMS_FIELD_ORDERING_DESC"
+					default="i.alias">
+					<option value="i.ordering">MOD_REDITEM_ITEMS_FIELD_ORDERING_OPTION_ORDERING</option>
+					<option value="i.alias">MOD_REDITEM_ITEMS_FIELD_ORDERING_OPTION_NAME</option>
+					<option value="i.created_time">MOD_REDITEM_ITEMS_FIELD_ORDERING_OPTION_CREATED_TIME</option>
+					<option value="i.modified_time">MOD_REDITEM_ITEMS_FIELD_ORDERING_OPTION_MODIFIED_TIME</option>
+					<option value="random">MOD_REDITEM_ITEMS_FIELD_ORDERING_OPTION_RANDOM</option>
+				</field>
+				<field name="items_direction"
+					type="list"
+					label="MOD_REDITEM_ITEMS_FIELD_ORDER_DIRECTION"
+					description="MOD_REDITEM_ITEMS_FIELD_ORDER_DIRECTION_DESC"
+					default="asc">
+					<option value="asc">MOD_REDITEM_ITEMS_FIELD_ORDER_DIRECTION_OPTION_ASCENDING</option>
+					<option value="desc">MOD_REDITEM_ITEMS_FIELD_ORDER_DIRECTION_OPTION_DESCENDING</option>
+				</field>
+				<field name="limit"
+					type="text"
+					default="10"
+					filter="integer"
+					label="MOD_REDITEM_ITEMS_FIELD_ITEMS_LIMIT"
+					description="MOD_REDITEM_ITEMS_FIELD_ITEMS_LIMIT_DESC" />
+				<field name="setItemId"
+					type="text"
+					default="0"
+					filter="integer"
+					label="MOD_REDITEM_ITEMS_FIELD_SET_ITEMID"
+					description="MOD_REDITEM_ITEMS_FIELD_ITEMS_SET_ITEMID_DESC" />
+			</fieldset>
+			<fieldset name="slider" label="MOD_REDITEM_ITEMS_SLIDER_OPTIONS">
+				<field name="display"
+					type="radio"
+					class="btn-group"
+					label="MOD_REDITEM_ITEMS_FIELD_DISPLAY_SLIDER"
+					description="MOD_REDITEM_ITEMS_FIELD_DISPLAY_SLIDER_DESC"
+					default="0">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="slider_pager"
+					type="radio"
+					class="btn-group"
+					label="MOD_REDITEM_ITEMS_FIELD_DISPLAY_SLIDER_PAGER"
+					description="MOD_REDITEM_ITEMS_FIELD_DISPLAY_SLIDER_PAGER_DESC"
+					default="1">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="slider_controls"
+					type="radio"
+					class="btn-group"
+					label="MOD_REDITEM_ITEMS_FIELD_DISPLAY_SLIDER_CONTROLS"
+					description="MOD_REDITEM_ITEMS_FIELD_DISPLAY_SLIDER_CONTROLS_DESC"
+					default="1">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="slider_autoplay"
+					type="radio"
+					class="btn-group"
+					label="MOD_REDITEM_ITEMS_FIELD_DISPLAY_SLIDER_AUTOPLAY"
+					description="MOD_REDITEM_ITEMS_FIELD_DISPLAY_SLIDER_AUTOPLAY_DESC"
+					default="1">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="owncache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC" >
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

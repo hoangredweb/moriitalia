@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<contentelement type="contentelement">
+	<name>RedITEM FAQ</name>
+	<author>redCOMPONENT</author>
+	<copyright>Copyright (C) 2008 - 2015 redCOMPONENT.com. All rights reserved.</copyright>
+	<version>1.0.0</version>
+	<description>Items FAQ Table Definition for the RedITEM extension</description>
+	<reference>
+		<table name="reditem_types_faq_3">
+			<field type="referenceid" name="id" translate="0">ID</field>
+			<field type="htmltext" name="cau_hoi" translate="1">Cau hoi</field>
+			<field type="htmltext" name="cau_tra_loi" translate="1">Cau tra loi</field>
+		</table>
+		<component>
+			<form>com_reditem#item#cid#task#!edit</form>
+		</component>
+	</reference>
+</contentelement>

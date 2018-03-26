@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<contentelement type="contentelement">
+    <name>redSHOP - Manufacturer</name>
+    <author>redCOMPONENT</author>
+    <copyright>Copyright (C) 2008 - 2016 redCOMPONENT.com. All rights reserved.</copyright>
+    <version>1.7.2</version>
+    <description>Translation definition for redSHOP component</description>
+    <reference>
+        <table name="redshop_manufacturer">
+            <field type="referenceid" name="manufacturer_id" translate="0">Manufacturer ID</field>
+            <field type="titletext" name="manufacturer_name" length="50" maxlength="250" translate="1">Manufacturer name</field>
+            <field type="htmltext" name="manufacturer_desc" translate="1" ebuttons="readmore">Fulltext</field>
+            <field type="htmltext" name="metakey" translate="1" ebuttons="readmore">Meta keywords</field>
+            <field type="htmltext" name="metadesc" translate="1" ebuttons="readmore">Meta description</field>
+            <field type="htmltext" name="pagetitle" translate="1" ebuttons="readmore">Page title</field>
+        </table>
+        <component>
+            <form>com_redshop#manufacturer_detail#cid#task#!edit</form>
+        </component>
+    </reference>
+</contentelement>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<contentelement type="contentelement">
+    <name>redSHOP - Product</name>
+    <author>redCOMPONENT</author>
+    <copyright>Copyright (C) 2008 - 2016 redCOMPONENT.com. All rights reserved.</copyright>
+    <version>1.7.2</version>
+    <description>Translation definition for redSHOP component</description>
+    <reference>
+        <table name="redshop_product">
+            <field type="referenceid" name="product_id" translate="0">Product ID</field>
+            <field type="titletext" name="product_name" length="50" maxlength="250" translate="1">Product name</field>
+            <field type="text" name="product_number" length="50" maxlength="250" translate="0">Product Number</field>
+            <field type="htmltext" name="product_desc" translate="1" ebuttons="ignore">Article Text</field>
+            <field type="htmltext" name="product_s_desc" translate="1" ebuttons="readmore">Fulltext</field>
+            <field type="htmltext" name="metakey" translate="1" ebuttons="readmore">Meta keywords</field>
+            <field type="htmltext" name="metadesc" translate="1" ebuttons="readmore">Meta description</field>
+            <field type="htmltext" name="pagetitle" translate="1" ebuttons="readmore">Page title</field>
+        </table>
+        <component>
+            <form>com_redshop#product_detail#cid#task#!edit</form>
+        </component>
+    </reference>
+</contentelement>

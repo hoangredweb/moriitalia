@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			label="COM_REDCORE_FILTER_SEARCH_DESC"
+			placeholder="JSEARCH_FILTER"
+			class="js-enter-submits" />
+		<field
+			name="userStatus"
+			type="list"
+			onchange="this.form.submit();"
+			label="COM_REDITEM_REPORT_USERS_FILTER_USER_STATUS">
+			<option value="">COM_REDITEM_REPORT_USERS_FILTER_USER_STATUS_OPTION_SELECT_USER_STATUS</option>
+			<option value="0">COM_REDITEM_REPORT_USERS_FILTER_USER_STATUS_OPTION_ACTIVE</option>
+			<option value="1">COM_REDITEM_REPORT_USERS_FILTER_USER_STATUS_OPTION_BLOCKED</option>
+		</field>
+	</fields>
+	<fields name="list">
+		<field
+			name="reportusers_limit"
+			type="rlimitbox"
+			class="inputbox input-mini chzn"
+			default="25"
+			label="JGLOBAL_ORDERING_LIST_LIMIT"
+			description="JGLOBAL_ORDERING_LIST_LIMIT_DESC"
+			onchange="this.form.submit();" />
+	</fields>
+</form>

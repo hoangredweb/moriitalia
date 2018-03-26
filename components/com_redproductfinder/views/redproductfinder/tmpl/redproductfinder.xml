@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Redproductfinder Layout">
+		<message>
+			<![CDATA[Redproductfinder Layout ]]>
+		</message>
+	</layout>
+	<fields name="request">
+		
+	</fields>
+</metadata>

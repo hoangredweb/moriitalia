@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" client="site" type="plugin" group="user" method="upgrade">
+	<name>PLG_USER_REDITEM_REPORTERS</name>
+	<version>1.0</version>
+	<creationDate>October 2014</creationDate>
+	<author>redCOMPONENT.com</author>
+	<copyright>redCOMPONENT.com</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>PLG_USER_REDITEM_REPORTERS_DESC</description>
+	<files>
+		<filename plugin="reditem_reporters">reditem_reporters.php</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_user_reditem_reporters.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_user_reditem_reporters.sys.ini</language>
+	</languages>
+</extension>

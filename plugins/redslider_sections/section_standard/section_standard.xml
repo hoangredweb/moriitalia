@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" client="site" type="plugin" group="redslider_sections" method="upgrade">
+	<name>PLG_SECTION_STANDARD</name>
+	<version>2.0.42</version>
+	<creationDate>February 2016</creationDate>
+	<author>redCOMPONENT.com</author>
+	<copyright>redCOMPONENT.com</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>PLG_SECTION_STANDARD_DESC</description>
+	<scriptfile>standard.script.php</scriptfile>
+	<files>
+		<filename plugin="section_standard">section_standard.php</filename>
+		<folder plugin="section_standard">forms</folder>
+		<folder plugin="section_standard">tmpl</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_redslider_sections_section_standard.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_redslider_sections_section_standard.sys.ini</language>
+	</languages>
+	<media destination="redslider_sections/section_standard" folder="media/redslider_sections">
+       <folder>media</folder>
+    </media>
+	<config>
+		<fields name="params" addfieldpath="/libraries/redslider/form/fields">
+			<fieldset name="basic">
+			</fieldset>
+		</fields>
+	</config>
+</extension>

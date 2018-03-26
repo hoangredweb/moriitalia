@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="2.5">
+<name>POWr Instagram Feed</name>
+<author>POWr.io</author>
+<creationDate>Aug 2016</creationDate>
+<version>3.5</version>
+<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+<authorEmail>info@powr.io</authorEmail>
+<authorUrl>https://www.powr.io</authorUrl>
+<packagename>POWr Instagram Feed</packagename>
+<packager>POWr.io</packager>
+<packagerurl>http://www.powr.io/</packagerurl>
+<description>Display posts from multiple Instagram accounts in a single feed!</description>
+<files folder="packages">
+  <file type="module" client="site">mod_powrinstagramfeed.zip</file>
+  <file type="plugin" group="client">plg_powrshortcodes.zip</file>
+  <file type="plugin" group="client">plg_powricon.zip</file>
+</files>
+</extension>

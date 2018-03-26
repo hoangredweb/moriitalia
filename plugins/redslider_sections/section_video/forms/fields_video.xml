@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form enctype="multipart/form-data">
+	<fields name="params">
+		<!-- Vimeo -->
+		<field name="vimeo_id"
+			type="text"
+			default=""
+			label="COM_REDSLIDER_SECTION_VIDEO_FIELD_VIMEO_ID"
+			description="COM_REDSLIDER_SECTION_VIDEO_FIELD_VIMEO_ID_DESC"
+		/>
+		<field name="vimeo_portrait"
+			type="radio"
+			class="btn-group"
+			label="COM_REDSLIDER_SECTION_VIDEO_FIELD_VIMEO_PORTRAIT"
+			description="COM_REDSLIDER_SECTION_VIDEO_FIELD_VIMEO_PORTRAIT_DESC"
+			default="0">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="vimeo_title"
+			type="radio"
+			class="btn-group"
+			label="COM_REDSLIDER_SECTION_VIDEO_FIELD_VIMEO_TITLE"
+			description="COM_REDSLIDER_SECTION_VIDEO_FIELD_VIMEO_TITLE_DESC"
+			default="0">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="vimeo_byline"
+			type="radio"
+			class="btn-group"
+			label="COM_REDSLIDER_SECTION_VIDEO_FIELD_VIMEO_BYLINE"
+			description="COM_REDSLIDER_SECTION_VIDEO_FIELD_VIMEO_BYLINE_DESC"
+			default="0">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="vimeo_autoplay"
+			type="radio"
+			class="btn-group"
+			label="COM_REDSLIDER_SECTION_VIDEO_FIELD_VIMEO_AUTOPLAY"
+			description="COM_REDSLIDER_SECTION_VIDEO_FIELD_VIMEO_AUTOPLAY_DESC"
+			default="0">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="vimeo_loop"
+			type="radio"
+			class="btn-group"
+			label="COM_REDSLIDER_SECTION_VIDEO_FIELD_VIMEO_LOOP"
+			description="COM_REDSLIDER_SECTION_VIDEO_FIELD_VIMEO_LOOP_DESC"
+			default="0">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="vimeo_color"
+			type="color"
+			default="#FFFFFF"
+			label="COM_REDSLIDER_SECTION_VIDEO_FIELD_VIMEO_COLOR"
+			description="COM_REDSLIDER_SECTION_VIDEO_FIELD_VIMEO_COLOR_DESC"
+		/>
+
+		<!-- Youtube -->
+		<field name="youtube_id"
+			type="text"
+			default=""
+			label="COM_REDSLIDER_SECTION_VIDEO_FIELD_YOUTUBE_ID"
+			description="COM_REDSLIDER_SECTION_VIDEO_FIELD_YOUTUBE_ID_DESC"
+		/>
+		<field name="youtube_suggested"
+			type="radio"
+			class="btn-group"
+			label="COM_REDSLIDER_SECTION_VIDEO_FIELD_YOUTUBE_SUGGEST"
+			description="COM_REDSLIDER_SECTION_VIDEO_FIELD_YOUTUBE_SUGGEST_DESC"
+			default="0">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="youtube_privacy_enhanced"
+			type="radio"
+			class="btn-group"
+			label="COM_REDSLIDER_SECTION_VIDEO_FIELD_YOUTUBE_PRIVACY_ENHANCE"
+			description="COM_REDSLIDER_SECTION_VIDEO_FIELD_YOUTUBE_PRIVACY_ENHANCE_DESC"
+			default="0">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+
+		<!-- Local video -->
+		<field name="local_media"
+			type="rmedia"
+			default=""
+			label="COM_REDSLIDER_SECTION_VIDEO_FIELD_LOCAL_MEDIA"
+			description="COM_REDSLIDER_SECTION_VIDEO_FIELD_LOCAL_MEDIA_DESC"
+		/>
+		<field name="local_width"
+			type="text"
+			default="500"
+			label="COM_REDSLIDER_SECTION_VIDEO_FIELD_LOCAL_WIDTH"
+			description="COM_REDSLIDER_SECTION_VIDEO_FIELD_LOCAL_WIDTH_DESC"
+		/>
+		<field name="local_height"
+			type="text"
+			default="315"
+			label="COM_REDSLIDER_SECTION_VIDEO_FIELD_LOCAL_HEIGHT"
+			description="COM_REDSLIDER_SECTION_VIDEO_FIELD_YOUTUBE_HEIGHT_DESC"
+		/>
+		<!-- Other video -->
+		<field name="other_iframe"
+			type="textarea"
+			label="COM_REDSLIDER_SECTION_VIDEO_FIELD_OTHER_IFRAME"
+			description="COM_REDSLIDER_SECTION_VIDEO_FIELD_OTHER_IFRAME_DESC"
+		/>
+		<!-- Basic fields -->
+		<field
+			name="background_image"
+			type="rmedia"
+			default=""
+			label="COM_REDSLIDER_SECTION_VIDEO_FIELD_BACKGROUND_IMAGE"
+			description="COM_REDSLIDER_SECTION_VIDEO_FIELD_BACKGROUND_IMAGE_DESC"
+		/>
+		<field name="slide_class"
+			type="text"
+			default="video_slide"
+			label="COM_REDSLIDER_SECTION_VIDEO_FIELD_SLIDE_CLASS"
+			description="COM_REDSLIDER_SECTION_VIDEO_FIELD_SLIDE_CLASS_DESC"
+		/>
+	</fields>
+</form>

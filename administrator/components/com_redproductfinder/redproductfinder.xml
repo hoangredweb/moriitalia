@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://www.joomla.org/xml/dtd/1.5/component-install.dtd">
+<extension type="component" version="3.4" method="upgrade">
+	<name>COM_REDPRODUCTFINDER</name>
+	<author>Redweb.dk</author>
+	<creationDate>25-06-2015</creationDate>
+	<copyright>redWEB ApS</copyright>
+	<license>GNU/GPL</license>
+	<authorEmail>email@redweb.dk</authorEmail>
+	<authorUrl>www.redweb.dk</authorUrl>
+	<version>2.1</version>
+	<redcore version="1.6.0" defaultFramework="bootstrap3" />
+	<scriptfile>install.php</scriptfile>
+	<description>COM_REDPRODUCTFINDER_XML_DESC</description>
+
+	<install folder="component/admin">
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install/mysql/install.sql</file>
+		</sql>
+	</install>
+	<uninstall folder="component/admin">
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install/mysql/uninstall.sql</file>
+		</sql>
+	</uninstall>
+	<update folder="component/admin">
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+			<schemapath type="mysqli">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+
+	<files folder="component/site">
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>redproductfinder.php</filename>
+		<filename>router.php</filename>
+		<folder>controllers</folder>
+		<folder>layouts</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+		<folder>helpers</folder>
+		<folder>assets</folder>
+	</files>
+
+	<languages folder="component/site/language">
+		<language tag="en-GB">en-GB/en-GB.com_redproductfinder.ini</language>
+		<language tag="da-DK">da-DK/da-DK.com_redproductfinder.ini</language>
+	</languages>
+
+	<media folder="media/com_redproductfinder" destination="com_redproductfinder">
+		<folder>images</folder>
+	</media>
+
+	<administration>
+		<menu link="option=com_redproductfinder" view="redproductfinder">COM_REDPRODUCTFINDER_MENU_MAIN</menu>
+
+		<submenu>
+			<menu link="option=com_redproductfinder" view="redproductfinder">COM_REDPRODUCTFINDER_REDPRODUCTFINDER</menu>
+			<menu link="option=com_redproductfinder&amp;view=forms" view="forms">COM_REDPRODUCTFINDER_FORMS</menu>
+			<menu link="option=com_redproductfinder&amp;view=types" view="types">COM_REDPRODUCTFINDER_TYPES</menu>
+			<menu link="option=com_redproductfinder&amp;view=tags" view="tags">COM_REDPRODUCTFINDER_TAGS</menu>
+			<menu link="option=com_redproductfinder&amp;view=associations" view="associations">COM_REDPRODUCTFINDER_ASSOCIATIONS</menu>
+			<menu link="option=com_redproductfinder&amp;view=keywords" view="keywords">COM_REDPRODUCTFINDER_KEYWORD_STATISTIC</menu>
+			<menu link="option=com_redproductfinder&amp;view=filters" view="filters">COM_REDPRODUCTFINDER_FILTERS</menu>
+		</submenu>
+
+		<files folder="component/admin">
+			<filename>changelog.txt</filename>
+			<filename>controller.php</filename>
+			<filename>config.xml</filename>
+			<filename>redproductfinder.php</filename>
+			<folder>extras</folder>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>plugins</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+			<folder>elements</folder>
+			<folder>layouts</folder>
+			<folder>sql</folder>
+		</files>
+
+		<languages folder="component/admin/language">
+			<language tag="en-GB">en-GB/en-GB.com_redproductfinder.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_redproductfinder.sys.ini</language>
+			<language tag="da-DK">da-DK/da-DK.com_redproductfinder.ini</language>
+			<language tag="da-DK">da-DK/da-DK.com_redproductfinder.sys.ini</language>
+		</languages>
+
+	</administration>
+</extension>

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<contentelement type="contentelement">
+    <name>redSHOP - Text Library</name>
+    <author>redCOMPONENT</author>
+    <copyright>Copyright (C) 2008 - 2016 redCOMPONENT.com. All rights reserved.</copyright>
+    <version>1.7.2</version>
+    <description>Translation definition for redSHOP component</description>
+    <reference>
+        <table name="redshop_textlibrary">
+            <field type="referenceid" name="textlibrary_id" translate="0">Text Library ID</field>
+            <field type="titletext" name="text_name" length="50" maxlength="250" translate="1">Text name</field>
+            <field type="htmltext" name="text_desc" translate="1" ebuttons="ignore">Text Description</field>
+            <field type="htmltext" name="text_field" translate="1" ebuttons="readmore">Text field</field>
+        </table>
+        <component>
+            <form>com_redshop#textlibrary_detail#cid#task#!edit</form>
+        </component>
+    </reference>
+</contentelement>

@@ -1,0 +1,1 @@
+<p class="cart-empty"><?php echo JText::_("COM_REDSHOP_EMPTY_CART");?></p>

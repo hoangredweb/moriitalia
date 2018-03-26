@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="library" method="upgrade" version="2.5">
+	<name>redSLIDER - Libraries</name>
+	<libraryname>redslider</libraryname>
+	<creationDate>29th April 2016</creationDate>
+	<author>redCOMPONENT</author>
+	<authorEmail>email@redcomponent.com</authorEmail>
+	<authorUrl>www.redcomponent.com</authorUrl>
+	<copyright>Copyright (C) 2008 - 2016 redCOMPONENT.com. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later, see LICENSE.</license>
+	<version>2.0.44</version>
+	<description>redSLIDER library</description>
+	<files>
+		<folder>form</folder>
+		<folder>helper</folder>
+		<folder>view</folder>
+		<filename>library.php</filename>
+		<filename>redslider.xml</filename>
+	</files>
+</extension>

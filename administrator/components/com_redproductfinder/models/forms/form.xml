@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset addfieldpath="/administrator/components/com_categories/models/fields">
+		<field name="id"
+			type="hidden"
+			label="JGLOBAL_FIELD_ID_LABEL"
+			description="JGLOBAL_FIELD_ID_DESC"
+			size="10"
+			default="0"
+			readonly="true"
+			class="readonly"
+		/>
+
+		<field 	id="published" name="published" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC"
+		class="chzn-color-state" filter="intval" size="1" default="1">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+
+		<field name="formname"
+			type="text"
+			label="COM_REDPRODUCTFINDER_FORM_NAME"
+			required="true"
+		 />
+
+		<field name="classname"
+			type="text"
+			label="COM_REDPRODUCTFINDER_MODELS_FORMS_FORM_CLASSNAME_LABEL"
+		/>
+
+		<field name="dependency"
+			type="list"
+			label="COM_REDPRODUCTFINDER_MODELS_FORMS_FORM_DEPENDANCIES_LABEL">
+			<option value="1">
+				JYES</option>
+			<option value="0">
+				JNO</option>
+		</field>
+
+		<field id="showname"
+			name="showname"
+			type="list"
+			label="COM_REDPRODUCTFINDER_MODELS_FORMS_FORM_SHOWNAME_LABEL"
+			class="chzn-color-state"
+			size="1"
+			default="1">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+
+		<field name="checked_out"
+			type="text"
+			label="COM_REDPRODUCTFINDER_MODELS_FORMS_FORM_CHECKED_OUT_LABEL"
+		/>
+		<field name="checked_out_time"
+			type="text"
+			label="COM_REDPRODUCTFINDER_MODELS_FORMS_FORM_CHECKED_OUT_TIME_LABEL"
+		/>
+	</fieldset>
+</form>

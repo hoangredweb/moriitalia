@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://moriitalia.redweb.vn/new/media/redcore/webservices/joomla/administrator.contact.1.0.0.wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://moriitalia.redweb.vn/new/media/redcore/webservices/joomla/administrator.contact.1.0.0.wsdl">
+  <wsdl:types>
+    <s:schema targetNamespace="http://moriitalia.redweb.vn/new/media/redcore/webservices/joomla/administrator.contact.1.0.0.wsdl" elementFormDefault="unqualified">
+      <s:complexType name="ArrayOfStringType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="readList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="limitStart" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="limit" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="filterSearch" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="filters" type="tns:readList_filters"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ordering" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="orderingDirection" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="readList_filters">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="published" type="s:int"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="readListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="list" type="tns:readListResponse_list"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="readListResponse_list">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="unbounded" name="item" type="tns:readListResponse_list_item"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="readListResponse_list_item">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="access" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="featured" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="language" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="name" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ordering" type="s:int"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="readItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="readItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:readItemResponse_item"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="readItemResponse_item">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="name" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="alias" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="con_position" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="address" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="suburb" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="state" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="country" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="postcode" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="telephone" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="fax" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="misc" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="image" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="email_to" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="default_con" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="published" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="checked_out" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="checked_out_time" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ordering" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="params" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="user_id" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="catid" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="access" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="mobile" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="webpage" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="sortname1" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="sortname2" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="sortname3" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="language" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="created" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="created_by" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="modified" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="modified_by" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="metakey" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="metadesc" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="metadata" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="featured" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="publish_up" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="publish_down" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="version" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="hits" type="s:int"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="name" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="catid" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="published" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="catid" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="published" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_featured">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_featuredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_unfeatured">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_unfeaturedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_publish">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_publishResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_unpublish">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_unpublishResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_checkin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_checkinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_checkout">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_checkoutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_save">
+        <s:complexType/>
+      </s:element>
+      <s:element name="task_saveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_apply">
+        <s:complexType/>
+      </s:element>
+      <s:element name="task_applyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_delete">
+        <s:complexType/>
+      </s:element>
+      <s:element name="task_deleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:service name="administrator.contact.1.0.0">
+    <wsdl:documentation>Api HAL configuration for Joomla Administrator Contact component</wsdl:documentation>
+    <wsdl:port name="administrator.contact.1.0.0_Soap" binding="tns:administrator.contact.1.0.0">
+      <soap:address location="http://moriitalia.redweb.vn/new/administrator/index.php?webserviceClient=administrator&amp;webserviceVersion=1.0.0&amp;option=contact&amp;api=soap"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="readListRequest">
+    <wsdl:part name="parameters" element="tns:readList"/>
+  </wsdl:message>
+  <wsdl:message name="readListResponse">
+    <wsdl:part name="parameters" element="tns:readListResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="administrator.contact.1.0.0">
+    <wsdl:operation name="readList">
+      <wsdl:input message="tns:readListRequest"/>
+      <wsdl:output message="tns:readListResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="readItem">
+      <wsdl:input message="tns:readItemRequest"/>
+      <wsdl:output message="tns:readItemResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input message="tns:createRequest"/>
+      <wsdl:output message="tns:createResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateRequest"/>
+      <wsdl:output message="tns:updateResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteRequest"/>
+      <wsdl:output message="tns:deleteResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_featured">
+      <wsdl:input message="tns:task_featuredRequest"/>
+      <wsdl:output message="tns:task_featuredResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_unfeatured">
+      <wsdl:input message="tns:task_unfeaturedRequest"/>
+      <wsdl:output message="tns:task_unfeaturedResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_publish">
+      <wsdl:input message="tns:task_publishRequest"/>
+      <wsdl:output message="tns:task_publishResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_unpublish">
+      <wsdl:input message="tns:task_unpublishRequest"/>
+      <wsdl:output message="tns:task_unpublishResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_checkin">
+      <wsdl:input message="tns:task_checkinRequest"/>
+      <wsdl:output message="tns:task_checkinResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_checkout">
+      <wsdl:input message="tns:task_checkoutRequest"/>
+      <wsdl:output message="tns:task_checkoutResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_save">
+      <wsdl:input message="tns:task_saveRequest"/>
+      <wsdl:output message="tns:task_saveResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_apply">
+      <wsdl:input message="tns:task_applyRequest"/>
+      <wsdl:output message="tns:task_applyResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_delete">
+      <wsdl:input message="tns:task_deleteRequest"/>
+      <wsdl:output message="tns:task_deleteResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="administrator.contact.1.0.0" type="tns:administrator.contact.1.0.0">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="readList">
+      <soap:operation soapAction="readList" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readItem">
+      <soap:operation soapAction="readItem" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="create" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="update" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="delete" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_featured">
+      <soap:operation soapAction="task_featured" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_unfeatured">
+      <soap:operation soapAction="task_unfeatured" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_publish">
+      <soap:operation soapAction="task_publish" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_unpublish">
+      <soap:operation soapAction="task_unpublish" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_checkin">
+      <soap:operation soapAction="task_checkin" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_checkout">
+      <soap:operation soapAction="task_checkout" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_save">
+      <soap:operation soapAction="task_save" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_apply">
+      <soap:operation soapAction="task_apply" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_delete">
+      <soap:operation soapAction="task_delete" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="readItemRequest">
+    <wsdl:part name="parameters" element="tns:readItem"/>
+  </wsdl:message>
+  <wsdl:message name="readItemResponse">
+    <wsdl:part name="parameters" element="tns:readItemResponse"/>
+  </wsdl:message>
+  <wsdl:message name="createRequest">
+    <wsdl:part name="parameters" element="tns:create"/>
+  </wsdl:message>
+  <wsdl:message name="createResponse">
+    <wsdl:part name="parameters" element="tns:createResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateRequest">
+    <wsdl:part name="parameters" element="tns:update"/>
+  </wsdl:message>
+  <wsdl:message name="updateResponse">
+    <wsdl:part name="parameters" element="tns:updateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="deleteRequest">
+    <wsdl:part name="parameters" element="tns:delete"/>
+  </wsdl:message>
+  <wsdl:message name="deleteResponse">
+    <wsdl:part name="parameters" element="tns:deleteResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_featuredRequest">
+    <wsdl:part name="parameters" element="tns:task_featured"/>
+  </wsdl:message>
+  <wsdl:message name="task_featuredResponse">
+    <wsdl:part name="parameters" element="tns:task_featuredResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_unfeaturedRequest">
+    <wsdl:part name="parameters" element="tns:task_unfeatured"/>
+  </wsdl:message>
+  <wsdl:message name="task_unfeaturedResponse">
+    <wsdl:part name="parameters" element="tns:task_unfeaturedResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_publishRequest">
+    <wsdl:part name="parameters" element="tns:task_publish"/>
+  </wsdl:message>
+  <wsdl:message name="task_publishResponse">
+    <wsdl:part name="parameters" element="tns:task_publishResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_unpublishRequest">
+    <wsdl:part name="parameters" element="tns:task_unpublish"/>
+  </wsdl:message>
+  <wsdl:message name="task_unpublishResponse">
+    <wsdl:part name="parameters" element="tns:task_unpublishResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_checkinRequest">
+    <wsdl:part name="parameters" element="tns:task_checkin"/>
+  </wsdl:message>
+  <wsdl:message name="task_checkinResponse">
+    <wsdl:part name="parameters" element="tns:task_checkinResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_checkoutRequest">
+    <wsdl:part name="parameters" element="tns:task_checkout"/>
+  </wsdl:message>
+  <wsdl:message name="task_checkoutResponse">
+    <wsdl:part name="parameters" element="tns:task_checkoutResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_saveRequest">
+    <wsdl:part name="parameters" element="tns:task_save"/>
+  </wsdl:message>
+  <wsdl:message name="task_saveResponse">
+    <wsdl:part name="parameters" element="tns:task_saveResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_applyRequest">
+    <wsdl:part name="parameters" element="tns:task_apply"/>
+  </wsdl:message>
+  <wsdl:message name="task_applyResponse">
+    <wsdl:part name="parameters" element="tns:task_applyResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_deleteRequest">
+    <wsdl:part name="parameters" element="tns:task_delete"/>
+  </wsdl:message>
+  <wsdl:message name="task_deleteResponse">
+    <wsdl:part name="parameters" element="tns:task_deleteResponse"/>
+  </wsdl:message>
+</wsdl:definitions>

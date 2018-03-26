@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fields name="params">
+        <fieldset name="extra" label="extra">
+            <field name="dateformat" type="text" default="%Y-%m-%d"
+                   label="COM_REDFORM_FIELD_DATE_PARAMS_DATE_FORMAT_LABEL"
+                   description="COM_REDFORM_FIELD_DATE_PARAMS_DATE_FORMAT_DESC"/>
+
+            <field type="redformnote" label="COM_REDFORM_note"
+                   description="COM_REDFORM_FIELD_DATE_PARAMS_NOTE_TEXT" />
+        </fieldset>
+    </fields>
+</form>

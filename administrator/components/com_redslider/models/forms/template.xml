@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="template-information">
+		<field
+				name="id"
+				type="hidden"
+				default="0"
+				class="readonly"
+				readonly="true"
+				/>
+		<field
+				name="title"
+				type="text"
+				default=""
+				label="COM_REDSLIDER_TEMPLATE_TITLE"
+				required="true"
+				class="input-normal"
+				description="COM_REDSLIDER_TEMPLATE_TITLE_DESC"
+				message="COM_REDSLIDER_TEMPLATE_TITLE_DESC"
+				/>
+		<field
+				name="alias"
+				type="text"
+				class="input-normal"
+				label="COM_REDSLIDER_TEMPLATE_ALIAS"
+				description="COM_REDSLIDER_TEMPLATE_ALIAS_DESC"
+				/>
+
+		<field name="section"
+			type="rlsectionlist"
+			label="COM_REDSLIDER_TEMPLATE_SECTION"
+			required="true"
+			onchange="submitform('template.setSection');"
+			description="COM_REDSLIDER_TEMPLATE_SECTION_DESC"
+			>
+			<option value="">COM_REDSLIDER_SELECT</option>
+		</field>
+
+		<field name="content"
+			type="editor"
+			editor="codemirror|tinymce"
+			default=""
+			label="COM_REDSLIDER_TEMPLATE_CONTENT"
+			description="COM_REDSLIDER_TEMPLATE_CONTENT_DESC"
+			cols="80"
+			filter="safehtml"
+			buttons="true"
+		/>
+
+		<field name="published" type="radio"
+			   label="JPUBLISHED"
+			   class="btn-group"
+			   default="1">
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+	</fieldset>
+</form>

@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<contentelement type="contentelement">
+    <name>redSHOP - Templates</name>
+    <author>redCOMPONENT</author>
+    <copyright>Copyright (C) 2008 - 2016 redCOMPONENT.com. All rights reserved.</copyright>
+    <version>1.0.0</version>
+    <description>Translation definition for redSHOP component</description>
+    <reference>
+        <table name="redshop_template">
+            <field type="referenceid" name="template_id" translate="0">Template ID</field>
+            <field type="titletext" name="template_name" translate="0">Template name</field>
+            <field type="htmltext" name="template_desc" translate="1" ebuttons="readmore">Template Description</field>
+        </table>
+        <component>
+            <form>com_redshop#template_detail#cid#task#!edit</form>
+        </component>
+    </reference>
+</contentelement>

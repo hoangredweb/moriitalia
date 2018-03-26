@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7.0" client="site" type="module" method="upgrade">
+	<name>redPRODUCTFORMS</name>
+	<author>Redweb.dk</author>
+	<creationDate>11-05-2014</creationDate>
+	<copyright>redWEB ApS</copyright>
+	<license>GNU/GPL</license>
+	<authorEmail>tuan@redweb.dk</authorEmail>
+	<authorUrl>www.redweb.dk</authorUrl>
+	<version>1.0</version>
+	<description>This is module that show form</description>
+	<files>
+		<filename module="mod_redproductforms">mod_redproductforms.php</filename>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_redproductforms.ini</language>
+		<language tag="da-DK">language/da-DK/da-DK.mod_redproductforms.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="form_id" type="sql" label="Select form"
+					   query="SELECT id, formname FROM #__redproductfinder_forms WHERE published = 1" key_field="id"
+					   value_field="formname"/>
+				<field
+						name="moduleclass_sfx"
+						type="text"
+						label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+						description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

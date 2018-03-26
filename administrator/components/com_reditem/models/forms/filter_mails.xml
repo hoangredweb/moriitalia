@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			label="COM_REDCORE_FILTER_SEARCH_DESC"
+			placeholder="JSEARCH_FILTER"
+			class="js-enter-submits"
+			/>
+		<field
+			name="section"
+			type="rimailsections"
+			class="chosen input-xlarge"
+			label="COM_REDITEM_MAIL_SECTION_LABEL"
+			description="COM_REDITEM_MAIL_SECTION_DESC"
+			default=""
+			onchange="this.form.submit();">
+			<option value="">COM_REDITEM_SELECT</option>
+			<option value="get_item_rating">COM_REDITEM_MAIL_SECTION_GET_ITEM_RATING</option>
+			<option value="item_reported">COM_REDITEM_MAIL_SECTION_ITEM_REPORTED</option>
+			<option value="item_self_removed">COM_REDITEM_MAIL_SECTION_ITEM_SELF_REMOVED</option>
+			<option value="item_removed_by_reported">COM_REDITEM_MAIL_SECTION_ITEM_REMOVED_BY_REPORTED</option>
+			<option value="item_removed_by_expired">COM_REDITEM_MAIL_SECTION_ITEM_REMOVED_BY_EXPIRED</option>
+			<option value="item_removed_by_admin">COM_REDITEM_MAIL_SECTION_ITEM_REMOVED_BY_ADMIN</option>
+			<option value="item_republished">COM_REDITEM_MAIL_SECTION_ITEM_REPUBLISHED</option>
+			<option value="get_item_comment">COM_REDITEM_MAIL_SECTION_GET_ITEM_COMMENT</option>
+			<option value="get_private_comment">COM_REDITEM_MAIL_SECTION_GET_PRIVATE_COMMENT</option>
+			<option value="get_item_comment_reply">COM_REDITEM_MAIL_SECTION_GET_ITEM_COMMENT_REPLY</option>
+			<option value="comment_reported">COM_REDITEM_MAIL_SECTION_COMMENT_REPORTED</option>
+			<option value="comment_self_removed">COM_REDITEM_MAIL_SECTION_COMMENT_SELF_REMOVED</option>
+			<option value="comment_removed_by_reported">COM_REDITEM_MAIL_SECTION_COMMENT_REMOVED_BY_REPORTED</option>
+		</field>
+		<field
+			name="filter_types"
+			type="ritypelist"
+			class="chosen"
+			onchange="this.form.submit();"
+			label="COM_REDITEM_FILTER_TYPES"
+			description="COM_REDITEM_FILTER_TYPES_DESCRIPTION">
+			<option value="0">COM_REDITEM_SELECT</option>
+		</field>
+		<field
+			name="published"
+			type="rpublished"
+			onchange="this.form.submit();"
+			label="COM_REDITEM_FILTER_PUBLISHED"
+			statuses="0,1">
+			<option value="">COM_REDITEM_FILTER_PUBLISHED</option>
+		</field>
+	</fields>
+	<fields name="list">
+		<field
+			name="mails_limit"
+			type="rlimitbox"
+			class="inputbox input-mini chzn"
+			default="25"
+			label="JGLOBAL_ORDERING_LIST_LIMIT"
+			description="JGLOBAL_ORDERING_LIST_LIMIT_DESC"
+			onchange="this.form.submit();" />
+	</fields>
+</form>

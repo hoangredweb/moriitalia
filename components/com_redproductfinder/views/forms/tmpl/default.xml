@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="COM_REDPRODUCTFINDER_FORMS_DEFAULT_TITLE">
+        <message>
+            <![CDATA[COM_REDPRODUCTFINDER_FORMS_DEFAULT_DESC]]>
+        </message>
+    </layout>
+
+	<fields name="request">
+   	<fieldset name="request"
+			addfieldpath="/administrator/components/com_redproductfinder/models/fields"
+		>
+			<field name="id"
+				type="modal_forms"
+				description="COM_CONTACT_SELECT_CONTACT_DESC"
+				label="COM_REDPRODUCTFINDER_MODEL_FIELD_MODAL_FORM_TITLE"
+				required="true"
+				edit="true"
+				clear="false"
+			/>
+	</fieldset>
+	</fields>
+</metadata>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="314" height="313" xmlns="http://www.w3.org/2000/svg">
+ <clipPath id="svgClip">
+  <path d="m0,260l248,0l0,-110l12,-20l-12,-20l0,-110l-248,0l0,260z" id="svgPath"/>
+ </clipPath>
+ <g>
+  <title>Layer 1</title>
+  <path fill="black" d="m0,313.00003l248,0l0,-132.4231l12,-24.07692l-12,-24.07693l0,-132.42308l-248,0l0,313.00003z" id="svgMask"/>
+ </g>
+</svg>

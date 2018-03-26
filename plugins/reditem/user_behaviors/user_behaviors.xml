@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" client="site" type="plugin" group="reditem" method="upgrade">
+	<name>PLG_REDITEM_USER_BEHAVIORS</name>
+	<version>1.0</version>
+	<creationDate>November 2014</creationDate>
+	<author>redCOMPONENT.com</author>
+	<copyright>redCOMPONENT.com</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>PLG_REDITEM_USER_BEHAVIORS_DESC</description>
+	<files>
+		<filename plugin="user_behaviors">user_behaviors.php</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_reditem_user_behaviors.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_reditem_user_behaviors.sys.ini</language>
+	</languages>
+	<config>
+	</config>
+</extension>

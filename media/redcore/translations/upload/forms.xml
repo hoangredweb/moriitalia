@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<contentelement type="contentelement">
+    <name>redFORM - Forms</name>
+    <author>redCOMPONENT</author>
+    <copyright>Copyright (C) 2008 - 2016 redCOMPONENT.com. All rights reserved.</copyright>
+    <version>1.0.0</version>
+    <description>Translation definition for redFORM component</description>
+    <reference>
+        <table name="rwf_forms">
+            <field type="referenceid" name="id" translate="0">Form ID</field>
+            <field type="htmltext" name="submissionsubject" translate="1" ebuttons="readmore">Submission Subject</field>
+            <field type="htmltext" name="submissionbody" translate="1" ebuttons="readmore">Submission Body</field>
+            <field type="htmltext" name="notificationtext" translate="1" ebuttons="readmore">Notification Text</field>
+            <field type="htmltext" name="contactpaymentnotificationsubject" translate="1" ebuttons="readmore">Contact payment notification subject</field>
+            <field type="htmltext" name="contactpaymentnotificationbody" translate="1" ebuttons="readmore">Contact payment notification body</field>
+            <field type="htmltext" name="submitterpaymentnotificationsubject" translate="1" ebuttons="readmore">Submitter payment notification subject</field>
+            <field type="htmltext" name="submitterpaymentnotificationbody" translate="1" ebuttons="readmore">Submitter payment notification body</field>
+        </table>
+        <component>
+            <form>com_redform#form#id#task#!edit</form>
+        </component>
+    </reference>
+</contentelement>

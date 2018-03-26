@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_REDITEM_ITEM_EDIT_LAYOUT">
+		<message>
+			<![CDATA[COM_REDITEM_ITEM_EDIT_LAYOUT_DESC]]>
+		</message>
+	</layout>
+
+    <fields name="request" addfieldpath="/libraries/reditem/form/fields">
+        <fieldset name="request">
+            <field
+                    name="typeId"
+                    type="ritypelist"
+                    label="COM_REDITEM_CATEGORY_TYPE"
+                    required="true"
+                    />
+            <field
+                    name="templateId"
+                    type="RedTypeTemplate"
+                    section="view_itemedit"
+                    label="COM_REDITEM_CATEGORY_SELECT_TEMPLATE"
+                    description="COM_REDITEM_CATEGORY_SELECT_TEMPLATE_DESC"
+                    default=""
+                    />
+            <field
+                    name="id"
+                    type="hidden"
+                    value="0"
+                    />
+        </fieldset>
+    </fields>
+
+    <fields name="params" addfieldpath="/libraries/reditem/form/fields">
+        <fieldset name="basic">
+            <field
+                    name="allow_cids"
+                    type="ricategoriestree"
+                    multiple="true"
+                    label="COM_REDITEM_ITEM_EDIT_LAYOUT_ALLOW_CATEGORIES"
+                    description="COM_REDITEM_ITEM_EDIT_LAYOUT_ALLOW_CATEGORIES_DESC"
+            />
+            <field
+                    name="show_item_url_after_save"
+                    type="radio"
+                    class="btn-group"
+                    label="COM_REDITEM_ITEM_EDIT_LAYOUT_SHOW_ITEM_URL_AFTER_SAVE"
+                    description="COM_REDITEM_ITEM_EDIT_LAYOUT_SHOW_ITEM_URL_AFTER_SAVE_DESC"
+                    default="0">
+                <option value="0">JDISABLED</option>
+                <option value="1">JENABLED</option>
+            </field>
+        </fieldset>
+    </fields>
+</metadata>

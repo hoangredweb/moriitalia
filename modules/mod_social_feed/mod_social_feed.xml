@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.2" client="site" method="upgrade">
+	<name>MOD_SOCIAL_FEED</name>
+	<version>1.0.0</version>
+	<creationDate>May 2016</creationDate>
+	<author>redCOMPONENT.com</author>
+	<authorEmail>email@redcomponent.com</authorEmail>
+	<copyright>Copyright (C) 2012 - 2016 redCOMPONENT.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>MOD_SOCIAL_FEED_DESC</description>
+	<files>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename module="mod_social_feed">mod_social_feed.php</filename>
+		<filename>mod_social_feed.xml</filename>
+	</files>
+	<media folder="media">
+		<folder>mod_social_feed</folder>
+	</media>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="length"
+					type="text"
+					label="MOD_SOCIAL_FEED_LENGHT"
+					description="MOD_SOCIAL_FEED_LENGHT_DESC"
+				/>
+				<field
+					name="show_media"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="MOD_SOCIAL_FEED_SHOW_MEDIA"
+					description="MOD_SOCIAL_FEED_SHOW_MEDIA_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+			<fieldset name="facebook">
+				<field
+					name="fb_account"
+					type="text"
+					label="MOD_SOCIAL_FEED_ACCOUNT"
+					description="MOD_SOCIAL_FEED_ACCOUNT_DESC"
+				/>
+				<field
+					name="fb_limit"
+					type="number"
+					label="MOD_SOCIAL_FEED_LIMIT"
+					description="MOD_SOCIAL_FEED_LIMIT_DESC"
+				/>
+				<field
+					name="fb_app_id"
+					type="text"
+					label="MOD_SOCIAL_FEED_APP_ID"
+					description="MOD_SOCIAL_FEED_APP_ID_DESC"
+				/>
+				<field
+					name="fb_app_secret"
+					type="text"
+					label="MOD_SOCIAL_FEED_APP_SECRET"
+					description="MOD_SOCIAL_FEED_APP_SECRET_DESC"
+				/>
+			</fieldset>
+			<fieldset name="instagram">
+				<field
+					name="ins_account"
+					type="text"
+					label="MOD_SOCIAL_FEED_ACCOUNT"
+					description="MOD_SOCIAL_FEED_ACCOUNT_DESC"
+				/>
+				<field
+					name="ins_limit"
+					type="number"
+					label="MOD_SOCIAL_FEED_LIMIT"
+					description="MOD_SOCIAL_FEED_LIMIT_DESC"
+				/>
+				<field
+					name="ins_client_id"
+					type="text"
+					label="MOD_SOCIAL_FEED_CLIENT_ID"
+					description="MOD_SOCIAL_FEED_CLIENT_ID_DESC"
+				/>
+				<field
+					name="ins_client_secret_key"
+					type="text"
+					label="MOD_SOCIAL_FEED_CLIENT_SECRET_KEY"
+					description="MOD_SOCIAL_FEED_CLIENT_SECRET_KEY_DESC"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

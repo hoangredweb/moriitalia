@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.0" method="upgrade">
+    <name>COM_REDSLIDER</name>
+    <creationDate>29th April 2016</creationDate>
+    <author>redCOMPONENT.com</author>
+    <authorEmail>email@redcomponent.com</authorEmail>
+    <authorUrl>www.redweb.dk</authorUrl>
+    <copyright>(c) Redweb.dk</copyright>
+    <license>GNU/GPL</license>
+    <version>2.0.44</version>
+    <description>COM_REDSLIDER_DESCRIPTION</description>
+    <scriptfile>install.php</scriptfile>
+    <redcore version="1.8.0" />
+
+    <install folder="components/com_redslider/admin">
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install/mysql/install.sql</file>
+            <file driver="mysql" charset="utf8">sql/install/mysql/data.sql</file>
+        </sql>
+    </install>
+    <uninstall folder="components/com_redslider/admin">
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install/mysql/uninstall.sql</file>
+        </sql>
+    </uninstall>
+    <update folder="components/com_redslider/admin">
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+
+    <!-- Medias -->
+    <media destination="com_redslider" folder="media/com_redslider">
+        <folder>css</folder>
+        <folder>images</folder>
+        <folder>js</folder>
+    </media>
+
+    <administration>
+        <menu img="../media/com_redslider/images/redslider16.png">COM_REDSLIDER</menu>
+        <files folder="components/com_redslider/admin">
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>layouts</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <filename>config.xml</filename>
+            <filename>access.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>redslider.php</filename>
+        </files>
+        <languages folder="components/com_redslider/admin/language">
+            <language tag="en-GB">en-GB/en-GB.com_redslider.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_redslider.sys.ini</language>
+        </languages>
+    </administration>
+
+    <!-- Libraries to install with the component -->
+    <libraries>
+        <library name="redslider"/>
+    </libraries>
+
+    <!-- Modules to install with the component -->
+    <modules>
+        <module name="mod_redslider" client="site" />
+    </modules>
+
+    <!-- Plugins to install with the component -->
+   <plugins>
+        <plugin name="section_article" group="redslider_sections" />
+        <plugin name="section_standard" group="redslider_sections" />
+        <plugin name="section_video" group="redslider_sections" />
+    </plugins>
+</extension>

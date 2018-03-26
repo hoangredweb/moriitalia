@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset addfieldpath="/administrator/components/com_redproductfinder/models/fields">
+		<field name="id" type="hidden" label="JGLOBAL_FIELD_ID_LABEL" description="JGLOBAL_FIELD_ID_DESC" size="10" default="0" readonly="true" class="readonly"/>
+
+		<field name="filter_name" type="text" label="COM_REDPRODUCTFINDER_MODELS_FORMS_FILTER_FILTER_NAME_LABEL" required="true"/>
+
+		<field name="select_name" type="text" label="COM_REDPRODUCTFINDER_MODELS_FORMS_FILTER_SELECT_NAME_LABEL"/>
+
+		<field name="tag_id" type="filter" label="COM_REDPRODUCTFINDER_MODELS_FORMS_FILTER_TAG_ID_LABEL"/>
+
+		<field id="published" name="published" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="chzn-color-state" size="1" default="1">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+
+		<field id="type_select" name="type_select" type="list" label="Selector Type" class="chzn-color-state" size="1" default="1">
+			<option value="generic">generic</option>
+			<option value="checkbox">checkbox</option>
+			<option value="radiobutton">radiobutton</option>
+		</field>
+	</fieldset>
+</form>

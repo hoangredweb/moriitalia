@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="comment-information">
+		<field
+			name="id"
+			type="hidden"
+			default="0"
+			class="readonly"
+			readonly="true"
+			/>
+
+		<field
+			name="item_id"
+			type="RedItem"
+			label="COM_REDITEM_COMMENT_SELECT_ITEM"
+			description="COM_REDITEM_COMMENT_SELECT_ITEM_DESCRIPTION"
+			required="true"
+		/>
+
+		<field
+			name="parent_id"
+			class="input-xxlarge"
+			type="RedComments"
+			label="COM_REDITEM_COMMENT_REPLY_TO"
+			description="COM_REDITEM_COMMENT_REPLY_TO_DESCRIPTION">
+			<option value="">COM_REDITEM_COMMENT_REPLY_TO_SELECT_COMMENT</option>
+		</field>
+
+		<field
+			name="private"
+			type="radio"
+			label="COM_REDITEM_COMMENT_PRIVATE"
+			description="COM_REDITEM_COMMENT_PRIVATE_DESCRIPTION"
+			class="btn-group"
+			default="0">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+
+		<field
+			name="user_id"
+			type="ruser"
+			default=""
+			label="COM_REDITEM_COMMENT_USER"
+			description="COM_REDITEM_COMMENT_USER_DESCRIPTION"
+		/>
+
+		<field name="comment"
+			type="editor"
+			default=""
+			label="COM_REDITEM_COMMENT_COMMENT_CONTENT"
+			description="COM_REDITEM_COMMENT_COMMENT_CONTENT_DESCRIPTION"
+			cols="80"
+			filter="safehtml"
+			buttons="true"
+		/>
+
+		<field
+			name="state"
+			type="radio"
+			label="JPUBLISHED"
+			class="btn-group"
+			default="1">
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+	</fieldset>
+</form>

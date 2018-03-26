@@ -1,0 +1,33 @@
+.componentheading,
+.hiddenonmodal{
+	display: none;
+}
+#tblprivate_customer #s2id_rs_country_country_code,
+#div_country_st_txt #s2id_rs_country_country_code_ST{
+	display: none;
+}
+#tblprivate_customer #s2id_rs_country_country_code + select,
+#div_country_st_txt #s2id_rs_country_country_code_ST + select{
+	display: inline-block!important;
+}
+#divShipping .button{
+	width: 162px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	color: #fff;
+	background: #000;
+	height: 38px;
+	line-height: 38px;
+	display: inline-block;
+	font-size: 14px;
+	text-transform: uppercase;
+	border-radius: 5px;
+}
+#newwishlist .btn-primary,
+#newwishlist .btn-cancel{
+	background: #000;
+	color: #fff;
+}
+.accounttable #tdUsernamePassword{
+	display: none!important;
+}

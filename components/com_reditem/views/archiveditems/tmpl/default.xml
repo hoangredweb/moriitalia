@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_REDITEM_ARCHIVED_ITEMS_LAYOUT">
+		<message>
+			<![CDATA[COM_REDITEM_ARCHIVED_ITEMS_LAYOUT_DESC]]>
+		</message>
+	</layout>
+
+	<fields name="request" addfieldpath="/libraries/reditem/form/fields">
+		<fieldset name="request">
+			<field
+				name="templateId"
+				type="RedTypeTemplate"
+				section="view_archiveditems"
+				label="COM_REDITEM_ARCHIVEDITEMS_SELECT_TEMPLATE"
+				description="COM_REDITEM_ARCHIVEDITEMS_SELECT_TEMPLATE_DESC"
+				default=""
+			/>
+		</fieldset>
+	</fields>
+</metadata>

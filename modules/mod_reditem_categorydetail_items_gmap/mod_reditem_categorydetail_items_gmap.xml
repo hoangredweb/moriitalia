@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>MOD_REDITEM_CATEGORYDETAIL_ITEMS_GMAP</name>
+	<version>1.0</version>
+	<creationDate>May 2015</creationDate>
+	<author>redCOMPONENT.com</author>
+	<authorEmail>email@redcomponent.com</authorEmail>
+	<copyright>redCOMPONENT.com</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>MOD_REDITEM_CATEGORYDETAIL_ITEMS_GMAP_DESCRIPTION</description>
+	<redcore version="1.8.6" />
+	<files>
+		<filename module="mod_reditem_categorydetail_items_gmap">helper.php</filename>
+		<filename module="mod_reditem_categorydetail_items_gmap">mod_reditem_categorydetail_items_gmap.php</filename>
+		<filename module="mod_reditem_categorydetail_items_gmap">tmpl/default.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_reditem_categorydetail_items_gmap.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_reditem_categorydetail_items_gmap.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params" addfieldpath="/libraries/reditem/form/fields">
+			<fieldset name="basic">
+				<field
+					name="category"
+					type="ricategoriestree"
+					default="2"
+					label="MOD_REDITEM_CATEGORYDETAIL_ITEMS_GMAP_CATEGORY"
+					description="MOD_REDITEM_CATEGORYDETAIL_ITEMS_GMAP_CATEGORY_DESC" />
+				<field
+					name="lazyload"
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="MOD_REDITEM_CATEGORYDETAIL_ITEMS_GMAP_USE_LAZYLOAD"
+					description="MOD_REDITEM_CATEGORYDETAIL_ITEMS_GMAP_USE_LAZYLOAD_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

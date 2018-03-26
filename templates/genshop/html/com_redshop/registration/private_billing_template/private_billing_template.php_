@@ -1,0 +1,66 @@
+<div class="row">
+        <div class="col-sm-6">
+            <div class="control-group">
+              <div class="controls">
+                <label>{firstname_lbl} *</label>
+                <p>{firstname}</p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="controls">
+                <label>{lastname_lbl} *</label>
+                <p>{lastname}</p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="controls">
+                <label>{phone_lbl} *</label>
+                <p>{phone}</p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="controls">
+                <label>{email_lbl} *</label>
+                <p>{email}</p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="controls">
+                <label class="retype-email-label">Nhập lại email *</label>
+                <p>{email}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="control-group">
+                <div class="controls">
+                  <label>{address_lbl} *</label>
+                  <p>{address}</p>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="controls">
+                  <label>{zipcode_lbl}</label>
+                  <p>{zipcode}</p>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="controls">
+                  <label>{city_lbl} *</label>
+                  <p>{city}</p>
+                </div>
+              </div>
+              <div class="control-group" style="{country_style}">
+                <div class="controls">
+                  <label>{country_lbl} *</label>
+                   {country} 
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="controls">
+                   {private_extrafield} 
+                </div>
+              </div>
+          </div>
+        
+      </div>

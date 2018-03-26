@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://moriitalia.web1.redhost.vn/new/media/redcore/webservices/com_reditem/site.reditem-item.1.0.0.wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://moriitalia.web1.redhost.vn/new/media/redcore/webservices/com_reditem/site.reditem-item.1.0.0.wsdl">
+  <wsdl:types>
+    <s:schema targetNamespace="http://moriitalia.web1.redhost.vn/new/media/redcore/webservices/com_reditem/site.reditem-item.1.0.0.wsdl" elementFormDefault="unqualified">
+      <s:complexType name="ArrayOfStringType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="readList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="limitStart" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="limit" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="filterSearch" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="filters" type="tns:ArrayOfStringType"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ordering" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="orderingDirection" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="readListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="list" type="tns:readListResponse_list"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="readListResponse_list">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="unbounded" name="item" type="tns:readListResponse_list_item"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="readListResponse_list_item">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="title" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="access" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="featured" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ordering" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="type_id" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="template_id" type="s:int"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="readItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="readItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:readItemResponse_item"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="readItemResponse_item">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="title" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="alias" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ordering" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="access" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="blocked" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="published" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="publish_up" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="publish_down" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="featured" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="type_id" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="template_id" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="checked_out" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="checked_out_time" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="created_user_id" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="created_time" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="modified_user_id" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="modified_time" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="params" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="customfield_values" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customfields" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="categories" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="template_id" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="type_id" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="featured" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="publish_down" type="s:dateTime"/>
+            <s:element minOccurs="0" maxOccurs="1" name="publish_up" type="s:dateTime"/>
+            <s:element minOccurs="1" maxOccurs="1" name="published" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="blocked" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ordering" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="access" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="title" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_archiveItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_archiveItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_getRating">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_getRatingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_itemShare">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="service" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_itemShareResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_unwatchItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="itemId" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_unwatchItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_watchItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="itemId" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_watchItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_ratingItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:float"/>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_ratingItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:service name="site.reditem-item.1.0.0">
+    <wsdl:documentation>Api HAL configuration for Item webservice of redITEM component</wsdl:documentation>
+    <wsdl:port name="site.reditem-item.1.0.0_Soap" binding="tns:site.reditem-item.1.0.0">
+      <soap:address location="http://moriitalia.web1.redhost.vn/new/administrator/index.php?webserviceClient=site&amp;webserviceVersion=1.0.0&amp;option=reditem&amp;view=item&amp;api=soap"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="readListRequest">
+    <wsdl:part name="parameters" element="tns:readList"/>
+  </wsdl:message>
+  <wsdl:message name="readListResponse">
+    <wsdl:part name="parameters" element="tns:readListResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="site.reditem-item.1.0.0">
+    <wsdl:operation name="readList">
+      <wsdl:input message="tns:readListRequest"/>
+      <wsdl:output message="tns:readListResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="readItem">
+      <wsdl:input message="tns:readItemRequest"/>
+      <wsdl:output message="tns:readItemResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input message="tns:createRequest"/>
+      <wsdl:output message="tns:createResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_archiveItem">
+      <wsdl:input message="tns:task_archiveItemRequest"/>
+      <wsdl:output message="tns:task_archiveItemResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_getRating">
+      <wsdl:input message="tns:task_getRatingRequest"/>
+      <wsdl:output message="tns:task_getRatingResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_itemShare">
+      <wsdl:input message="tns:task_itemShareRequest"/>
+      <wsdl:output message="tns:task_itemShareResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_unwatchItem">
+      <wsdl:input message="tns:task_unwatchItemRequest"/>
+      <wsdl:output message="tns:task_unwatchItemResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_watchItem">
+      <wsdl:input message="tns:task_watchItemRequest"/>
+      <wsdl:output message="tns:task_watchItemResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_ratingItem">
+      <wsdl:input message="tns:task_ratingItemRequest"/>
+      <wsdl:output message="tns:task_ratingItemResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="site.reditem-item.1.0.0" type="tns:site.reditem-item.1.0.0">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="readList">
+      <soap:operation soapAction="readList" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readItem">
+      <soap:operation soapAction="readItem" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="create" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_archiveItem">
+      <soap:operation soapAction="task_archiveItem" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_getRating">
+      <soap:operation soapAction="task_getRating" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_itemShare">
+      <soap:operation soapAction="task_itemShare" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_unwatchItem">
+      <soap:operation soapAction="task_unwatchItem" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_watchItem">
+      <soap:operation soapAction="task_watchItem" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_ratingItem">
+      <soap:operation soapAction="task_ratingItem" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="readItemRequest">
+    <wsdl:part name="parameters" element="tns:readItem"/>
+  </wsdl:message>
+  <wsdl:message name="readItemResponse">
+    <wsdl:part name="parameters" element="tns:readItemResponse"/>
+  </wsdl:message>
+  <wsdl:message name="createRequest">
+    <wsdl:part name="parameters" element="tns:create"/>
+  </wsdl:message>
+  <wsdl:message name="createResponse">
+    <wsdl:part name="parameters" element="tns:createResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_archiveItemRequest">
+    <wsdl:part name="parameters" element="tns:task_archiveItem"/>
+  </wsdl:message>
+  <wsdl:message name="task_archiveItemResponse">
+    <wsdl:part name="parameters" element="tns:task_archiveItemResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_getRatingRequest">
+    <wsdl:part name="parameters" element="tns:task_getRating"/>
+  </wsdl:message>
+  <wsdl:message name="task_getRatingResponse">
+    <wsdl:part name="parameters" element="tns:task_getRatingResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_itemShareRequest">
+    <wsdl:part name="parameters" element="tns:task_itemShare"/>
+  </wsdl:message>
+  <wsdl:message name="task_itemShareResponse">
+    <wsdl:part name="parameters" element="tns:task_itemShareResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_unwatchItemRequest">
+    <wsdl:part name="parameters" element="tns:task_unwatchItem"/>
+  </wsdl:message>
+  <wsdl:message name="task_unwatchItemResponse">
+    <wsdl:part name="parameters" element="tns:task_unwatchItemResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_watchItemRequest">
+    <wsdl:part name="parameters" element="tns:task_watchItem"/>
+  </wsdl:message>
+  <wsdl:message name="task_watchItemResponse">
+    <wsdl:part name="parameters" element="tns:task_watchItemResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_ratingItemRequest">
+    <wsdl:part name="parameters" element="tns:task_ratingItem"/>
+  </wsdl:message>
+  <wsdl:message name="task_ratingItemResponse">
+    <wsdl:part name="parameters" element="tns:task_ratingItemResponse"/>
+  </wsdl:message>
+</wsdl:definitions>

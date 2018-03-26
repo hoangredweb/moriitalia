@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset
+		name="permissions"
+		label="JCONFIG_PERMISSIONS_LABEL"
+		description="JCONFIG_PERMISSIONS_DESC">
+
+		<field
+			name="rules"
+			type="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			class="inputbox"
+			validate="rules"
+			filter="rules"
+			component="com_redslider"
+			section="component" />
+	</fieldset>
+	<fieldset
+		name="general"
+		label="COM_REDSLIDER_CONFIGURATION_GENERAL"
+		description="COM_REDSLIDER_CONFIGURATION_GENERAL_DESC">
+		<field
+			name="use_own_css"
+			type="radio"
+			label="COM_REDSLIDER_CONFIGURATION_GENERAL_USE_OWN_CSS"
+			description="COM_REDSLIDER_CONFIGURATION_GENERAL_USE_OWN_CSS_DESC"
+			class="btn-group"
+			default="0">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+	</fieldset>
+</config>

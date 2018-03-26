@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			label="COM_REDCORE_FILTER_SEARCH_DESC"
+			placeholder="JSEARCH_FILTER"
+			class="js-enter-submits" />
+		<field
+			name="reportsCount"
+			type="rtext"
+			label="COM_REDITEM_REPORT_ITEMS_FILTER_REPORT_COUNT"
+			placeholder="COM_REDITEM_REPORT_ITEMS_FILTER_REPORT_COUNT_ENTER_NUMBER"
+			class="js-enter-submits" />
+		<field
+			name="dateFrom"
+			type="rdatepicker"
+			label="COM_REDITEM_REPORT_ITEMS_FILTER_DATE_FROM"
+			placeholder="COM_REDITEM_REPORT_ITEMS_FILTER_DATE_FROM_DESC"
+			onchange="this.form.submit();"
+			dateFormat="yy-mm-dd" />
+		<field
+			name="dateTo"
+			type="rdatepicker"
+			label="COM_REDITEM_REPORT_ITEMS_FILTER_DATE_TO"
+			placeholder="COM_REDITEM_REPORT_ITEMS_FILTER_DATE_TO_DESC"
+			onchange="this.form.submit();"
+			dateFormat="yy-mm-dd" />
+		<field
+			name="owner"
+			type="RedItemUser"
+			label="COM_REDITEM_REPORT_ITEMS_FILTER_OWNER"
+			class="input-xlarge"
+			onchange="this.form.submit();">
+			<option value="">COM_REDITEM_REPORT_ITEMS_FILTER_OWNER_OPTION_SELECT_OWNER</option>
+		</field>
+		<field
+			name="reporter"
+			type="RedItemUser"
+			label="COM_REDITEM_REPORT_ITEMS_FILTER_REPORTER"
+			class="input-xlarge"
+			onchange="this.form.submit();">
+			<option value="">COM_REDITEM_REPORT_ITEMS_FILTER_REPORTER_OPTION_SELECT_REPORTER</option>
+		</field>
+	</fields>
+	<fields name="list">
+		<field
+			name="reportitems_limit"
+			type="rlimitbox"
+			class="inputbox input-mini chzn"
+			default="25"
+			label="JGLOBAL_ORDERING_LIST_LIMIT"
+			description="JGLOBAL_ORDERING_LIST_LIMIT_DESC"
+			onchange="this.form.submit();" />
+	</fields>
+</form>

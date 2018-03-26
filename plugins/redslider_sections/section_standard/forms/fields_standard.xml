@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form enctype="multipart/form-data">
+	<fields name="params">
+		<field
+			name="background_image"
+			type="rmedia"
+			label="COM_REDSLIDER_STANDARD_IMAGE_FILE"
+			description="COM_REDSLIDER_STANDARD_IMAGE_FILE_DESC"
+		/>
+		<field name="caption"
+			type="text"
+			default=""
+			label="COM_REDSLIDER_SECTION_STANDARD_FIELD_CAPTION"
+			description="COM_REDSLIDER_SECTION_STANDARD_FIELD_CAPTION_DESC"
+			message="COM_REDSLIDER_SECTION_STANDARD_FIELD_CAPTION_DESC"
+		/>
+		<field name="description"
+			type="editor"
+			cols="80"
+			default=""
+			label="COM_REDSLIDER_SECTION_STANDARD_FIELD_DESCRIPTION"
+			description="COM_REDSLIDER_SECTION_STANDARD_FIELD_DESCRIPTION_DESC"
+			message="COM_REDSLIDER_SECTION_STANDARD_FIELD_DESCRIPTION_DESC"
+		/>
+		<field name="link"
+			type="text"
+			default=""
+			label="COM_REDSLIDER_SECTION_STANDARD_FIELD_LINK"
+			description="COM_REDSLIDER_SECTION_STANDARD_FIELD_LINK_DESC"
+			message="COM_REDSLIDER_SECTION_STANDARD_FIELD_LINK_DESC"
+		/>
+		<field name="linktext"
+			type="text"
+			default=""
+			label="COM_REDSLIDER_SECTION_STANDARD_FIELD_LINKTEXT"
+			description="COM_REDSLIDER_SECTION_STANDARD_FIELD_LINKTEXT_DESC"
+			message="COM_REDSLIDER_SECTION_STANDARD_FIELD_LINKTEXT_DESC"
+		/>
+		<field name="slide_class"
+			type="text"
+			default="standard_slide"
+			label="COM_REDSLIDER_SECTION_STANDARD_FIELD_SUFFIX_CLASS"
+			description="COM_REDSLIDER_SECTION_STANDARD_FIELD_SUFFIX_CLASS_DESC"
+			message="COM_REDSLIDER_SECTION_STANDARD_FIELD_SUFFIX_CLASS_DESC"
+		/>
+	</fields>
+</form>

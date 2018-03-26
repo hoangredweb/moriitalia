@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<contentelement type="contentelement">
+    <name>redSLIDER - Slides</name>
+    <author>redCOMPONENT</author>
+    <copyright>Copyright (C) 2008 - 2016 redCOMPONENT.com. All rights reserved.</copyright>
+    <version>1.0.0</version>
+    <description>Translation definition for redSLIDER component</description>
+    <reference>
+        <table name="redslider_slides">
+            <field type="referenceid" name="id" translate="0">SLide ID</field>
+            <field type="titletext" name="title" length="50" maxlength="250" translate="1">Title</field>
+            <field type="textarea" class="form-control" name="params" translate="1">Params</field>
+        </table>
+        <component>
+            <form>com_redslider#slide#id#task#!edit</form>
+        </component>
+    </reference>
+</contentelement>

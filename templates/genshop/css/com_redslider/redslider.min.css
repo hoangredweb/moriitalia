@@ -1,0 +1,227 @@
+.redslider2 {
+    position: relative;
+    border: none;
+}
+.redslider2 ul.slides
+{
+    padding:0px;
+    margin:0px;
+}
+.redslider2 .slides img
+{
+    height:100%;
+}
+.redslider2 ul.slides > li
+{
+    list-style: none;
+    position: relative;
+    z-index: 1;
+}
+
+.redslider2 ul.slides > li .slide-content
+{
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.redslider2 ul.slides > li .slide-content > div
+{
+    padding: 0;
+    text-align: center;
+    margin: auto;
+}
+.redslider2 ul.slides > li .slide-content p
+{
+    text-align:left;
+    color: #fff;
+    text-overflow: ellipsis;
+}
+.redslider2 ul.slides > li .slide-content .slideTitle > h3, .redslider2 ul.slides > li .slide-content .slideTitle > h3 a{
+    color: #fff;
+    font-size: 25px;
+    background: none;
+    text-decoration: none;
+    text-align: left;
+}
+.redslider2 .carousel,.redslider2 .slider{
+    position: relative;
+}
+.redslider2 .flex-direction-nav
+{
+    list-style: none;
+}
+.redslider2 .flex-direction-nav
+{
+    margin:0px;
+}
+.redslider2 .flex-direction-nav a
+{
+    line-height:45px;
+    background:none;
+}
+.redslider2 .flex-direction-nav a:hover
+{
+    opacity: 1;
+}
+.redslider2 .flex-control-nav
+{
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    z-index: 2000;
+}
+.redslider2 .flex-control-nav li
+{
+    padding:0 3px;
+    margin: 0;
+}
+.redslider2 .flex-control-nav a
+{
+    background-color: transparent;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #fff;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+}
+.redslider2 .flex-control-nav a.flex-active
+{
+    background-color:#fff;
+    width: 15px;
+    height: 15px;
+}
+.redslider2 .flex-control-nav a:hover
+{
+    background-color:#fff;
+}
+.redslider2 .carousel,.redslider2 .slider{
+    position: relative;
+}
+.redslider2 .carousel img{
+    height: 100%;
+    max-height: 100px;
+}
+.redslider2 .slideText{
+    color: #fff;
+}
+/*-------------------.rstyle1-----------------------------*/
+.redslider2.rstyle1
+{
+    /*border:1px solid #FFFFFF;*/
+    border: none;
+    margin-bottom: 15px;
+}
+.redslider2.rstyle1 .flex-control-nav{
+    width: 30%;
+    right: 0;
+    left: 0;
+    height: 10px;
+    bottom: 5%;
+    margin: auto;
+}
+.redslider2.rstyle1 .flex-direction-nav .flex-next
+{
+    background: url('../../images/icons/right-chevron.png') no-repeat top right;
+    text-indent: -10000000000000px;
+    width: 36px;
+    height: 100%;
+    top: 0;
+    text-align: left;
+}
+.redslider2.rstyle1 .flex-direction-nav .flex-prev
+{
+    background: url('../../images/icons/right-chevron.png') no-repeat top left;
+    text-indent: -10000000000000px;
+    width: 36px;
+    height: 100%;
+    top: 0;
+    text-align: left;
+    transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+.redslider2.rstyle1 .flex-direction-nav .flex-next,
+.redslider2.rstyle1 .flex-direction-nav .flex-prev{
+    background: none;
+}
+/*-------------------.rstyle2-----------------------------*/
+.redslider2.rstyle2
+{
+    /*@TODO note! this line is comment because we need same border for all 3 style (rstyle1,rstyle2,rstyle3).
+    so uncomment if you using new border on this style*/
+    /*border:1px solid #FFFFFF;*/
+}
+.redslider2.rstyle2 .flex-control-nav{
+    width: 30%;
+    right: 0;
+    height: 10px;
+    bottom: 5%;
+    text-align: right;
+    margin-right: 10px;
+}
+.redslider2.rstyle2 .flex-control-nav a{
+    text-indent: 99999px;
+}
+.redslider2.rstyle2 .flex-direction-nav .flex-next
+{
+    background: url('../images/nav-next-style2.png') no-repeat top right;
+    text-indent: -10000000000000px;
+    width: 100px;
+    height: 32px;
+    text-align: left;
+}
+.redslider2.rstyle2 .flex-direction-nav .flex-prev
+{
+    background: url('../images/nav-prev-style2.png') no-repeat top left;
+    text-indent: -10000000000000px;
+    width: 100px;
+    height: 32px;
+    text-align: left;
+}
+/*-------------------.rstyle3-----------------------------*/
+.redslider2.rstyle3
+{
+    /*@TODO note! this line is comment because we need same border for all 3 style (rstyle1,rstyle2,rstyle3).
+    so uncomment if you using new border on this style*/
+    /*border:1px solid #FFFFFF;*/
+}
+.redslider2.rstyle3 .flex-control-nav{
+    width: 30%;
+    right: 0;
+    height: 10px;
+    bottom: 5%;
+    text-align: right;
+    margin-right: 10px;
+}
+.redslider2.rstyle3 .flex-control-nav a{
+    text-indent: 99999px;
+}
+.redslider2.rstyle3 .flex-direction-nav .flex-next{
+    right: -6px;
+}
+.redslider2.rstyle3 .flex-direction-nav .flex-prev{
+    left: -6px;
+}
+.redslider2.rstyle3 .flex-direction-nav .flex-next
+{
+    background: url('../images/nav-next-style3.png') no-repeat top right;
+    text-indent: -10000000000000px;
+    width: 100px;
+    height: 40px;
+    text-align: left;
+}
+.redslider2.rstyle3 .flex-direction-nav .flex-prev
+{
+    background: url('../images/nav-prev-style3.png') no-repeat top left;
+    text-indent: -10000000000000px;
+    width: 100px;
+    height: 40px;
+    text-align: left;
+}

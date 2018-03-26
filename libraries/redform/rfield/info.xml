@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fields name="params">
+        <fieldset name="extra" label="extra">
+            <field name="content" type="editor" default=""
+                   label="COM_REDFORM_FIELD_INFO_CONTENT_LABEL"
+                   description="COM_REDFORM_FIELD_INFO_CONTENT_DESC"
+                   filter="safehtml"
+                   />
+        </fieldset>
+    </fields>
+</form>

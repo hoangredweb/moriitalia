@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.redcore #component form select,
+/*.redcore #component form textarea,*/
+.redcore #component form input[type="text"],
+.redcore #component form input[type="password"],
+.redcore #component form input[type="datetime"],
+.redcore #component form input[type="datetime-local"],
+.redcore #component form input[type="date"],
+.redcore #component form input[type="month"],
+.redcore #component form input[type="time"],
+.redcore #component form input[type="week"],
+.redcore #component form input[type="number"],
+.redcore #component form input[type="email"],
+.redcore #component form input[type="url"],
+.redcore #component form input[type="search"],
+.redcore #component form input[type="tel"],
+.redcore #component form input[type="color"],
+.redcore #component form .uneditable-input {
+    height: 20px;
+}

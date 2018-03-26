@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			label="COM_REDCORE_FILTER_SEARCH_DESC"
+			placeholder="JSEARCH_FILTER"
+			class="js-enter-submits" />
+		<field
+			name="point"
+			type="list"
+			label="COM_REDITEM_REPORT_REPORTERS_FILTER_POINT"
+			onchange="this.form.submit();">
+			<option value="">COM_REDITEM_REPORT_REPORTERS_FILTER_POINT_OPTIONS_SELECT_POINT</option>
+			<option value="5">COM_REDITEM_REPORT_REPORTERS_FILTER_POINT_OPTIONS_SELECT_POINT_FIVE_STARS</option>
+			<option value="4">COM_REDITEM_REPORT_REPORTERS_FILTER_POINT_OPTIONS_SELECT_POINT_FOUR_STARS</option>
+			<option value="3">COM_REDITEM_REPORT_REPORTERS_FILTER_POINT_OPTIONS_SELECT_POINT_THREE_STARS</option>
+			<option value="2">COM_REDITEM_REPORT_REPORTERS_FILTER_POINT_OPTIONS_SELECT_POINT_TWO_STARS</option>
+			<option value="1">COM_REDITEM_REPORT_REPORTERS_FILTER_POINT_OPTIONS_SELECT_POINT_ONE_STARS</option>
+		</field>
+	</fields>
+	<fields name="list">
+		<field
+			name="reporters_limit"
+			type="rlimitbox"
+			class="inputbox input-mini chzn"
+			default="25"
+			label="JGLOBAL_ORDERING_LIST_LIMIT"
+			description="JGLOBAL_ORDERING_LIST_LIMIT_DESC"
+			onchange="this.form.submit();" />
+	</fields>
+</form>

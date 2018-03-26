@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_REDITEM_SEARCH_LAYOUT">
+		<message>
+			<![CDATA[COM_REDITEM_SEARCH_LAYOUT_DESC]]>
+		</message>
+	</layout>
+
+	<fields name="request" addfieldpath="/libraries/reditem/form/fields">
+		<fieldset name="request">
+			<field
+				name="typeId"
+				type="RITypeList"
+				label="COM_REDITEM_SEARCH_TYPE"
+				description="COM_REDITEM_SEARCH_TYPE_DESCRIPTION"
+				required="true"
+			/>
+			<field
+				name="templateId"
+				type="RedTypeTemplate"
+				section="view_search"
+				label="COM_REDITEM_SEARCH_SELECT_TEMPLATE"
+				description="COM_REDITEM_SEARCH_SELECT_TEMPLATE_DESC"
+				default=""
+				required="true"
+			/>
+		</fieldset>
+	</fields>
+</metadata>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="file" version="2.5" method="upgrade">
+	<name>COM_REDITEM</name>
+	<creationDate>December 2013</creationDate>
+	<author>redCOMPONENT.com</author>
+	<authorEmail>email@redcomponent.com</authorEmail>
+	<authorUrl>www.redweb.dk</authorUrl>
+	<copyright>(c) Redweb.dk</copyright>
+	<license>GNU/GPL</license>
+	<version>2.1.19</version>
+	<description>COM_REDITEM_DESCRIPTION</description>
+
+	<fileset>
+		<files folder="admin" target="administrator/language">
+			<folder>vi-VN</folder>
+		</files>
+		<files folder="site" target="language">
+			<folder>vi-VN</folder>
+		</files>
+	</fileset>
+</extension>

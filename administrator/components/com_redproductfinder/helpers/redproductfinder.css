@@ -1,0 +1,165 @@
+/* Icon files 16px */
+.icon-16-redproductfinder_tags {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_tags16.png);
+}
+.icon-16-redproductfinder_type {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_type16.png);
+}
+.icon-16-redproductfinder_form {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_form16.png);
+}
+.icon-16-redproductfinder_redproductfinder {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_prodlogo16.gif);
+}
+.icon-16-redproductfinder_association {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_association16.png);
+}
+.icon-16-redproductfinder_clone_16 {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_clone16.png);
+}
+.icon-16-redproductfinder_importattributes_16 {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_importattribute16.png);
+}
+
+/* Icon files 32px */
+.icon-32-redproductfinder_tags {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_tags32.png);
+}
+.icon-32-redproductfinder_type {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_type32.png);
+}
+.icon-32-redproductfinder_form {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_form32.png);
+}
+.icon-32-redproductfinder_redproductfinder {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_prodlogo32.gif);
+}
+.icon-32-redproductfinder_association {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_association32.png);
+}
+.icon-32-redproductfinder_clone_32 {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_clone32.png);
+}
+.icon-32-redproductfinder_importattributes_32 {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_importattribute32.png);
+}
+
+/* Icon files 48px */
+.icon-48-redproductfinder_tags {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_tags48.png);
+}
+.icon-48-redproductfinder_type {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_type48.png);
+}
+.icon-48-redproductfinder_form {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_form48.png);
+}
+.icon-48-redproductfinder_redproductfinder {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_prodlogo48.gif);
+}
+.icon-48-redproductfinder_association {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_association48.png);
+}
+.icon-48-redproductfinder_clone_48 {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_clone48.png);
+}
+.icon-48-redproductfinder_importattributes_48 {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_importattribute48.png);
+}
+
+.icon-48-redproductfinder_filters {
+   background-image: url(../../../../media/com_redproductfinder/redproductfinder_prodlogo48.gif);
+}
+
+.select_box_parent {
+	cursor: pointer;
+	display: block;
+}
+
+.select_box_child {
+	display: none;
+}
+.quality_score {
+	margin-left: 20px;
+}
+/* standard style for redproductfinder */
+
+fieldset.adminform label.radiobtn,
+table.admintable label.radiobtn{
+	clear: none;
+	min-width: 45px;
+	float: left;
+	margin: 3px 0 0 5px;
+	
+}
+
+/* standard form style table */
+
+div.col50 fieldset{ 
+	background-color: #fff;
+	padding: 5px 17px 17px 17px;	
+}
+div.width-45 { width: 45%; }
+div.width-55 { width: 55%; }
+div.width-50 { width: 50%; }
+div.width-70 { width: 70%; }
+div.width-30 { width: 30%; }
+div.width-60 { width: 60%; }
+div.width-40 { width: 40%; }
+
+table.admintable td 					 { padding: 3px; }
+table.admintable td.key,
+table.admintable td.paramlist_key {
+	background-color: #f6f6f6;
+	text-align: right;
+	width: 140px;
+	color: #666;
+	font-weight: bold;
+	border-bottom: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+}
+
+table.paramlist td.paramlist_description {
+	background-color: #f6f6f6;
+	text-align: left;
+	width: 170px;
+	color: #333;
+	font-weight: normal;
+	border-bottom: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+}
+
+table.admintable td.key.vtop { vertical-align: top; }
+
+table.adminform {
+	background-color: #f9f9f9;
+	border: solid 1px #d5d5d5;
+	width: 100%;
+	border-collapse: collapse;
+	margin: 8px 0 10px 0;
+	margin-bottom: 15px;
+	width: 100%;
+}
+table.adminform.nospace { margin-bottom: 0; }
+table.adminform tr.row0 { background-color: #f9f9f9; }
+table.adminform tr.row1 { background-color: #eeeeee; }
+
+table.adminform th {
+	font-size: 11px;
+	padding: 6px 2px 4px 4px;
+	text-align: left;
+	height: 25px;
+	color: #000;
+	background-repeat: repeat;
+}
+table.adminform td { padding: 3px; text-align: left; }
+
+table.adminform td.filter{
+	text-align: left;
+}
+
+table.adminform td.helpMenu{
+	text-align: right;
+}
+
+fieldset.adminform { border: 1px solid #ccc; margin: 0 10px 10px 10px; }

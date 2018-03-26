@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset addfieldpath="/administrator/components/com_redproductfinder/models/fields">
+		<field name="id" type="hidden" label="JGLOBAL_FIELD_ID_LABEL" description="JGLOBAL_FIELD_ID_DESC" size="10" default="0" readonly="true" class="readonly"/>
+
+		<field
+			name="product_id"
+			type="product"
+			section="view_categorydetail"
+			label="COM_REDPRODUCTFINDER_MODELS_FORMS_ASSOCIATION_PRODUCT_ID_LABEL"
+			required="true"
+			/>
+
+		<field name="aliases" type="text" label="COM_REDPRODUCTFINDER_MODELS_FORMS_ASSOCIATION_ALIASES_LABEL"/>
+
+		<field name="form_type_tag" type="form" label="COM_REDPRODUCTFINDER_MODELS_FORMS_ASSOCIATION_FORM_TYPE_TAG_LABEL"/>
+
+		<field id="published" name="published" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="chzn-color-state" size="1" default="1">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+	</fieldset>
+</form>

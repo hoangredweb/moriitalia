@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://moriitalia.web1.redhost.vn/new/media/redcore/webservices/com_reditem/site.reditem-comment.1.0.0.wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://moriitalia.web1.redhost.vn/new/media/redcore/webservices/com_reditem/site.reditem-comment.1.0.0.wsdl">
+  <wsdl:types>
+    <s:schema targetNamespace="http://moriitalia.web1.redhost.vn/new/media/redcore/webservices/com_reditem/site.reditem-comment.1.0.0.wsdl" elementFormDefault="unqualified">
+      <s:complexType name="ArrayOfStringType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="readItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="readItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:readItemResponse_item"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="readItemResponse_item">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="created" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="comment" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="trash" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="state" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="private" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="reply_user_id" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="user_id" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="item_id" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="parent_id" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="reports" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="owner" type="tns:ArrayOfStringType"/>
+          <s:element minOccurs="1" maxOccurs="1" name="replyToUser" type="tns:ArrayOfStringType"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="comment" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="trash" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="private" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="parentId" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="itemId" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="comment" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="private" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="commentId" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_getComments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="itemId" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_getCommentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="tns:ArrayOfStringType"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:service name="site.reditem-comment.1.0.0">
+    <wsdl:documentation>Api HAL configuration for Comment webservice of redITEM component</wsdl:documentation>
+    <wsdl:port name="site.reditem-comment.1.0.0_Soap" binding="tns:site.reditem-comment.1.0.0">
+      <soap:address location="http://moriitalia.web1.redhost.vn/new/administrator/index.php?webserviceClient=site&amp;webserviceVersion=1.0.0&amp;option=reditem&amp;view=comment&amp;api=soap"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="readItemRequest">
+    <wsdl:part name="parameters" element="tns:readItem"/>
+  </wsdl:message>
+  <wsdl:message name="readItemResponse">
+    <wsdl:part name="parameters" element="tns:readItemResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="site.reditem-comment.1.0.0">
+    <wsdl:operation name="readItem">
+      <wsdl:input message="tns:readItemRequest"/>
+      <wsdl:output message="tns:readItemResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input message="tns:createRequest"/>
+      <wsdl:output message="tns:createResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateRequest"/>
+      <wsdl:output message="tns:updateResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteRequest"/>
+      <wsdl:output message="tns:deleteResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_getComments">
+      <wsdl:input message="tns:task_getCommentsRequest"/>
+      <wsdl:output message="tns:task_getCommentsResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="site.reditem-comment.1.0.0" type="tns:site.reditem-comment.1.0.0">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="readItem">
+      <soap:operation soapAction="readItem" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="create" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="update" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="delete" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_getComments">
+      <soap:operation soapAction="task_getComments" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="createRequest">
+    <wsdl:part name="parameters" element="tns:create"/>
+  </wsdl:message>
+  <wsdl:message name="createResponse">
+    <wsdl:part name="parameters" element="tns:createResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateRequest">
+    <wsdl:part name="parameters" element="tns:update"/>
+  </wsdl:message>
+  <wsdl:message name="updateResponse">
+    <wsdl:part name="parameters" element="tns:updateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="deleteRequest">
+    <wsdl:part name="parameters" element="tns:delete"/>
+  </wsdl:message>
+  <wsdl:message name="deleteResponse">
+    <wsdl:part name="parameters" element="tns:deleteResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_getCommentsRequest">
+    <wsdl:part name="parameters" element="tns:task_getComments"/>
+  </wsdl:message>
+  <wsdl:message name="task_getCommentsResponse">
+    <wsdl:part name="parameters" element="tns:task_getCommentsResponse"/>
+  </wsdl:message>
+</wsdl:definitions>

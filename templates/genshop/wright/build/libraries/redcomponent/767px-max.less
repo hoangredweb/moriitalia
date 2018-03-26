@@ -1,0 +1,191 @@
+//
+// Responsive: Landscape phone to desktop/tablet
+// --------------------------------------------------
+
+@media (max-width: 767px) {
+
+	// Modals
+    #sbox-window {
+        position: fixed;
+        top:   20px !important;
+        left:  20px !important;
+        right: 20px !important;
+        width: auto !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        &.fade  { top: -100px !important; }
+        &.fade.in { top: 20px !important; }
+    }
+
+    // Modals
+	  .modal {
+	    position: static;
+	    top:   auto;
+	    left:  auto;
+	    right: auto;
+	    width: auto;
+	    margin: auto;
+	    &.fade  { top: auto; }
+	    &.fade.in { top: auto; }
+	  }
+
+    .pagination .pager
+    {
+        display: inline;
+    }
+
+    .pagination .pagerdt, .pagination .counter
+    {
+        display: none;
+    }
+
+    #divShipping
+  {
+    .admintable
+    {
+      margin-left: 30px;
+    }
+    td
+    {
+      width: auto;
+      display: table-cell;
+    }
+  }
+    .cartproducts
+  {
+    > thead > tr th
+    {
+      display: none;
+
+    }
+
+    td.cart_product_name, td.cart_product_price
+    {
+      width: 100%;
+      float: left;
+      display: block;
+      min-height: 60px;
+    }
+
+
+
+    .update_cart
+    {
+      display: none;
+    }
+  }
+
+  .carttotal
+  {
+    .carttotal_left
+    {
+        width: 100%;
+      display: block;
+      float: left;
+    }
+
+    .carttotal_right
+    {
+      width: 100%;
+      display: block;
+      float: left;
+
+      .cart_calculations
+      {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .tablecompare
+  {
+    th
+    {
+      width: 100%;
+      display: block;
+    }
+  }
+    .cart_calculations
+  {
+    tr
+    {
+      td
+      {
+
+        &:nth-child(2n)
+        {
+          padding-bottom: 10px;
+        }
+
+        .singleline
+        {
+          padding: 0px;
+        }
+      }
+
+
+    }
+  }
+
+
+  .table_billing
+  {
+    td
+    {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .checkout-bar
+  {
+    .checkout-bar-step
+    {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .nav,
+  .navbar-inner,
+  .nav .navbar-inner,
+  .navbar .nav,
+  .navbar .nav .navbar-inner {
+    li {
+      margin-bottom: 0;
+      line-height: inherit;
+      &:hover,
+      &:focus {
+        > .dropdown-menu {
+          display: none !important;
+        }
+      }
+
+      &.open
+      {
+        &:hover,
+        &:focus {
+          > .dropdown-menu {
+            display: block !important;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-nav .open .dropdown-menu > li > a
+  {
+    padding: 10px 25px;
+  }
+
+  .navbar-nav > li > a
+  {
+    padding-right: 30px;
+  }
+
+    .gridRedWeb .grid('767');
+}
+
+
+
+

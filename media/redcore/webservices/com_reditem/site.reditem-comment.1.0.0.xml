@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<apiservice client="site">
+    <name>redItem - Comment Webservice</name>
+    <author>redCOMPONENT</author>
+    <copyright>Copyright (C) 2008 - 2015 redCOMPONENT.com. All rights reserved.</copyright>
+    <description>Api HAL configuration for Comment webservice of redITEM component</description>
+    <config>
+        <name>reditem-comment</name>
+        <version>1.0.0</version>
+        <authorizationAssetName>com_reditem</authorizationAssetName>
+    </config>
+    <operations>
+        <documentation authorizationNeeded="false" source="auto" url=""/>
+        <create authorizationNeeded="true" strictFields="false" authorization="item.comment.edit" dataMode="model" optionName="com_reditem" modelClassName="Comment" modelClassPath="" isAdminClass="false" functionName="saveComment" functionArgs="" validateData="none" validateDataFunction="validate" tableName="reditem_comments">
+            <description><![CDATA[Method for store comment into an item.]]></description>
+            <fields>
+                <field name="userId" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="false"/>
+                <field name="comment" transform="string" defaultValue="" isRequiredField="true" isPrimaryField="false"/>
+                <field name="trash" transform="int" defaultValue="" isRequiredField="false" isPrimaryField="false"/>
+                <field name="state" transform="int" defaultValue="1" isRequiredField="false" isPrimaryField="false"/>
+                <field name="private" transform="int" defaultValue="" isRequiredField="false" isPrimaryField="false"/>
+                <field name="parentId" transform="int" defaultValue="" isRequiredField="false" isPrimaryField="false"/>
+                <field name="itemId" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="false"/>
+            </fields>
+            <resources>
+                <resource displayName="result" transform="int" fieldFormat="{result}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+            </resources>
+        </create>
+        <read>
+            <item authorizationNeeded="false" strictFields="false" authorization="" dataMode="helper" optionName="com_reditem" modelClassName="Comment" modelClassPath="" isAdminClass="false" functionName="getItem" functionArgs="id{int}" validateData="none" validateDataFunction="validate" tableName="">
+                <description><![CDATA[This operation display detail information for specific comment.]]></description>
+                <resources>
+                    <resource displayName="id" transform="int" fieldFormat="{id}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="created" transform="datetime" fieldFormat="{created}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="comment" transform="string" fieldFormat="{comment}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="trash" transform="int" fieldFormat="{trash}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="state" transform="int" fieldFormat="{state}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="private" transform="int" fieldFormat="{private}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="reply_user_id" transform="int" fieldFormat="{reply_user_id}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="user_id" transform="int" fieldFormat="{user_id}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="item_id" transform="int" fieldFormat="{item_id}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="parent_id" transform="int" fieldFormat="{parent_id}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="reports" transform="json" fieldFormat="{reports}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="owner" transform="array" fieldFormat="{owner}" displayGroup="" resourceSpecific="rcwsGlobal">
+                        <description><![CDATA[Owner information]]></description>
+                    </resource>
+                    <resource displayName="replyToUser" transform="array" fieldFormat="{replyToUser}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <description><![CDATA[Comment detail information]]></description>
+                </resources>
+            </item>
+        </read>
+        <update authorizationNeeded="true" strictFields="false" authorization="item.comment.edit" dataMode="model" optionName="com_reditem" modelClassName="Comment" modelClassPath="" isAdminClass="false" functionName="saveComment" functionArgs="" validateData="none" validateDataFunction="validate" tableName="">
+            <description><![CDATA[Method for edit comment.]]></description>
+            <fields>
+                <field name="comment" transform="string" defaultValue="" isRequiredField="true" isPrimaryField="false"/>
+                <field name="private" transform="int" defaultValue="" isRequiredField="false" isPrimaryField="false"/>
+                <field name="userId" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="false"/>
+                <field name="commentId" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="true"/>
+            </fields>
+            <resources>
+                <resource displayName="result" transform="boolean" fieldFormat="{result}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+            </resources>
+        </update>
+        <delete authorizationNeeded="true" strictFields="false" authorization="" dataMode="helper" optionName="" modelClassName="" modelClassPath="" isAdminClass="false" functionName="" functionArgs="id{int}" validateData="none" validateDataFunction="validate" tableName="">
+            <description><![CDATA[Method for user trash an comment.]]></description>
+            <fields>
+                <field name="id" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="true">
+                    <description><![CDATA[Comment ID]]></description>
+                </field>
+            </fields>
+            <resources>
+                <resource displayName="result" transform="boolean" fieldFormat="{result}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+            </resources>
+        </delete>
+        <task>
+            <getComments useOperation="" authorizationNeeded="false" strictFields="false" authorization="" dataMode="helper" optionName="com_reditem" modelClassName="" modelClassPath="" isAdminClass="false" functionName="" functionArgs="itemId{int}" validateData="none" validateDataFunction="validate" tableName="">
+                <description><![CDATA[ This task enables you to get comments of an item. ]]></description>
+                <fields>
+                    <field name="itemId" transform="string" defaultValue="" isRequiredField="true" isPrimaryField="false"/>
+                    <description><![CDATA[ Fields required for getting comments. ]]></description>
+                </fields>
+                <resources>
+                    <resource displayName="result" transform="array" fieldFormat="{result}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                </resources>
+            </getComments>
+        </task>
+    </operations>
+</apiservice>

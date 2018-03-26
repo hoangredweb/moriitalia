@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<apiservice client="site">
+    <name>redItem - Item Webservice</name>
+    <author>redCOMPONENT</author>
+    <copyright>Copyright (C) 2008 - 2015 redCOMPONENT.com. All rights reserved.</copyright>
+    <description>Api HAL configuration for Item webservice of redITEM component</description>
+    <config>
+        <name>reditem-item</name>
+        <version>1.0.0</version>
+        <authorizationAssetName>com_reditem</authorizationAssetName>
+    </config>
+    <operations>
+        <documentation authorizationNeeded="false" source="auto" url=""/>
+        <create authorizationNeeded="true" strictFields="false" authorization="" dataMode="helper" optionName="" modelClassName="" modelClassPath="" isAdminClass="false" functionName="" functionArgs="" validateData="none" validateDataFunction="validate" tableName="">
+            <fields>
+                <field name="customfields" transform="json" defaultValue="" isRequiredField="false" isPrimaryField="false">
+                    <description><![CDATA[Customfield values.]]></description>
+                </field>
+                <field name="categories" transform="string" defaultValue="" isRequiredField="false" isPrimaryField="false">
+                    <description><![CDATA[Category references for this item. Seperate by ]]></description>
+                </field>
+                <field name="template_id" transform="int" defaultValue="" isRequiredField="false" isPrimaryField="false">
+                    <description><![CDATA[Template ID of this item.]]></description>
+                </field>
+                <field name="type_id" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="false">
+                    <description><![CDATA[Type ID of this item.]]></description>
+                </field>
+                <field name="featured" transform="int" defaultValue="" isRequiredField="false" isPrimaryField="false">
+                    <description><![CDATA[Featured status of this item. Default is ]]></description>
+                </field>
+                <field name="publish_down" transform="datetime" defaultValue="" isRequiredField="false" isPrimaryField="false">
+                    <description><![CDATA[Published down time for this item.]]></description>
+                </field>
+                <field name="publish_up" transform="datetime" defaultValue="" isRequiredField="false" isPrimaryField="false">
+                    <description><![CDATA[Published up time for this item.]]></description>
+                </field>
+                <field name="published" transform="int" defaultValue="1" isRequiredField="true" isPrimaryField="false">
+                    <description><![CDATA[Published status of item. Default is ]]></description>
+                </field>
+                <field name="blocked" transform="int" defaultValue="" isRequiredField="false" isPrimaryField="false">
+                    <description><![CDATA[Blocked status. Default is ]]></description>
+                </field>
+                <field name="ordering" transform="int" defaultValue="" isRequiredField="false" isPrimaryField="false">
+                    <description><![CDATA[Ordering number. Default is ]]></description>
+                </field>
+                <field name="access" transform="int" defaultValue="1" isRequiredField="false" isPrimaryField="false">
+                    <description><![CDATA[Access permission. Default is 1 (Public)]]></description>
+                </field>
+                <field name="title" transform="string" defaultValue="" isRequiredField="true" isPrimaryField="false">
+                    <description><![CDATA[Title of item]]></description>
+                </field>
+            </fields>
+            <resources>
+                <resource displayName="documentation" transform="string" fieldFormat="{webserviceUrlPath}&amp;format=doc#{rel}" displayGroup="_links" linkTitle="Documentation" linkName="{webserviceName}" hrefLang="" linkTemplated="true" linkRel="curies" resourceSpecific="rcwsGlobal"/>
+                <resource displayName="base" transform="string" fieldFormat="/" displayGroup="_links" linkTitle="Default page" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                <resource displayName="{webserviceName}:list" transform="string" fieldFormat="{webserviceUrlPath}" displayGroup="_links" linkTitle="" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                <resource displayName="{webserviceName}:self" transform="string" fieldFormat="{webserviceUrlPath}&amp;id={id}" displayGroup="_links" linkTitle="" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                <resource displayName="result" transform="boolean" fieldFormat="{result}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+            </resources>
+        </create>
+        <read>
+            <list authorizationNeeded="false" strictFields="false" authorization="" dataMode="model" optionName="com_reditem" modelClassName="Items" modelClassPath="" isAdminClass="false" functionName="" functionArgs="" validateData="none" validateDataFunction="validate" tableName="">
+                <description><![CDATA[ This operation lists redItem items. ]]></description>
+                <resources>
+                    <resource displayName="documentation" transform="string" fieldFormat="{webserviceUrlPath}&amp;format=doc#{rel}" displayGroup="_links" linkTitle="Documentation" linkName="{webserviceName}" hrefLang="" linkTemplated="true" linkRel="curies" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="page" transform="int" fieldFormat="{pagination.page}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="pageLimit" transform="int" fieldFormat="{pagination.limit}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="limitstart" transform="int" fieldFormat="{pagination.limitstart}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="totalItems" transform="int" fieldFormat="{pagination.totalItems}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="totalPages" transform="int" fieldFormat="{pagination.totalPages}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="base" transform="string" fieldFormat="/" displayGroup="_links" linkTitle="Default page" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="{webserviceName}:self" transform="string" fieldFormat="{webserviceUrlPath}" displayGroup="_links" linkTitle="" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="reditem-item:first" transform="string" fieldFormat="/index.php?option=reditem-item&amp;list[limitstart]=0" displayGroup="_links" linkTitle="Pagination first" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="reditem-item:previous" transform="string" fieldFormat="/index.php?option=reditem-item&amp;list[limitstart]={pagination.previous}" displayGroup="_links" linkTitle="Pagination previous" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="reditem-item:next" transform="string" fieldFormat="/index.php?option=reditem-item&amp;list[limitstart]={pagination.next}" displayGroup="_links" linkTitle="Pagination next" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="reditem-item:last" transform="string" fieldFormat="/index.php?option=reditem-item&amp;list[limitstart]={pagination.last}" displayGroup="_links" linkTitle="Pagination last" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="reditem-item:all" transform="string" fieldFormat="/index.php?option=reditem-item&amp;list[limit]=0" displayGroup="_links" linkTitle="Show all items" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="reditem-item:limit" transform="string" fieldFormat="/index.php?option=reditem-item&amp;list[limit]={limit}&amp;list[limitstart]={limitstart}" displayGroup="_links" linkTitle="List limit" linkName="" hrefLang="" linkTemplated="true" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="reditem-item:filter" transform="string" fieldFormat="/index.php?option=reditem-item&amp;filter[search]={filter_search}" displayGroup="_links" linkTitle="Filter list" linkName="" hrefLang="" linkTemplated="true" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="reditem-item:sort" transform="string" fieldFormat="/index.php?option=reditem-item&amp;filter[order]={filter_order}&amp;filter[order_Dir]={filter_order_Dir}" displayGroup="_links" linkTitle="List sort" linkName="" hrefLang="" linkTemplated="true" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="id" transform="int" fieldFormat="{id}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="title" transform="string" fieldFormat="{title}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="access" transform="int" fieldFormat="{access}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="featured" transform="int" fieldFormat="{featured}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="ordering" transform="int" fieldFormat="{ordering}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="type_id" transform="int" fieldFormat="{type_id}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="template_id" transform="int" fieldFormat="{template_id}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="{webserviceName}:self" transform="string" fieldFormat="{webserviceUrlPath}&amp;id={id}" displayGroup="_links" linkTitle="" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="listItem">
+                        <description><![CDATA[Link to redItem item]]></description>
+                    </resource>
+                </resources>
+            </list>
+            <item authorizationNeeded="false" strictFields="false" authorization="" dataMode="helper" optionName="com_reditem" modelClassName="" modelClassPath="" isAdminClass="false" functionName="" functionArgs="" validateData="none" validateDataFunction="validate" tableName="">
+                <description><![CDATA[ This operation displays one redItem item. ]]></description>
+                <resources>
+                    <resource displayName="id" transform="int" fieldFormat="{id}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="title" transform="string" fieldFormat="{title}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="alias" transform="string" fieldFormat="{alias}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="ordering" transform="int" fieldFormat="{ordering}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="access" transform="int" fieldFormat="{access}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="blocked" transform="int" fieldFormat="{blocked}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="published" transform="int" fieldFormat="{published}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="publish_up" transform="datetime" fieldFormat="{publish_up}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="publish_down" transform="datetime" fieldFormat="{publish_down}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="featured" transform="int" fieldFormat="{featured}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="type_id" transform="int" fieldFormat="{type_id}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="template_id" transform="int" fieldFormat="{template_id}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="checked_out" transform="int" fieldFormat="{checked_out}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="checked_out_time" transform="datetime" fieldFormat="{checked_out_time}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="created_user_id" transform="int" fieldFormat="{created_user_id}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="created_time" transform="datetime" fieldFormat="{created_time}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="modified_user_id" transform="int" fieldFormat="{modified_user_id}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="modified_time" transform="datetime" fieldFormat="{modified_time}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="params" transform="string" fieldFormat="{params}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="customfield_values" transform="string" fieldFormat="{customfield_values}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="documentation" transform="string" fieldFormat="{webserviceUrlPath}&amp;format=doc#{rel}" displayGroup="_links" linkTitle="Documentation" linkName="{webserviceName}" hrefLang="" linkTemplated="true" linkRel="curies" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="base" transform="string" fieldFormat="/" displayGroup="_links" linkTitle="Default page" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="{webserviceName}:self" transform="string" fieldFormat="{webserviceUrlPath}&amp;id={id}" displayGroup="_links" linkTitle="" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="{webserviceName}:list" transform="string" fieldFormat="{webserviceUrlPath}" displayGroup="_links" linkTitle="" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                </resources>
+            </item>
+        </read>
+        <task>
+            <archiveItem useOperation="" authorizationNeeded="true" strictFields="false" authorization="" dataMode="model" optionName="com_reditem" modelClassName="Item" modelClassPath="" isAdminClass="false" functionName="" functionArgs="id{int}" validateData="none" validateDataFunction="validate" tableName="">
+                <fields>
+                    <field name="id" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="false">
+                        <description><![CDATA[ID of item]]></description>
+                    </field>
+                </fields>
+                <resources>
+                    <resource displayName="result" transform="boolean" fieldFormat="{result}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                </resources>
+            </archiveItem>
+            <getRating useOperation="" authorizationNeeded="false" strictFields="false" authorization="" dataMode="model" optionName="com_reditem" modelClassName="Item" modelClassPath="" isAdminClass="false" functionName="" functionArgs="id{int}" validateData="none" validateDataFunction="validate" tableName="">
+                <fields>
+                    <field name="id" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="false">
+                        <description><![CDATA[ID of item]]></description>
+                    </field>
+                </fields>
+                <resources>
+                    <resource displayName="result" transform="json" fieldFormat="{result}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                </resources>
+            </getRating>
+            <itemShare useOperation="" authorizationNeeded="true" strictFields="false" authorization="" dataMode="model" optionName="com_reditem" modelClassName="Item" modelClassPath="" isAdminClass="false" functionName="" functionArgs="id{int},service{string}" validateData="none" validateDataFunction="validate" tableName="">
+                <fields>
+                    <field name="service" transform="string" defaultValue="" isRequiredField="true" isPrimaryField="false">
+                        <description><![CDATA[Name of shared service]]></description>
+                    </field>
+                    <field name="id" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="false">
+                        <description><![CDATA[ID of item]]></description>
+                    </field>
+                </fields>
+                <resources>
+                    <resource displayName="result" transform="boolean" fieldFormat="{result}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                </resources>
+            </itemShare>
+            <unwatchItem useOperation="" authorizationNeeded="true" strictFields="false" authorization="" dataMode="model" optionName="com_reditem" modelClassName="Item" modelClassPath="" isAdminClass="false" functionName="" functionArgs="itemId{int}" validateData="none" validateDataFunction="validate" tableName="">
+                <fields>
+                    <field name="itemId" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="false">
+                        <description><![CDATA[ID of item]]></description>
+                    </field>
+                </fields>
+                <resources>
+                    <resource displayName="result" transform="boolean" fieldFormat="{result}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                </resources>
+            </unwatchItem>
+            <watchItem useOperation="" authorizationNeeded="true" strictFields="false" authorization="" dataMode="model" optionName="com_reditem" modelClassName="Item" modelClassPath="" isAdminClass="false" functionName="" functionArgs="itemId{int}" validateData="none" validateDataFunction="validate" tableName="">
+                <fields>
+                    <field name="itemId" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="false">
+                        <description><![CDATA[ID of item]]></description>
+                    </field>
+                </fields>
+                <resources>
+                    <resource displayName="result" transform="boolean" fieldFormat="{result}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                </resources>
+            </watchItem>
+            <ratingItem useOperation="" authorizationNeeded="true" strictFields="false" authorization="" dataMode="model" optionName="com_reditem" modelClassName="Item" modelClassPath="" isAdminClass="false" functionName="" functionArgs="id{int},value{float}" validateData="none" validateDataFunction="validate" tableName="">
+                <description><![CDATA[ This task enables you to rate specific Item. Expected parameters: id of the item and value. ]]></description>
+                <fields>
+                    <field name="value" transform="float" defaultValue="0.0" isRequiredField="false" isPrimaryField="false">
+                        <description><![CDATA[Rating value]]></description>
+                    </field>
+                    <field name="id" transform="int" defaultValue="" isRequiredField="true" isPrimaryField="false">
+                        <description><![CDATA[ID of item]]></description>
+                    </field>
+                </fields>
+                <resources>
+                    <resource displayName="result" transform="boolean" fieldFormat="{result}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                </resources>
+            </ratingItem>
+        </task>
+    </operations>
+</apiservice>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5.0" type="plugin" group="redshop_user" method="upgrade">
+    <name>PLG_REDSHOP_USER_USER_POINT</name>
+    <author>redCOMPONENT.com</author>
+    <version>1.0.0</version>
+    <redshop>1.6</redshop>
+    <creationDate>June 2015</creationDate>
+    <copyright>redCOMPONENT.com</copyright>
+    <license>GNU/GPL</license>
+    <authorEmail>email@redcomponent.com</authorEmail>
+    <authorUrl>www.redweb.dk</authorUrl>
+    <description>PLG_REDSHOP_USER_USER_POINT_DESC</description>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_redshop_user_user_point.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_redshop_user_user_point.sys.ini</language>
+    </languages>
+    <files>
+        <filename plugin="user_point">user_point.php</filename>
+    </files>
+</extension>

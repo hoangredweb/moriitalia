@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset addfieldpath="/administrator/components/com_categories/models/fields">
+		<field name="id" type="hidden" label="JGLOBAL_FIELD_ID_LABEL" description="JGLOBAL_FIELD_ID_DESC" size="10" default="0" readonly="true" class="readonly"/>
+
+		<field name="type_name" type="text" label="COM_REDPRODUCTFINDER_MODELS_FORMS_TYPE_TYPE_NAME_LABEL" required="true"/>
+
+		<field name="form_id" type="sql" label="COM_REDPRODUCTFINDER_MODELS_FORMS_TYPE_FORM_ID_LABEL" query="SELECT id, formname FROM #__redproductfinder_forms WHERE published = 1" key_field="id" value_field="formname"/>
+
+		<field name="class_name" type="text" label="COM_REDPRODUCTFINDER_MODELS_FORMS_TYPE_CLASS_NAME_LABEL"/>
+
+		<field name="type_select" type="list" label="COM_REDPRODUCTFINDER_MODELS_FORMS_TYPE_TYPE_SELECT_LABEL">
+			<option value="checkbox">Checkbox</option>
+			<option value="radio">Radio</option>
+			<option value="generic">Generic</option>
+			<option value="Productfinder_datepicker">Productfinder datepicker</option>
+		</field>
+
+		<field id="showname" name="showname" type="list" label="COM_REDPRODUCTFINDER_MODELS_FORMS_TYPE_SHOWNAME_LABEL" class="chzn-color-state" size="1" default="0">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+
+		<field id="published" name="published" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="chzn-color-state" size="1" default="1">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+	</fieldset>
+</form>

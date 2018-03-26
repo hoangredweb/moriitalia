@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://moriitalia.redweb.vn/new/media/redcore/webservices/joomla/site.users.1.1.0.wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://moriitalia.redweb.vn/new/media/redcore/webservices/joomla/site.users.1.1.0.wsdl">
+  <wsdl:types>
+    <s:schema targetNamespace="http://moriitalia.redweb.vn/new/media/redcore/webservices/joomla/site.users.1.1.0.wsdl" elementFormDefault="unqualified">
+      <s:complexType name="ArrayOfStringType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="task_forgotUsername">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="email" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_forgotUsernameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_forgotPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="email" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_forgotPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_authenticateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="email" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="task_authenticateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="tns:ArrayOfStringType"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:service name="site.users.1.1.0">
+    <wsdl:documentation>Api HAL configuration for com_users.</wsdl:documentation>
+    <wsdl:port name="site.users.1.1.0_Soap" binding="tns:site.users.1.1.0">
+      <soap:address location="http://moriitalia.redweb.vn/new/administrator/index.php?webserviceClient=site&amp;webserviceVersion=1.1.0&amp;option=users&amp;api=soap"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="task_forgotUsernameRequest">
+    <wsdl:part name="parameters" element="tns:task_forgotUsername"/>
+  </wsdl:message>
+  <wsdl:message name="task_forgotUsernameResponse">
+    <wsdl:part name="parameters" element="tns:task_forgotUsernameResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="site.users.1.1.0">
+    <wsdl:operation name="task_forgotUsername">
+      <wsdl:input message="tns:task_forgotUsernameRequest"/>
+      <wsdl:output message="tns:task_forgotUsernameResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_forgotPassword">
+      <wsdl:input message="tns:task_forgotPasswordRequest"/>
+      <wsdl:output message="tns:task_forgotPasswordResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="task_authenticateUser">
+      <wsdl:input message="tns:task_authenticateUserRequest"/>
+      <wsdl:output message="tns:task_authenticateUserResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="site.users.1.1.0" type="tns:site.users.1.1.0">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="task_forgotUsername">
+      <soap:operation soapAction="task_forgotUsername" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_forgotPassword">
+      <soap:operation soapAction="task_forgotPassword" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="task_authenticateUser">
+      <soap:operation soapAction="task_authenticateUser" type="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="task_forgotPasswordRequest">
+    <wsdl:part name="parameters" element="tns:task_forgotPassword"/>
+  </wsdl:message>
+  <wsdl:message name="task_forgotPasswordResponse">
+    <wsdl:part name="parameters" element="tns:task_forgotPasswordResponse"/>
+  </wsdl:message>
+  <wsdl:message name="task_authenticateUserRequest">
+    <wsdl:part name="parameters" element="tns:task_authenticateUser"/>
+  </wsdl:message>
+  <wsdl:message name="task_authenticateUserResponse">
+    <wsdl:part name="parameters" element="tns:task_authenticateUserResponse"/>
+  </wsdl:message>
+</wsdl:definitions>

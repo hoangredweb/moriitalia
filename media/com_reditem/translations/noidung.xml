@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<contentelement type="contentelement">
+	<name>RedITEM Noi dung</name>
+	<author>redCOMPONENT</author>
+	<copyright>Copyright (C) 2008 - 2015 redCOMPONENT.com. All rights reserved.</copyright>
+	<version>1.0.0</version>
+	<description>Items Noi dung Table Definition for the RedITEM extension</description>
+	<reference>
+		<table name="reditem_types_n_i_dung_1">
+			<field type="referenceid" name="id" translate="0">ID</field>
+			<field type="htmltext" name="gioi_thieu" translate="1">Gioi thieu</field>
+			<field type="htmltext" name="chi_tiet" translate="1">Chi tiet</field>
+		</table>
+		<component>
+			<form>com_reditem#item#cid#task#!edit</form>
+		</component>
+	</reference>
+</contentelement>

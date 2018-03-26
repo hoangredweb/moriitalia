@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<contentelement type="contentelement">
+    <name>redSHOP - Category</name>
+    <author>redCOMPONENT</author>
+    <copyright>Copyright (C) 2008 - 2016 redCOMPONENT.com. All rights reserved.</copyright>
+    <version>1.7.2</version>
+    <description>Translation definition for redSHOP component</description>
+    <reference>
+        <table name="redshop_category">
+            <field type="referenceid" name="category_id" translate="0">Category ID</field>
+            <field type="titletext" name="category_name" length="50" maxlength="250" translate="1">Category name</field>
+            <field type="htmltext" name="category_short_description" translate="1" ebuttons="ignore">Article Text</field>
+            <field type="htmltext" name="category_description" translate="1" ebuttons="readmore">Fulltext</field>
+            <field type="htmltext" name="metakey" translate="1" ebuttons="readmore">Meta keywords</field>
+            <field type="htmltext" name="metadesc" translate="1" ebuttons="readmore">Meta description</field>
+            <field type="htmltext" name="pagetitle" translate="1" ebuttons="readmore">Page title</field>
+        </table>
+        <component>
+            <form>com_redshop#category_detail#cid#task#!edit</form>
+        </component>
+    </reference>
+</contentelement>

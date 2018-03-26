@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.5.1" type="plugin" group="redshop_coupon" method="upgrade">
+	<name>PLG_REDSHOP_COUPON_COUPON</name>
+	<version>1.0</version>
+	<redshop>2.0</redshop>
+	<creationDate>Oct 2016</creationDate>
+	<author>redCOMPONENT.com</author>
+	<authorEmail>email@redcomponent.com</authorEmail>
+	<authorUrl>www.redcomponent.com</authorUrl>
+	<copyright>(C) 2014 redCOMPONENT.com</copyright>
+	<license>GNU/GPL</license>
+
+  	<description>PLG_REDSHOP_COUPON_COUPON_DESC</description>
+
+	<files>
+		<filename plugin="coupon">coupon.php</filename>
+		<folder>language</folder>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_redshop_coupon_coupon.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_redshop_coupon_coupon.sys.ini</language>
+	</languages>
+
+	<config>
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="failed_url" type="text" default="" label="PLG_REDSHOP_COUPON_FAILED_URL"
+			  description="PLG_REDSHOP_COUPON_FAILED_URL"/>
+		</fieldset>
+	</fields>
+  </config>
+</extension>

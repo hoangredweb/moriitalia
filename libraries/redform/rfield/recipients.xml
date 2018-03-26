@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fields name="params">
+        <fieldset name="extra" label="extra">
+            <field name="size" type="text" default="5" label="COM_REDFORM_FIELD_MULTISELECT_PARAMS_SIZE"
+                   description="COM_REDFORM_FIELD_MULTISELECT_PARAMS_SIZE_DESC"/>
+            <field name="multiple" type="radio" default="1" label="COM_REDFORM_FIELD_RECIPIENTS_PARAMS_MULTIPLE"
+                   description="COM_REDFORM_FIELD_RECIPIENTS_PARAMS_MULTIPLE_DESC">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </field>
+        </fieldset>
+    </fields>
+</form>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="general-information">
+		<field
+			name="id"
+			type="hidden"
+			default="0"
+			class="readonly"
+			readonly="true" />
+
+		<field
+			name="type_id"
+			type="ritypelist"
+			class="input-xlarge"
+			label="COM_REDITEM_MAIL_TYPE_ID"
+			onchange="submitform('mail.setType');"
+			default="0"
+			required="true"
+			description="COM_REDITEM_MAIL_TYPE_ID_DESC">
+			<option value="0">COM_REDITEM_MAIL_TYPE_ID_UNCATEGORISED</option>
+		</field>
+
+		<field
+			name="subject"
+			type="text"
+			default=""
+			label="COM_REDITEM_MAIL_SUBJECT_LABEL"
+			required="true"
+			class="input-xlarge"
+			description="COM_REDITEM_MAIL_SUBJECT_DESC" />
+
+		<field
+			name="description"
+			type="text"
+			class="input-xlarge"
+			label="COM_REDITEM_MAIL_DESCRIPTION_LABEL"
+			description="COM_REDITEM_MAIL_DESCRIPTION_DESC" />
+
+		<field
+			name="section"
+			type="rimailsections"
+			class="chosen input-xlarge"
+			label="COM_REDITEM_MAIL_SECTION_LABEL"
+			description="COM_REDITEM_MAIL_SECTION_DESC"
+			unuse="id"
+			onchange="submitform('mail.setSection');"
+			required="true">
+			<option value="">COM_REDITEM_SELECT</option>
+			<option value="get_item_rating">COM_REDITEM_MAIL_SECTION_GET_ITEM_RATING</option>
+			<option value="item_reported">COM_REDITEM_MAIL_SECTION_ITEM_REPORTED</option>
+			<option value="item_self_removed">COM_REDITEM_MAIL_SECTION_ITEM_SELF_REMOVED</option>
+			<option value="item_removed_by_reported">COM_REDITEM_MAIL_SECTION_ITEM_REMOVED_BY_REPORTED</option>
+			<option value="item_removed_by_expired">COM_REDITEM_MAIL_SECTION_ITEM_REMOVED_BY_EXPIRED</option>
+			<option value="item_removed_by_admin">COM_REDITEM_MAIL_SECTION_ITEM_REMOVED_BY_ADMIN</option>
+			<option value="item_republished_by_admin">COM_REDITEM_MAIL_SECTION_ITEM_REPUBLISHED_BY_ADMIN</option>
+			<option value="item_unpublished">COM_REDITEM_MAIL_SECTION_ITEM_UNPUBLISHED</option>
+			<option value="item_archived_by_admin">COM_REDITEM_MAIL_SECTION_ITEM_ARCHIVED_BY_ADMIN</option>
+			<option value="item_trashed_by_admin">COM_REDITEM_MAIL_SECTION_ITEM_TRASHED_BY_ADMIN</option>
+			<option value="item_unblocked">COM_REDITEM_MAIL_SECTION_ITEM_UNBLOCKED</option>
+			<option value="get_item_comment">COM_REDITEM_MAIL_SECTION_GET_ITEM_COMMENT</option>
+			<option value="get_private_comment">COM_REDITEM_MAIL_SECTION_GET_PRIVATE_COMMENT</option>
+			<option value="get_item_comment_reply">COM_REDITEM_MAIL_SECTION_GET_ITEM_COMMENT_REPLY</option>
+			<option value="comment_unblocked">COM_REDITEM_MAIL_SECTION_COMMENT_UNBLOCKED</option>
+			<option value="private_comment_unblocked">COM_REDITEM_MAIL_SECTION_PRIVATE_COMMENT_UNBLOCKED</option>
+			<option value="comment_reported">COM_REDITEM_MAIL_SECTION_COMMENT_REPORTED</option>
+			<option value="comment_self_removed">COM_REDITEM_MAIL_SECTION_COMMENT_SELF_REMOVED</option>
+			<option value="comment_removed_by_reported">COM_REDITEM_MAIL_SECTION_COMMENT_REMOVED_BY_REPORTED</option>
+		</field>
+
+		<field
+			name="content"
+			type="editor"
+			default=""
+			label="COM_REDITEM_MAIL_CONTENT_LABEL"
+			description="COM_REDITEM_MAIL_CONTENT_DESC"
+			cols="80"
+			filter="safehtml"
+			buttons="true" />
+
+		<field
+			name="published"
+			type="radio"
+			label="JPUBLISHED"
+			class="btn-group"
+			default="1">
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+	</fieldset>
+</form>

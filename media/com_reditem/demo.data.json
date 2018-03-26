@@ -1,0 +1,446 @@
+{
+  "types" : [
+    {
+      "title"       : "Type A",
+      "description" : "<p>Type A description</p>",
+      "params"      : {
+        "thumbnailImageQuality"       : 90,
+        "thumbnailCreateMethod"       : 0,
+        "default_itemdetail_template" : 0
+      }
+    },
+    {
+      "title"       : "Type B",
+      "description" : "<p>Type B description</p>",
+      "params"      : {
+        "thumbnailImageQuality"       : 90,
+        "thumbnailCreateMethod"       : 0,
+        "default_itemdetail_template" : 0
+      }
+    }
+  ],
+  "fields" : [
+    {
+      "name"      : "Checkbox",
+      "type"      : "checkbox",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "Option 1\r\nOption 2\r\nOption 3\r\nOption 4",
+      "params"    : {}
+    },
+    {
+      "name"      : "Select list",
+      "type"      : "select",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "Option 1\r\nOption 2\r\nOption 3\r\nOption 4",
+      "params"    : {}
+    },
+    {
+      "name"      : "Url",
+      "type"      : "url",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {}
+    },
+    {
+      "name"      : "User",
+      "type"      : "user",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {}
+    },
+    {
+      "name"      : "Items from other types",
+      "type"      : "itemfromtypes",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {
+        "types" : ["@types2@"]
+      }
+    },
+    {
+      "name"      : "Task list",
+      "type"      : "tasklist",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {}
+    },
+    {
+      "name"      : "Color",
+      "type"      : "color",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {}
+    },
+    {
+      "name"      : "Date",
+      "type"      : "date",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {
+        "dateFormat" : "Y - m - d"
+      }
+    },
+    {
+      "name"      : "Date Range",
+      "type"      : "daterange",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {}
+    },
+    {
+      "name"      : "Range number",
+      "type"      : "range",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {
+        "min"     : "1",
+        "max"     : "100",
+        "default" : "50",
+        "step"    : "1"
+      }
+    },
+    {
+      "name"      : "Editor",
+      "type"      : "editor",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {}
+    },
+    {
+      "name"      : "Gallery",
+      "type"      : "gallery",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {}
+    },
+    {
+      "name"      : "Google Map",
+      "type"      : "googlemaps",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {}
+    },
+    {
+      "name"      : "File Upload",
+      "type"      : "file",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {}
+    },
+    {
+      "name"      : "Image",
+      "type"      : "image",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {}
+    },
+    {
+      "name"      : "Number",
+      "type"      : "number",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {
+        "number_decimal_sepatator"  : ".",
+        "number_thousand_separator" : ",",
+        "number_number_decimals"    : "2"
+      }
+    },
+    {
+      "name"      : "Radio list",
+      "type"      : "radio",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "Option 1\r\nOption 2\r\nOption 3\r\nOption 4",
+      "params"    : {}
+    },
+    {
+      "name"      : "Text",
+      "type"      : "text",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {}
+    },
+    {
+      "name"      : "Textarea",
+      "type"      : "textarea",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {}
+    },
+    {
+      "name"      : "Youtube",
+      "type"      : "youtube",
+      "type_id"   : "@types1@",
+      "published" : 1,
+      "options"   : "",
+      "params"    : {}
+    }
+  ],
+  "categories" : [
+    {
+      "title"        : "Parent Category",
+      "template_id"  : "@templates1@",
+      "introtext"    : "<p>Category introtext</p>",
+      "fulltext"     : "<p>Category fulltext</p>",
+      "path"         : "parent-category",
+      "published"    : 1,
+      "publish_up"   : "0000-00-00 00:00:00",
+      "publish_down" : "0000-00-00 00:00:00",
+      "params"       : {
+        "category_image_title" : "",
+        "category_image_alt"   : ""
+      }
+    },
+    {
+      "title"        : "Child Category",
+      "template_id"  : "@templates1@",
+      "introtext"    : "<p>Child Category introtext</p>",
+      "fulltext"     : "<p>Child Category fulltext</p>",
+      "path"         : "parent-category/child-category",
+      "parent_id"    : "@categories1@",
+      "published"    : 1,
+      "publish_up"   : "0000-00-00 00:00:00",
+      "publish_down" : "0000-00-00 00:00:00",
+      "params"       : {
+        "category_image_title" : "",
+        "category_image_alt"   : ""
+      }
+    }
+  ],
+  "templates" : [
+    {
+      "name"        : "Category Template",
+      "type_id"     : "@types1@",
+      "description" : "Template for category",
+      "typecode"    : "view_categorydetail",
+      "published"   : 1,
+      "content"     : "<div class=\"toolbox\">{print_icon}</div><div class=\"category\"><h1><a href=\"{category_link}\">{category_title}</a></h1>{category_image}<p>{category_introtext}</p><p>{category_fulltext}</p></div><p>{items_loop_start}</p><p><a href=\"{item_link}\">{item_title}</a></p><p>{image_value}</p><p>{items_loop_end}</p><hr /><h3>Sub Category (Featured)</h3><p>{sub_featured_category_start}<a href=\"{sub_category_link}\">{sub_category_title}</a>{sub_category_image}</p><p>{sub_category_introtext}</p><p>{sub_category_fulltext}</p><p>{sub_featured_category_end}</p><hr /><h3>Sub Category</h3><p>{sub_category_start}<a href=\"{sub_category_link}\">{sub_category_title}</a>{sub_category_image}</p><p>{sub_category_introtext}</p><p>{sub_category_fulltext}</p><p>{sub_category_end}</p>"
+    },
+    {
+      "name"        : "Item Template",
+      "type_id"     : "@types1@",
+      "description" : "Template for item",
+      "typecode"    : "view_itemdetail",
+      "published"   : 1,
+      "content"     : "<p><a href=\"{item_link}\">{item_title}</a>{print_icon}</p><p>{editor_text}: {editor_value}</p>"
+    },
+    {
+      "name"        : "Archived Items Template",
+      "type_id"     : "@types1@",
+      "description" : "Template for archived items",
+      "typecode"    : "view_archiveditems",
+      "published"   : 1,
+      "content"     : "<p><a href=\"{item_link}\">{item_title}</a>{print_icon}</p><p>{editor_text}: {editor_value}</p>"
+    },
+    {
+      "name"        : "Item Template",
+      "type_id"     : "@types2@",
+      "description" : "Template for item",
+      "typecode"    : "view_itemdetail",
+      "published"   : 1,
+      "content"     : "<p><a href=\"{item_link}\">{item_title}</a>{print_icon}</p>"
+    }
+  ],
+  "items" : [
+    {
+      "title"        : "Item 1",
+      "type_id"      : "@types1@",
+      "template_id"  : "@templates2@",
+      "access"       : 1,
+      "published"	 : 1,
+      "publish_up"   : "0000-00-00 00:00:00",
+      "publish_down" : "0000-00-00 00:00:00",
+      "params"       : {
+        "item_image_title" : "",
+        "item_image_alt"   : ""
+      },
+      "fields" : {
+        "checkbox" : {
+          "checkbox" : "[\"Option 1\",\"Option 2\"]"
+        },
+        "date" : {
+          "date" : "@dates1@"
+        },
+        "editor" : {
+          "editor" : "<p>Editor customfield sample text</p>"
+        },
+        "gallery" : {
+          "gallery" : "[\"\"]"
+        },
+        "googlemaps" : {
+          "google_map" : "55.40375599999999,10.402370000000019"
+        },
+        "file" : {
+          "file_upload" : ""
+        },
+        "image" : {
+          "image" : ""
+        },
+        "number" : {
+          "number" : "9999"
+        },
+        "radio" : {
+          "radio_list" : "Option 4"
+        },
+        "select" : {
+          "select_list" : "[\"Option 1\",\"Option 2\"]"
+        },
+        "text" : {
+          "text" : "Text sample"
+        },
+        "textarea" : {
+          "textarea" : "Textarea sample"
+        },
+        "youtube" : {
+          "youtube" : "5it6k8ivvF8"
+        },
+        "range" : {
+          "range_number" : "50"
+        },
+        "daterange" : {
+          "date_range" : "{\"start\":\"2015-07-14 07:00:00\",\"end\":\"2015-07-30 23:00:00\"}"
+        },
+        "color" : {
+          "color" : "#FF0000"
+        },
+        "itemfromtypes" : {
+          "items_from_other_types" : "[\"@typeTables2@|@items3@\"]"
+        },
+        "tasklist" : {
+          "task_list" : "[\"Task 1|Lorem ipsum dolor sit amet|0|0\",\"Task 2|Lorem ipsum dolor sit amet|0|0\"]"
+        },
+        "user" : {
+          "user" : "[\"@users1@\"]"
+        },
+        "url" : {
+          "url" : "[\"http:\/\/redweb.dk\",\"redWEB ApS\"]"
+        }
+      },
+      "categories"   : ["@categories1@"]
+    },
+    {
+      "title"        : "Item 2",
+      "type_id"      : "@types1@",
+      "template_id"  : "@templates2@",
+      "access"       : 1,
+      "published"	 : 1,
+      "publish_up"   : "0000-00-00 00:00:00",
+      "publish_down" : "0000-00-00 00:00:00",
+      "params"       : {
+        "item_image_title" : "",
+        "item_image_alt"   : ""
+      },
+      "fields"       : {
+        "checkbox" : {
+          "checkbox" : "[\"Option 1\",\"Option 2\"]"
+        },
+        "date" : {
+          "date" : "@dates1@"
+        },
+        "editor" : {
+          "editor" : "<p>Editor customfield sample text</p>"
+        },
+        "gallery" : {
+          "gallery" : "[\"\"]"
+        },
+        "googlemaps" : {
+          "google_map" : "55.40375599999999,10.402370000000019"
+        },
+        "file" : {
+          "file_upload" : ""
+        },
+        "image" : {
+          "image" : ""
+        },
+        "number" : {
+          "number" : "9999"
+        },
+        "radio" : {
+          "radio_list" : "Option 4"
+        },
+        "select" : {
+          "select_list" : "[\"Option 1\",\"Option 2\"]"
+        },
+        "text" : {
+          "text" : "Text sample"
+        },
+        "textarea" : {
+          "textarea" : "Textarea sample"
+        },
+        "youtube" : {
+          "youtube" : "5it6k8ivvF8"
+        },
+        "range" : {
+          "range_number" : "50"
+        },
+        "daterange" : {
+          "date_range" : "{\"start\":\"2015-07-14 07:00:00\",\"end\":\"2015-07-30 23:00:00\"}"
+        },
+        "color" : {
+          "color" : "#FF0000"
+        },
+        "itemfromtypes" : {
+          "items_from_other_types" : "[\"@typeTables2@|@items3@\"]"
+        },
+        "tasklist" : {
+          "task_list" : "[\"Task 1|Lorem ipsum dolor sit amet|0|0\",\"Task 2|Lorem ipsum dolor sit amet|0|0\"]"
+        },
+        "user" : {
+          "user" : "[\"@users1@\"]"
+        },
+        "url" : {
+          "url" : "[\"http:\/\/redweb.dk\",\"redWEB ApS\"]"
+        }
+      },
+      "categories"   : ["@categories1@", "@categories2@"]
+    },
+    {
+      "title"        : "Item 3",
+      "type_id"      : "@types2@",
+      "template_id"  : "@templates4@",
+      "access"       : 1,
+      "published"	 : 1,
+      "publish_up"   : "0000-00-00 00:00:00",
+      "publish_down" : "0000-00-00 00:00:00",
+      "params"       : {
+        "item_image_title" : "",
+        "item_image_alt"   : ""
+      },
+      "fields"       : {},
+      "categories"   : ["@categories2@"]
+    },
+    {
+      "title"        : "Item 4",
+      "type_id"      : "@types2@",
+      "template_id"  : "@templates4@",
+      "access"       : 1,
+      "published"	 : 1,
+      "publish_up"   : "0000-00-00 00:00:00",
+      "publish_down" : "0000-00-00 00:00:00",
+      "params"       : {
+        "item_image_title" : "",
+        "item_image_alt"   : ""
+      },
+      "fields"       : {},
+      "categories"   : ["@categories1@", "@categories2@"]
+    }
+  ]
+}

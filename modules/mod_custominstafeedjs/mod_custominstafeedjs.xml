@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>mod_custominstafeedjs</name>
+	<author>Joomla! Project</author>
+	<creationDate>April 2017</creationDate>
+	<copyright>Copyright (C) 2017 - 2018 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>admin@joomla.org</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<version>1.0.0</version>
+	<description>MOD_CUSTOMINSTAFEEDJS_XML_DESCRIPTION</description>
+
+	<files>
+		<filename>mod_custominstafeedjs.xml</filename>
+		<filename module="mod_custominstafeedjs">mod_custominstafeedjs.php</filename>
+		<filename>index.html</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/index.html</filename>
+		<filename>js/instafeed.js</filename>
+		<filename>js/instafeed.min.js</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_custominstafeedjs.ini</language>
+		<language tag="en-GB">language/en-GB.mod_custominstafeedjs.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="moduleclass_sfx"
+						type="text"
+						label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+						description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			</fieldset>
+			<fieldset name="CUSTOMINSTAFEEDJS" label="MOD_CUSTOMINSTAFEEDJS_LBL">
+				<field
+					name="userId"
+					type="text"
+					default="3990872003"
+					label="userId"
+				/>
+				<field
+					name="clientId"
+					type="text"
+					default="de0d45ba4d6b47aba3c086f2ef84aa23"
+					label="clientId"
+				/>
+				<field
+					name="accessToken"
+					type="text"
+					default="3983090256.ba4c844.f897bdee2d994d34b5fbfd43ed0e23d6"
+					label="accessToken"
+				/>
+				<field
+					name="limit"
+					type="text"
+					default="4"
+					label="limit"
+				/>
+				<field name="resolution" type="list" default="standard_resolution" required="true" label="Select an option" description="thumbnail (default) - 150x150|low_resolution - 306x306|standard_resolution - 612x612">
+					<option value="thumbnail">thumbnail</option>
+					<option value="low_resolution">low_resolution</option>
+					<option value="standard_resolution">standard_resolution</option>
+				</field>
+				<field name="template" type="editor" rows="8" cols="4" filter="raw" default="" label="Select an editor" />
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>

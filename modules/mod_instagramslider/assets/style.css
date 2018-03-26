@@ -1,0 +1,33 @@
+#instagram_slider {
+	position: relative;
+}
+
+#ibox1 {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border:5px solid #644e40;
+	background-color: #fff;
+	position: fixed;
+}
+
+#ibox2 {
+	overflow: hidden;
+	text-align: left;
+}
+
+#ibox1 img {
+	position: absolute; 
+	top: 0px; 
+	cursor: pointer;
+	border: 0;
+	z-index: 10000;
+}
+
+#ibox1 iframe {
+	border:0px;
+	overflow: hidden; 
+	position: absolute;
+	width:100%;
+	height: 100%;
+}

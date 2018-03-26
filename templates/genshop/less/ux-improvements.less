@@ -1,0 +1,195 @@
+#main-content{
+	.redSHOPSiteViewProduct{
+		.product{
+			margin-bottom: 0px;
+			.product-right{
+				.brand h3 a{
+					margin-bottom: 15px;
+				}
+				#product_price{
+					margin-top: 0;
+					float: left;
+					width: 100%;
+					.product_price_val.product_old_price{
+						float: left;
+						span{
+							position: relative;
+						}
+					}
+					.product_r_price{
+						float: left;
+						font-weight: bold;
+					}
+				}
+				.product_addtocart{
+					float: left;
+					.product-cart-link {
+						a{
+							span{
+								
+								border: none;
+							}
+							&:hover,&:focus{
+								span{
+									background: #fe7272;
+									border: none;
+								}
+							}
+						}
+					}
+					fieldset.checkbox{
+						label{
+							border: none;
+						}
+					}
+				}
+				.product_title{
+					h1{
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.on_sale_wrap{
+	display: none;
+	float: none;
+	width: 80px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 3;
+	.on-sale{
+		display: none;
+		float: left;
+		background: @huong;
+		color: @white;
+		padding: 3px 10px;
+		p{
+			margin: 0;
+		}
+	}
+	.sale-savings{
+		padding: 0 0 0 20px;
+		line-height: 40px;
+		text-align: center;
+		float: right;
+		background: url(../images/bg-sale.png) no-repeat 0 0;
+		color: @white;
+		display: inline-block;
+		width: 80px;
+		height: 40px;
+		font-family: 'robotobold',sans-serif;
+		font-weight: bold;
+		p{
+			margin: 0;
+			span{
+				display: inline-block;
+							letter-spacing: -1px;
+							font-size: 18px;
+							//font-family: 'Noto Sans Bold';
+							&.percent{
+								vertical-align: top;
+								font-size: 10px;
+								padding-top: 0;
+								position: relative;
+								top: -2px;
+							}
+				}
+		}
+	}
+}
+.redSHOPSiteViewCategory{
+	#featured,
+	#grid-top-slider{
+		display: none;
+	}
+}
+body{
+	&.category{
+		.select2-search{
+			display: none;
+		}
+		.select2-results li{
+			.select2-result-label{
+				white-space: nowrap;
+			}
+		}
+	}
+}
+body.en-GB{
+	.form-tang-qua .formbox .su-kien{
+		width: 87%;
+	}
+	.form-tang-qua .formbox .fieldline .label label{
+		white-space: normal;
+	}
+	.newsletter-social-pos .custom {
+	    background: url(../images/Icons/Contact-Us.png) no-repeat 93px center;
+	}
+	&.category{
+			.select2-drop{
+				//width: ~'calc( 100% + 100px )';
+				width: auto !important;
+				margin-left: -86px;
+				margin-right: -100px;
+			}
+	}
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+	body.en-GB{
+		#menubar .shopbMegaMenu ul.nav li a, #menubar .navbar-default .navbar-nav > li > a{
+			padding: 13px 23px;
+		}
+		#menubar ul.shopbMegaMenu-menu li.item-131 a{
+			padding-left: 0;
+		}
+		#menubar ul.shopbMegaMenu-menu li:last-child a{
+			padding-right: 0;
+			span.indicator{
+				right: -20px;
+			}
+		}
+	}
+}
+@media(max-width: 1199px){
+	body.en-GB{
+		.form-tang-qua .formbox .su-kien{
+			width: 100%;
+		}
+	}
+}
+@media(max-width: 991px){
+	body.en-GB{
+		.form-tang-qua .formbox .su-kien .label{
+			width: 40%;
+		}
+		.form-tang-qua .formbox .su-kien .field{
+			width: 60%;
+		}
+	}
+}
+@media(max-width: 700px){
+	body.en-GB{
+		.form-tang-qua .formbox .redform-section .label{
+			width: 100%;
+		}
+		.form-tang-qua .formbox .redform-section .field{
+			width: 100%;
+		}
+	}
+}
+.instafeed.custom{
+	.ehover1 img{
+		max-width: ~'calc(100% + 10px)';
+	}
+}
+#sbox-btn-close{
+	background: url(../images/cart-close.png) no-repeat;
+	height: 31px;
+	width: 27px;
+	top: 8px;
+	right: 8px;
+}

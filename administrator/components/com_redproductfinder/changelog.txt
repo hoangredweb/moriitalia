@@ -1,0 +1,71 @@
+/**
+ * Changelog redPRODUCTFINDER
+ *
+ * Version: 1.3.1
+ * Date: 03 Dec 2009
+*/
+
+Version 1.5
++ Added Quality score
++ Added pricing to search result
++ Added option to choose OR or AND search results
+/ Fixed possible error on router
+
+Version 1.4
++ Added clone option
++ Added attribute import from Redshop
+* Fixed a number of undefined errors
+- Removed hardcoded page title
++ Added CSS tags
+
+Version 1.3.1
+* Fixed missing div
++ Added CSS cleanup code
+
+Version 1.3
++ Added redPRODUCTFINDER plugin
+/ Updated component to handle plugin
+
+Version 1.2.1
++ Added All to search
+
+Version 1.2
+/ Updated SEF URLs
+* Fixed undefined error
+
+Version 1.1
++ Added option for short or long product description
+/ Updated search result layout
++ Added SEF results to search link
+/ Updated sh404SEF plugin file to show nice URLs
+* Fixed implode error
+* Fixed Search Again not selecting correct checkboxes
+
+Version 1.0
+* Fixed hardcoded table prefix
++ Added Link to this result
++ Added product description
+
+Version 1.0 RC 2
++ Added search again button
+
+Version 1.0 RC 1
+/ Updated Danish language files
+* Fixed selection lost on adding a new type
++ Added showing of type to tag on associationlist
+- Removed apply button
+
+Version 1.0 beta 3
++ Added Joomla SEF Router
++ Added Sh404SEF Router
+* Fixed page title not showing
+/ Changed order to add new type/tag to the end
++ Added type filter to tag list
+/ Renamed products to associatons
+/ Changed multi-select box on adding association to checkboxes
+* Fixed tag ordering front-end
+/ Changed front-end only to show types that have tags
++ Added tooltips to types
+
+Version 1.0
++ Initial release

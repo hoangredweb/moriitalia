@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" client="site" type="plugin" group="content" method="upgrade">
+	<name>PLG_REDITEM_TEXT_TAGS</name>
+	<version>1.0.0</version>
+	<creationDate>December 2016</creationDate>
+	<author>redCOMPONENT.com</author>
+	<copyright>Copyright (C) 2012 - 2016 redCOMPONENT.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>PLG_REDITEM_TEXT_TAGS_DESCRIPTION</description>
+	<files>
+		<folder>language</folder>
+		<filename>LICENSE</filename>
+		<filename plugin="reditem_text_tags">reditem_text_tags.php</filename>
+		<filename>reditem_text_tags.xml</filename>
+	</files>
+</extension>

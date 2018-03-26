@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<apiservice client="site">
+    <name>redITEM - Categories Webservice</name>
+    <author/>
+    <copyright/>
+    <description/>
+    <config>
+        <name>reditem-categories</name>
+        <version>1.0.0</version>
+        <authorizationAssetName>com_{webserviceName}</authorizationAssetName>
+    </config>
+    <operations>
+        <documentation authorizationNeeded="false" source="auto" url=""/>
+        <read>
+            <list authorizationNeeded="false" strictFields="false" authorization="" dataMode="helper" optionName="" modelClassName="" modelClassPath="" isAdminClass="false" functionName="getItems" functionArgs="" validateData="none" validateDataFunction="validate" tableName="">
+                <fields>
+                    <field name="includeItemsFields" transform="boolean" defaultValue="" isRequiredField="false" isFilterField="false" isSearchableField="false" isPrimaryField="false">
+                        <description><![CDATA[If true, get customfield values for each of items in list items for each of categories.]]></description>
+                    </field>
+                    <field name="includeItems" transform="boolean" defaultValue="" isRequiredField="false" isFilterField="false" isSearchableField="false" isPrimaryField="false">
+                        <description><![CDATA[If true, get list items belong for each of categories.]]></description>
+                    </field>
+                    <field name="direction" transform="string" defaultValue="" isRequiredField="false" isFilterField="false" isSearchableField="false" isPrimaryField="false"/>
+                    <field name="ordering" transform="string" defaultValue="" isRequiredField="false" isFilterField="false" isSearchableField="false" isPrimaryField="false"/>
+                    <field name="list_start" transform="int" defaultValue="" isRequiredField="false" isFilterField="false" isSearchableField="false" isPrimaryField="false"/>
+                    <field name="list_limit" transform="int" defaultValue="" isRequiredField="false" isFilterField="false" isSearchableField="false" isPrimaryField="false"/>
+                    <field name="filter_featured" transform="string" defaultValue="" isRequiredField="false" isFilterField="false" isSearchableField="false" isPrimaryField="false"/>
+                    <field name="filter_published" transform="string" defaultValue="" isRequiredField="false" isFilterField="false" isSearchableField="false" isPrimaryField="false"/>
+                    <field name="filter_parentid" transform="int" defaultValue="" isRequiredField="false" isFilterField="false" isSearchableField="false" isPrimaryField="false"/>
+                    <field name="filter_ids" transform="array" defaultValue="" isRequiredField="false" isFilterField="false" isSearchableField="false" isPrimaryField="false"/>
+                    <field name="filter_types" transform="array" defaultValue="" isRequiredField="false" isFilterField="false" isSearchableField="false" isPrimaryField="false"/>
+                    <field name="filter_search" transform="string" defaultValue="" isRequiredField="false" isFilterField="false" isSearchableField="false" isPrimaryField="false"/>
+                </fields>
+                <resources>
+                    <resource displayName="items" transform="array" fieldFormat="{items}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="access_level" transform="string" fieldFormat="{access_level}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="modified_time" transform="datetime" fieldFormat="{modified_time}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="modified_user_id" transform="int" fieldFormat="{modified_user_id}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="create_time" transform="datetime" fieldFormat="{create_time}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="create_user_id" transform="int" fieldFormat="{create_user_id}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="published" transform="int" fieldFormat="{published}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="ordering" transform="int" fieldFormat="{ordering}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="featured" transform="int" fieldFormat="{featured}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="template_id" transform="int" fieldFormat="{template_id}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="fulltext" transform="string" fieldFormat="{fulltext}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="introtext" transform="string" fieldFormat="{introtext]" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="category_image" transform="string" fieldFormat="{category_image}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="type_id" transform="int" fieldFormat="{type_id}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="path" transform="string" fieldFormat="{path}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="access" transform="int" fieldFormat="{access}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="title" transform="string" fieldFormat="{title}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="level" transform="int" fieldFormat="{level}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="parent_id" transform="int" fieldFormat="{parent_id}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="id" transform="int" fieldFormat="{id}" displayGroup="" resourceSpecific="listItem"/>
+                    <resource displayName="{webserviceName}:self" transform="string" fieldFormat="{webserviceUrlPath}&amp;id={id}" displayGroup="_links" linkTitle="" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="listItem"/>
+                    <resource displayName="documentation" transform="string" fieldFormat="{webserviceUrlPath}&amp;format=doc#{rel}" displayGroup="_links" linkTitle="Documentation" linkName="{webserviceName}" hrefLang="" linkTemplated="true" linkRel="curies" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="page" transform="int" fieldFormat="{pagination.page}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="pageLimit" transform="int" fieldFormat="{pagination.limit}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="limitstart" transform="int" fieldFormat="{pagination.limitstart}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="totalItems" transform="int" fieldFormat="{pagination.totalItems}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="totalPages" transform="int" fieldFormat="{pagination.totalPages}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="base" transform="string" fieldFormat="/" displayGroup="_links" linkTitle="Default page" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="{webserviceName}:self" transform="string" fieldFormat="{webserviceUrlPath}" displayGroup="_links" linkTitle="" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="{webserviceName}:first" transform="string" fieldFormat="{webserviceUrlPath}&amp;list[limitstart]=0" displayGroup="_links" linkTitle="Pagination first" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="{webserviceName}:previous" transform="string" fieldFormat="{webserviceUrlPath}&amp;list[limitstart]={pagination.previous}" displayGroup="_links" linkTitle="Pagination previous" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="{webserviceName}:next" transform="string" fieldFormat="{webserviceUrlPath}&amp;list[limitstart]={pagination.next}" displayGroup="_links" linkTitle="Pagination next" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="{webserviceName}:last" transform="string" fieldFormat="{webserviceUrlPath}&amp;list[limitstart]={pagination.last}" displayGroup="_links" linkTitle="Pagination last" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="{webserviceName}:all" transform="string" fieldFormat="{webserviceUrlPath}&amp;list[limit]=0" displayGroup="_links" linkTitle="Show all items" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="{webserviceName}:limit" transform="string" fieldFormat="{webserviceUrlPath}&amp;list[limit]={limit}&amp;list[limitstart]={limitstart}" displayGroup="_links" linkTitle="List limit" linkName="" hrefLang="" linkTemplated="true" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="{webserviceName}:filter" transform="string" fieldFormat="{webserviceUrlPath}&amp;filter[search]={filter_search}" displayGroup="_links" linkTitle="Filter list" linkName="" hrefLang="" linkTemplated="true" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="{webserviceName}:sort" transform="string" fieldFormat="{webserviceUrlPath}&amp;filter[order]={filter_order}&amp;filter[order_Dir]={filter_order_Dir}" displayGroup="_links" linkTitle="List sort" linkName="" hrefLang="" linkTemplated="true" linkRel="" resourceSpecific="rcwsGlobal"/>
+                </resources>
+            </list>
+            <item authorizationNeeded="false" strictFields="false" authorization="" dataMode="model" optionName="com_reditem" modelClassName="category" modelClassPath="" isAdminClass="false" functionName="" functionArgs="" validateData="none" validateDataFunction="validate" tableName="">
+                <description><![CDATA[ This operation displays one redITEM category. ]]></description>
+                <resources>
+                    <resource displayName="id" transform="int" fieldFormat="{id}" displayGroup="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="documentation" transform="string" fieldFormat="{webserviceUrlPath}&amp;format=doc#{rel}" displayGroup="_links" linkTitle="Documentation" linkName="{webserviceName}" hrefLang="" linkTemplated="true" linkRel="curies" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="base" transform="string" fieldFormat="/" displayGroup="_links" linkTitle="Default page" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="{webserviceName}:list" transform="string" fieldFormat="{webserviceUrlPath}" displayGroup="_links" linkTitle="" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                    <resource displayName="{webserviceName}:self" transform="string" fieldFormat="{webserviceUrlPath}&amp;id={id}" displayGroup="_links" linkTitle="" linkName="" hrefLang="" linkTemplated="false" linkRel="" resourceSpecific="rcwsGlobal"/>
+                </resources>
+            </item>
+        </read>
+    </operations>
+</apiservice>

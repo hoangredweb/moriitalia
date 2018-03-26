@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" client="site" type="plugin" group="system" method="upgrade">
+	<name>PLG_SYSTEM_REDITEM_STATES</name>
+	<version>2.1</version>
+	<creationDate>July 2014</creationDate>
+	<author>redCOMPONENT.com</author>
+	<copyright>redCOMPONENT.com</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>PLG_SYSTEM_REDITEM_STATES_DESC</description>
+	<files>
+		<filename plugin="reditem_states">reditem_states.php</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_system_reditem_states.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_reditem_states.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			</fieldset>
+		</fields>
+	</config>
+</extension>

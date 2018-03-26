@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<contentelement type="contentelement">
+    <name>redFORM - Fields</name>
+    <author>redCOMPONENT</author>
+    <copyright>Copyright (C) 2008 - 2016 redCOMPONENT.com. All rights reserved.</copyright>
+    <version>1.0.0</version>
+    <description>Translation definition for redFORM component</description>
+    <reference>
+        <table name="rwf_fields">
+            <field type="referenceid" name="id" translate="0">Template ID</field>
+            <field type="titletext" name="field" translate="1">Field</field>
+            <field type="titletext" name="field_header" translate="1" ebuttons="readmore">Field header</field>
+            <field type="htmltext" name="params" translate="1" ebuttons="readmore">Params</field>
+        </table>
+        <component>
+            <form>com_redform#field#cid#task#!edit</form>
+        </component>
+    </reference>
+</contentelement>

@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<contentelement type="contentelement">
+	<name>RedITEM Lien he</name>
+	<author>redCOMPONENT</author>
+	<copyright>Copyright (C) 2008 - 2015 redCOMPONENT.com. All rights reserved.</copyright>
+	<version>1.0.0</version>
+	<description>Items Lien he Table Definition for the RedITEM extension</description>
+	<reference>
+		<table name="reditem_types_c_a_hang_2">
+			<field type="referenceid" name="id" translate="0">ID</field>
+			<field type="htmltext" name="thong_tin_lien_he" translate="1">Thong tin lien he</field>
+			<field type="htmltext" name="chi_tiet" translate="1">Chi tiet</field>
+		</table>
+		<component>
+			<form>com_reditem#item#cid#task#!edit</form>
+		</component>
+	</reference>
+</contentelement>

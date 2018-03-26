@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="user" method="upgrade">
+	<name>PLG_USER_REDSHOP_USER_POINT</name>
+	<author>Joomla! Project</author>
+	<creationDate>December 2006</creationDate>
+	<copyright>(C) 2005 - 2016 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>admin@joomla.org</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_USER_REDSHOP_USER_POINT_DESC</description>
+	<files>
+		<filename plugin="redshop_user_point">redshop_user_point.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_user_redshop_user_point.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_user_redshop_user_point.sys.ini</language>
+	</languages>
+</extension>
