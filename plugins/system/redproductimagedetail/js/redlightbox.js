@@ -80,7 +80,6 @@ function preloadSlimbox(parameters) {
 				mainimg.elevateZoom({
 					zoomType: "inner",
 					scrollZoom : true,
-					lensSize    : 200,
 					cursor: "crosshair",
 					gallery: gl,
 					loadingIcon: 'plugins/system/redproductzoom/js/zoomloader.gif'

@@ -17,6 +17,7 @@ require dirname(__FILE__) . '/wright/wright.php';
 $tpl = Wright::getInstance();
 $tpl->addJSScript(JURI::root() . 'templates/' . $this->template . '/js/jquery.elevatezoom.js');
 $tpl->addJSScript(JURI::root() . 'templates/' . $this->template . '/js/js.js');
+$tpl->addJSScript(JURI::root() . 'templates/' . $this->template . '/js/js2.js');
 $tpl->addJSScript(JURI::root() . 'templates/' . $this->template . '/js/grids.js');
 $tpl->addJSScript(JURI::root() . 'templates/' . $this->template . '/js/select2.min.js');
 $tpl->addJSScript(JURI::root() . 'templates/' . $this->template . '/js/customjs.js');

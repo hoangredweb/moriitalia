@@ -85,7 +85,7 @@ JText::script('COM_REDSHOP_TOTAL_PRODUCT_COUNT');
 									</span>
 								</label>
 								<?php endif; ?>
-								<?php if (!empty($cat->child)): ?>
+								<?php if (isset($cat->child) && !empty($cat->child)): ?>
 									<ul class='taglist'>
 										<?php foreach ($cat->child as $k => $child) :?>
 											<li>

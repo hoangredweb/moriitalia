@@ -48,13 +48,13 @@ class RedshopModelSearch extends RedshopModelSearchDefault
 		{
 			$query = $db->getQuery(true)
 				->select('COUNT(DISTINCT(p.product_id))')
-				->leftJoin($db->qn('#__redshop_manufacturer', 'm') . ' ON m.manufacturer_id = p.manufacturer_id');
+				->leftJoin($db->qn('#__redshop_manufacturer', 'm') . ' ON m.id = p.manufacturer_id');
 		}
 		else
 		{
 			$query = $db->getQuery(true)
 				->select('DISTINCT(p.product_id)')
-				->leftJoin($db->qn('#__redshop_manufacturer', 'm') . ' ON m.manufacturer_id = p.manufacturer_id')
+				->leftJoin($db->qn('#__redshop_manufacturer', 'm') . ' ON m.id = p.manufacturer_id')
 				->order($db->escape($orderBy));
 		}
 
@@ -197,7 +197,7 @@ class RedshopModelSearch extends RedshopModelSearchDefault
 		else
 		{
 			$keyword = $this->getState('keyword');
-			$manuCondition = ' OR (' . $db->qn('m.manufacturer_name') . ' LIKE ' . $db->q('%' . $keyword . '%') . ')';
+			$manuCondition = ' OR (' . $db->qn('m.name') . ' LIKE ' . $db->q('%' . $keyword . '%') . ')';
 			$defaultSearchType = $app->input->getCmd('search_type', 'product_name');
 
 			if (!empty($manudata['search_type']))

@@ -74,6 +74,35 @@ abstract class ModRedshopFilter
 	 */
 	public static function getChildCategory($parentId)
 	{
+		if ($parentId == 0)
+		{
+			return array();
+		}
+
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true)
+			->select($db->qn('c.id', 'category_id'))
+			->from($db->qn("#__redshop_category", "c"))
+			->where($db->qn("c.parent_id") . ' = ' . $db->q((int) $parentId))
+			->where($db->qn("c.published") . " = 1");
+
+		return $db->setQuery($query)->loadColumn();
+	}
+
+	/**
+	 * This method will get child category redshop
+	 *
+	 * @param   $parentId  category parent id
+	 *
+	 * @return array
+	 */
+	public static function getChildCategory2($parentId)
+	{
+		if ($parentId == 0)
+		{
+			return array();
+		}
+
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true)
 			->select($db->qn('c.id', 'category_id'))
@@ -126,6 +155,7 @@ abstract class ModRedshopFilter
 	public static function getCategories($catList = array(), $rootCategory = 0, $cid = 0)
 	{
 		$categories = self::getChildCategory($cid);
+		$tmp = array_intersect($catList, $catList);
 		$mainCat = array_merge(array(), array_intersect($categories, $catList));
 
 		if (empty($mainCat))
@@ -160,8 +190,11 @@ abstract class ModRedshopFilter
 		if (empty($catList))
 		{
 			return array();
-		}
+		}	
 
+		// Remove null
+		$catList = array_filter($catList, 'strlen');
+		
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true)
 			->select($db->qn('id'))
@@ -235,12 +268,12 @@ abstract class ModRedshopFilter
 			{
 				if (!empty($value) && $value->category_id != 0)
 				{
-					$child = self::getChildCategory($value->category_id);
+					$child = self::getChildCategory2($value->category_id);
 					$data[$key]->child = $child;
 
 					foreach ($child as $k => $subChild)
 					{
-						$sub = self::getChildCategory($subChild->category_id);
+						$sub = self::getChildCategory2($subChild->category_id);
 						$data[$key]->child[$k]->sub = $sub;
 					}
 				}

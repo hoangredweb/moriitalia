@@ -50,7 +50,7 @@ defined('_JEXEC') or die('Restricted access');
 				    accessToken:'3983090256.ba4c844.f897bdee2d994d34b5fbfd43ed0e23d6',
 
 				    resolution: 'standard_resolution',
-				    template: '<div class=" col-md-3 col-sm-6 col-xs-12"><a href="{{link}}" target="_blank"><img src="{{image}}" /><div class="likes">&hearts; {{likes}}</div></a></div>',
+				    template: '<div class=" col-md-3 col-sm-6 col-xs-12"><div class="image_instagram"><div class="overflay"></div><a href="{{link}}" target="_blank"><img src="{{image}}" /></a></div></div>',
 				    limit: 4
 			    });
 			    jQuery(window).on('load',function(){
@@ -179,6 +179,12 @@ defined('_JEXEC') or die('Restricted access');
 					<!-- header -->
 					<header id="header">
 						<div class="row clearfix">
+							<?php if ($this->countModules('menu-phone')) : ?>
+								<div class="hidden-lg hidden-md hidden-sm">
+									<!-- menu -->
+									<w:nav name="menu-phone" />
+								</div>
+							<?php endif; ?>
 			                <w:logo name="top" /> 
 						</div>
 					</header>
@@ -191,7 +197,9 @@ defined('_JEXEC') or die('Restricted access');
 					<div id="menubar">
 						<?php if ($this->countModules('menu')) : ?>
 							<!-- menu -->
+							<div class="hidden-xs">
 							<w:nav name="menu" />
+							</div>
 						<?php endif; ?>
 					</div>
 				</div>

@@ -1346,15 +1346,10 @@ if ($slide)
 				var gl = element.parents('.redSHOP_product_box_left').find('.redhoverImagebox').attr('id');
 
 				mainimg.elevateZoom({
-					zoomType: "window",
+					zoomType: "inner",
 					scrollZoom : true,
-					lensSize    : 100,
 					cursor: "crosshair",
 					gallery: gl,
-					tintColour: "#828282",
-					tintOpacity: 0.5,
-					zoomWindowWidth: 400,
-					zoomWindowHeight: 400,
 					loadingIcon: 'plugins/system/redproductzoom/js/zoomloader.gif'
 				});
 			}

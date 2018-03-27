@@ -139,7 +139,7 @@
 					$(".modal-body .quick_zoom").hover(function () { 
 					var elevateZoom=$(this).data('elevateZoom');
 					if (typeof elevateZoom === 'undefined') {
-						$(this).elevateZoom({loadingIcon: "plugins/system/redproductzoom/js/zoomloader.gif",cursor: "crosshair",zoomType: "window",scrollZoom: true,gallery: "additional_image",tint: false,tintColour: "#828282",tintOpacity: 0.5,zoomWindowWidth: 400,zoomWindowHeight: 400});
+						$(this).elevateZoom({loadingIcon: "plugins/system/redproductzoom/js/zoomloader.gif",cursor: "crosshair",zoomType: "inner",scrollZoom: true,gallery: "additional_image"});
 					   
 					} else {					   
 					   elevateZoom.changeState('enable');
