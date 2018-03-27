@@ -374,6 +374,39 @@ jQuery(document).ready(function($){
         });
     });
 
+ //    $( '.moduletable.menu-on-top >ul >li .sign-in' ).click(function () {
+	//   if ( $( ".moduletable.menu-on-top >ul >li >ul" ).is( ":hidden" ) ) {
+	//     $( ".moduletable.menu-on-top >ul >li >ul" ).slideDown( "slow" );
+	//   } else {
+	//     $( ".moduletable.menu-on-top >ul >li >ult" ).slideUp("slow");
+	//   }
+	// });
 
+	// $(".product_detail div.tab-content").prependTo($(".product-right")).insertAfter('.wrap-tab');
+	
+	if(window_w <= 979)
+	{
+		$("#header #logo ").insertBefore('#header #top');
+	}
+	if(window_w <=767)
+	{
+	   	$( '#menu-toggle' ).click(function () {
+	  		if ( $( "#nav-menu" ).is( ":hidden" ) ) {
+			    $( "#nav-menu" ).slideDown( "slow" );
+		  	} else {
+		    	$( "#nav-menu" ).slideUp("slow");
+		  	}
+		});
+	}
 
+	/*menu responsive*/
+	$('.navbar-header .navbar-toggle').on('click', function() {
+		$( ".navbar-header .navbar-toggle span:nth-of-type(2)" ).toggleClass( "icon-bar--1");
+	  	$( ".navbar-header .navbar-toggle span:nth-of-type(3)" ).toggleClass( "icon-bar--2");
+	  	$( ".navbar-header .navbar-toggle span:nth-of-type(4)" ).toggleClass( "icon-bar--3");
+
+	  	$('#nav-menu-phone').toggleClass('nav-menu-phone--open');
+	  	return false;
+	});
+	
 });
