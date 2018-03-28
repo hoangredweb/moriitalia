@@ -151,7 +151,7 @@ for ($i = 0; $i < count($rows); $i++)
 				$thumImage = REDSHOP_FRONT_IMAGES_ABSPATH . "product/" . Redshop::getConfig()->get('PRODUCT_DEFAULT_IMAGE');
 			}
 
-			echo "<div class=\"mod_redshop_products_image\"><a href=\"" . $link . "\" title=\"$row->product_name\"><img src=\"" . $thumImage . "\"></a><button data-target=\"#quick-view-" . $row->product_id . "\" data-toggle=\"modal\" class=\"btn btn-info btn-lg quick-view\" type=\"button\" style=\"margin-left: 1px;\">" . JText::_('COM_REDSHOP_TEXT_QUICK_VIEW') . "</button>" . "</div>";
+			echo "<div class=\"mod_redshop_products_image\"><a href=\"" . $link . "\" title=\"$row->product_name\"><img src=\"" . $thumImage . "\"></a><button data-target=\"#quick-view-" . $row->product_id . "\" data-toggle=\"modal\" class=\"hidden btn btn-info hidden btn-lg quick-view\" type=\"button\" style=\"margin-left: 1px;\">" . JText::_('COM_REDSHOP_TEXT_QUICK_VIEW') . "</button>" . "</div>";
 
 		}
 	}
@@ -278,15 +278,6 @@ for ($i = 0; $i < count($rows); $i++)
 				$productDiscountPrice = $producthelper->getProductFormattedPrice($productPrice);
 			}
 
-			if (!isset($addtocart))
-			{
-				$addtocart = null;
-			}
-
-			if (!isset($hiddenUserField))
-			{
-				$hiddenUserField = null;
-			}
 
 			$displyText = "<div class=\"mod_product_price_wrapper\"><div class=\"inner row\"><div class=\"mod_redshop_products_title\"><a href=\"" . $link . "\" title=\"\">" . JHTML::_('string.truncate', $row->product_name, 37) . "</a></div><div class=\"mod_redshop_products_price col-xs-12 align-left\">" . $productDiscountPrice . "</div></div><div class=\"wishlist\">" . $producthelper->replaceWishlistButton($row->product_id, '{wishlist_link}') . "</div><div class=\"mod_redshop_products_addtocart " . $outofstock . "\">" . $addtocart . $hiddenUserField . "</div></div>";
 

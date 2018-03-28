@@ -31,13 +31,13 @@ JText::script('COM_REDSHOP_TOTAL_PRODUCT_COUNT');
 			<div id='manu dropdown-div'>
 				<h3 class="title">
 					<?php echo JText::_("MOD_REDSHOP_FILTER_MANUFACTURER_LABEL"); ?>
-					<span class="dropdown"></span>
+					<span class="dropdown show"></span>
 				</h3>
-				<div class="brand-input hidden">
+				<div class="brand-input ">
 					<input type="text" name="keyword-manufacturer" id="keyword-manufacturer" placeholder="<?php echo JText::_('TYPE_A_KEYWORD')?>" />
 					<i class="icon-search"></i>
 				</div>
-				<ul class='taglist hidden' id="manufacture-list">
+				<ul class='taglist ' id="manufacture-list">
 					<?php if (!empty($manufacturers)) : ?>
 					<?php foreach ($manufacturers as $m => $manu) : ?>
 						<li style="list-style: none">

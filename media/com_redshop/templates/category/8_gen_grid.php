@@ -1,9 +1,11 @@
 <div class='category_wrapper'>
 	<div class='category_header'>
-				<div class="category-main-image">
-					{category_main_thumb_image}
-				</div>
-			{if subcats}
+		<!-- Category title -->
+		<div class="category_main_title">{category_main_name}</div>	
+		<div class="category-main-image">
+			{category_main_thumb_image}
+		</div>
+			<!-- {if subcats}
 			<div class="cate_feature_mod">
 				<div class="moduletable">
 					<ul class="nav menu navbar-nav features-menu">
@@ -19,11 +21,11 @@
 					</ul>
 				</div>
 			</div>
-				{subcats end if}
+				{subcats end if} -->
 		</div>
 	 <div class="clearfix"></div>
 	 
-	
+
 <!-- Toolbar -->
 <div class="category_main_toolbar">
 	<div class="row">
@@ -33,8 +35,7 @@
 		<div class="col-sm-6 category_sortby">{order_by}</div>
 	</div>
 </div>
-<!-- Category title -->
-<div class="category_main_title">{category_main_name}</div>	
+
 
 <div class="category_product_list">
 <div class="category_box_wrapper row grid">

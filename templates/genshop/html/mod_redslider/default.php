@@ -42,7 +42,7 @@ die;*/
 				<?php if (isset($slide->params)): 
 				$slideParams = json_decode($slide->params);
 				?>
-					<a href="#" data-index="<?php echo $i?>"><span class="caption"><?php echo $slideParams->caption?></span class="desc"><span><?php echo $slideParams->description?></span></a>
+					<a href="#" data-index="<?php echo $i?>" class="block-shop col-sm-4 col-xs-12"><span class="inner-block-shop"><span class="caption"><?php echo $slideParams->caption?></span><span class="desc"><?php echo $slideParams->description?></span></span></a>
 				<?php endif ?>
 			<?php 
 			$i++;
@@ -83,7 +83,7 @@ jQuery(document).ready(function($) {
 		$(".slide-category nav a").removeClass('slide-selected');
 		$(".slide-category nav a").removeClass('slide-beside');
 		$(".slide-category nav a").removeAttr('id');
-		$(".slide-category nav a[data-index='" + data_index + "']").addClass('slide-selected');
+		$(".slide-category nav a[data-index='" + data_index + "']").addClass('slide-selected block-shop2');
 
 		$(".slide-category nav a[data-index='" + data_index + "']").attr('id', "my2");
 

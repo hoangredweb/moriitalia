@@ -35,34 +35,71 @@ $action             = JRoute::_("index.php?option=com_redshop&view=search");
 $getData            = $input->getArray();
 $productOnSale      = $input->getInt('product_on_sale', 0);
 $categoryForSale    = $params->get('category_for_sale', 0);
+$pids       		= array();
 
 if (!empty($cid))
 {
-	$categoryModel = JModelLegacy::getInstance('Category', 'RedshopModel');
-	$categoryModel->setId($cid);
-	$categoryModel->setState('include_sub_categories_products', true);
-	$productList = $categoryModel->getCategoryProduct(true, true);
-	$catList     = array();
-	$manuList    = array();
-	$pids        = ModRedshopFilter::getProductByCategory($cid);
+	$list = RedshopHelperCategory::getCategoryListArray($categoryForSale);
+	$childCat = array($categoryForSale);
 
-	foreach ($productList as $k => $value)
+	foreach ($list as $key => $value)
 	{
-		$tmpCategories = is_array($value->categories) ? $value->categories : explode(',', $value->categories);
-		$catList = array_merge($catList, $tmpCategories);
-		$pids[]  = $value->product_id;
-
-		if ($value->manufacturer_id && $value->manufacturer_id != $mid)
-		{
-			$manuList[] = $value->manufacturer_id;
-		}
+		$childCat[] = $value->id;
 	}
 
-	$catList       = array_unique($catList);
-	$manufacturers = ModRedshopFilter::getManufacturers(array_unique($manuList));
-	$categories    = ModRedshopFilter::getCategories($catList, $rootCategory, $cid);
-	$customFields  = ModRedshopFilter::getCustomFields($pids, $productFields);
-	$rangePrice    = ModRedshopFilter::getRange($pids);	
+	foreach ($list as $key => $value)
+	{
+		$childCat[] = $value->id;
+	}
+
+	if (in_array($cid, $childCat))
+	{
+		$productList = array();
+		$catList     = array();
+		$manuList    = array();
+		$pids        = array();
+
+		if ($cid == $categoryForSale)
+		{
+			foreach ($childCat as $k => $value)
+			{
+				$productCats = $productHelper->getProductCategory($value);
+
+				foreach ($productCats as $key => $value)
+				{
+					$productList[] = $productHelper->getProductById($value->product_id);
+				}
+			}
+		}
+		else
+		{
+			$productCats = $productHelper->getProductCategory($cid);
+
+			foreach ($productCats as $key => $value)
+			{
+				$productList[$key] = $productHelper->getProductById($value->product_id);
+			}
+		}
+
+		foreach ($productList as $k => $value)
+		{
+			$tmpCategories = is_array($value->categories) ? $value->categories : explode(',', $value->categories);
+			$catList = array_merge($catList, $tmpCategories);
+			$manuList[] = $value->manufacturer_id;
+			$pids[]     = $value->product_id;
+		}
+
+		$catList = array_unique($catList);
+		$manufacturers = ModRedshopFilter::getManufacturerOnSale(array_unique($manuList));
+		$categories    = ModRedshopFilter::getParentCategoryOnSale($catList, $rootCategory, $categoryForSale);
+		$rangePrice    = ModRedshopFilter::getRange($pids);
+		}
+	else
+	{
+		$categories    = ModRedshopFilter::getParentCategory($cid);
+		$rangePrice    = ModRedshopFilter::getRangeMaxMin($cid);
+		$manufacturers = ModRedshopFilter::getManufacturers($cid);
+	}
 }
 elseif (!empty($mid))
 {

@@ -30,7 +30,7 @@ defined('_JEXEC') or die('Restricted access');
 	<ul class="<?php echo $params->get('inline', 1) ? 'lang-inline' : 'lang-block';?>">
 	<?php foreach ($list as $language) : ?>
 		<?php if ($params->get('show_active', 0) || !$language->active):?>
-			<li
+			<span class="slash_line">/</span> <li
 				class="<?php echo $language->active ? 'lang-active' : 'none-active';?>"
 				dir="<?php echo JLanguage::getInstance($language->lang_code)->isRTL() ? 'rtl' : 'ltr' ?>">
 				<a href="<?php echo $language->link;?>">
@@ -46,7 +46,7 @@ defined('_JEXEC') or die('Restricted access');
 						<?php echo $params->get('full_name', 1) ? $language->title_native : strtoupper($language->sef);?>
 					<?php endif; ?>
 				</a>
-			</li>
+			</li> 
 		<?php endif;?>
 	<?php endforeach;?>
 	</ul>

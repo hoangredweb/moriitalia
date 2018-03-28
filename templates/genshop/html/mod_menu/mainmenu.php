@@ -35,7 +35,7 @@ else {
 	}
 ?>>
 <?php
-	echo '<li class="homemenu"><a href="'.JURI::base(  ).'"><i class="icon-home"></i></a></li>';
+	//echo '<li class="homemenu"><a href="'.JURI::base(  ).'"><i class="icon-home"></i></a></li>';
 foreach ($list as $i => &$item) :
 	$active = false;  // Wright v.3: Active toggle for collapsible menus
 	$class = 'item-'.$item->id;

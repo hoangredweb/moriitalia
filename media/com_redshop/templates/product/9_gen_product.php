@@ -41,8 +41,9 @@
             <div class="product_rating">{product_rating_summary}</div>
         </div>
         <div class="clearfix"></div>
-        
-        {attribute_template:attributes}
+        <!-- Start Attribute -->
+        {attribute_template:gen_attributes}
+        <!-- End Attribute -->
 
       	 <div class="product_short_desc">
             <div class="title_descriptio">{description}</div>
@@ -53,7 +54,9 @@
       	
 
         <div class="product_details">
+            <div class="about_manufacture">{manufacturer_product_link}</div>
             <div class="product_addtocart">
+                
                 <div id="add_to_cart_all">{form_addtocart:gen_add_to_cart2}</div>
                 
             </div>
@@ -87,31 +90,44 @@
         </div>
     </div>
 </div>
- {related_product:related_products}
-
 <div class="tab_content_review">
 <ul class="nav nav-pills">
-    <li class="active"><a data-toggle="pill" href="#home">{description}</a></li>
-    <li><a data-toggle="pill" href="#menu1">{rs_specs_features_lbl}</a></li>
-    <li><a data-toggle="pill" href="#menu2">{reviews}</a></li>
+    <li class="active"><a data-toggle="pill" href="#block_description">{description}</a></li>
+    <li><a data-toggle="pill" href="#specs_features">{rs_specs_features_lbl}</a></li>
+    <li><a data-toggle="pill" href="#block_review">{reviews}</a></li>
   </ul>
   
   <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
+    <div id="block_description" class="tab-pane fade in active">
       {product_desc}
     </div>
-    <div id="menu1" class="tab-pane fade">
+    <div id="specs_features" class="tab-pane fade">
       {rs_specs_features}
     </div>
-    <div id="menu2" class="tab-pane fade">
+    <div id="block_review" class="tab-pane fade">
       <div class="rating-client col-md-4 col-xs-12">
-        <h3>Khách hàng nhận xét</h3>
+        <h3>{average_rating}</h3>
         <div class="total-rating">{product_rating_summary}</div>
-        {form_rating_without_link}
+        {form_rating}
       </div>
       <div class="allcomment col-md-8 col-xs-12">
+      <h3>{custom_rating}</h3>
         {product_rating}
       </div>
     </div>   
   </div>
 </div>
+ {related_product:related_products}
+
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+        jQuery('input[attribute_name="Color"]').each(function(idx, el){
+            var color_text = $(this).next('label').text().trim().toLowerCase();
+            $(this).next('label').andSelf().wrapAll("<div class='block-radio " + color_text + "'></div>");
+        });
+
+        jQuery('input[attribute_name="Size"]').each(function(idx, el){
+            $(this).next('label').andSelf().wrapAll("<div class='block-radio'></div>");
+        });
+    });
+</script>
