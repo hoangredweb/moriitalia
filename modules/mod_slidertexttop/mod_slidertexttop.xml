@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>Module Slider Text Top</name>
+	<author>Harvey</author>
+	<creationDate>April 2018</creationDate>
+	<copyright>Copyright (C) 2017 - 2018 Open Source Matters. All rights reserved.</copyright>
+	<authorUrl>www.joomla.org</authorUrl>
+	<version>1.0.0</version>
+	<description>MOD_DESCRITPION_MODULE_TEXT_TOP</description>
+
+
+	<files>
+		<filename module="Module Slider Text Top">mod_slidertexttop.php</filename>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_slidertexttop.ini</language>
+		<language tag="vi-VN">vi-VN/vi-VN.mod_slidertexttop.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				
+				<field name= "text_ids"
+					type= "subform"
+					label= "MOD_FIELD_SELECT_TEXT"
+					min="1"
+					max="100"
+					required= "true"            
+					formsource= "modules/mod_slidertexttop/subslider.xml"
+					multiple= "true"
+					default= '[{"text_id":""}]'
+					buttons= "add,remove"
+					layout="joomla.form.field.subform.repeatable-table"
+					groupByFieldset="false"/>
+
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					rows="3"
+				/>
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+  <field name="mytext" type="textarea" default="" label="Enter some text" description="" rows="2" cols="100" filter="raw"/>
+</form>
