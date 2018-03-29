@@ -21,6 +21,7 @@ $tpl->addJSScript(JURI::root() . 'templates/' . $this->template . '/js/js2.js');
 $tpl->addJSScript(JURI::root() . 'templates/' . $this->template . '/js/grids.js');
 $tpl->addJSScript(JURI::root() . 'templates/' . $this->template . '/js/select2.min.js');
 $tpl->addJSScript(JURI::root() . 'templates/' . $this->template . '/js/customjs.js');
+$tpl->addJSScript(JURI::root() . 'templates/' . $this->template . '/js/owl.carousel.min.js');
 
 unset($this->_scripts[JURI::root(true).'/media/jui/js/bootstrap.min.js']);
 

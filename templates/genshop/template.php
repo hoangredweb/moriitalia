@@ -38,6 +38,7 @@ defined('_JEXEC') or die('Restricted access');
         <meta name="format-detection" content="telephone=no">
 		<w:head />
 		<link href="<?php echo JURI::root();?>templates/genshop/css/effects.min.css" rel="stylesheet">
+		<link href="<?php echo JURI::root();?>templates/genshop/css/owl.carousel.min.css" rel="stylesheet">
 		<link href="<?php echo JURI::root();?>templates/genshop/css/font-awesome.min.css" rel="stylesheet">
 		<?php if ($menu->getActive() == $menu->getDefault($lang->getTag()) && $this->countModules('instagram')):?>
 		 	<script type="text/javascript" src="<?php echo JURI::root();?>templates/genshop/js/instafeed.js"></script>
@@ -175,10 +176,29 @@ defined('_JEXEC') or die('Restricted access');
 	<body <?php if ($bodyclass != "") : ?> class="<?php echo $langTag; ?> <?php echo $bodyclass . ' ' . $temp_view ?> "<?php endif; ?>>
 			<div id="page-content-wrapper">
 
+				<!-- Topbar -->
+				<?php if ($this->countModules('topbar')) : ?>
+						<!-- featured -->
+						<div id="topbar" class="clearfix">
+							<div class="container">
+								<w:module type="none" name="topbar" chrome="xhtml" />
+							</div>
+						</div>
+					<?php endif; ?>
 				<div class="container">
 					<!-- header -->
+					
 					<header id="header">
 						<div class="row clearfix">
+						<?php if ($this->countModules('language')) : ?>
+							<div id="grid_language">	
+								<div class="container">						
+									<w:module type="none" name="language" chrome="xhtml" />
+								</div>
+									
+							</div> 
+							<?php endif; ?>
+
 							<?php if ($this->countModules('menu-phone')) : ?>
 								<div class="hidden-lg hidden-md hidden-sm">
 									<!-- menu -->

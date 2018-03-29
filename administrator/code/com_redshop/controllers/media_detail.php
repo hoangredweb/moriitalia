@@ -7,6 +7,8 @@
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
+use Joomla\Utilities\ArrayHelper;
+
 defined('_JEXEC') or die;
 
 jimport('joomla.filesystem.file');
@@ -25,7 +27,7 @@ class RedshopControllerMedia_Detail extends RedshopControllerMedia_DetailDefault
 	 *
 	 * @return  [type]  [description]
 	 */
-	public function save()
+	public function save($apply = 0)
 	{
 		$post = JRequest::get('post');
 

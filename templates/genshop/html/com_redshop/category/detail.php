@@ -1266,10 +1266,6 @@ if ($slide)
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 
-		$('div[id*=additional_images]').find('a').click(function() {
-			$('div[id*=productImageWrapID_]').find('a').attr('href', $(this).attr('data-zoom-image'));
-		});
-
 		getImagename = function(link) {
 			var re = new RegExp("images\/(.*?)\/thumb\/(.*?)_w([0-9]*?)_h([0-9]*?)(_.*?|)([.].*?)$");
 			var m = link.match(re);
@@ -1289,8 +1285,6 @@ if ($slide)
 			element.parents('.redSHOP_product_box_left').find('div[id*=additional_images]').find('.additional_image').each(function() {
 				$(this).attr('onmouseout', '');
 				$(this).attr('onmouseover', '');
-
-				gl = $(this).attr('id');
 
 				var urlimg = $(this).find('img').attr('data-src');
 				if (typeof urlimg === 'undefined' || urlimg === false) {
@@ -1350,15 +1344,30 @@ if ($slide)
 					scrollZoom : true,
 					cursor: "crosshair",
 					gallery: gl,
+					responsive:true,
 					loadingIcon: 'plugins/system/redproductzoom/js/zoomloader.gif'
 				});
 			}
 		};
 
-		$('div[id*=productImageWrapID_]').each(function() {
+		/*$('div[id*=productImageWrapID_]').each(function() {
 			redproductzoom($(this));
+		});*/
+
+		$('.quick-view').on('click', function() {
+			var quick_view_id = $(this).data('target');
+			redproductzoom($(quick_view_id).find('div[id*=productImageWrapID_]'));
 		});
 
-		
+		$('#productlist .modal').on('hidden.bs.modal', function () {
+		 	$('.zoomContainer').remove();
+		})
 	});
 </script>
+
+<style type="text/css">
+	#main-content .modal:not(a) .product .product-left .product_image img{
+		width: 310px;
+		height: 400px;
+	}
+</style>

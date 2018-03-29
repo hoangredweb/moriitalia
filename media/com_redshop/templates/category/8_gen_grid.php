@@ -2,9 +2,7 @@
 	<div class='category_header'>
 		<!-- Category title -->
 		<div class="category_main_title">{category_main_name}</div>	
-		<div class="category-main-image">
-			{category_main_thumb_image}
-		</div>
+		<div class="category-main-image">{category_main_thumb_image}</div>
 			<!-- {if subcats}
 			<div class="cate_feature_mod">
 				<div class="moduletable">
@@ -22,10 +20,9 @@
 				</div>
 			</div>
 				{subcats end if} -->
-		</div>
-	 <div class="clearfix"></div>
-	 
-
+	</div>
+<div class="clearfix"></div>	 
+<div class="category_product_list">
 <!-- Toolbar -->
 <div class="category_main_toolbar">
 	<div class="row">
@@ -36,8 +33,6 @@
 	</div>
 </div>
 
-
-<div class="category_product_list">
 <div class="category_box_wrapper row grid">
 	{product_loop_start}
 
@@ -154,7 +149,9 @@
 	        });
 	    });
 	</script>
+
+	<div class="pagination">{pagination}</div>
 </div>
 </div>
-<div class="pagination">{pagination}</div>
+
 </div>

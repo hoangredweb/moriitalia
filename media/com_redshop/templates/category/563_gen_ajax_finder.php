@@ -1,6 +1,16 @@
+<!-- Toolbar -->
+<div class="category_main_toolbar">
+	<div class="row">
+		<div class="col-sm-6 count_totalproduct">
+			<div class="total_product">{total_product}</div>
+		</div>
+		<div class="col-sm-6 category_sortby">{order_by}</div>
+	</div>
+</div>
+
+<div id="productlist">
 <div class="category_box_wrapper row grid">
 	{product_loop_start}
-
 	<div class="cate_redshop_products_wrapper col-sm-4 col-xs-6">
     
 		<div class="category_box_inside">
@@ -106,6 +116,170 @@
 	        jQuery('input[attribute_name="Size"]').each(function(idx, el){
 	            $(this).next('label').andSelf().wrapAll("<div class='block-radio'></div>");
 	        });
+
+	       jQuery('.attributes_box').each(function(i,e){
+		  		var textlabel = $(this).find('.attribute_wrapper >label').text().toLowerCase();
+		  		jQuery(this).addClass(textlabel)
+		  	});
+
+	       $('.category_box_inside .wishlist').click(function() {
+				window.location = jQuery(this).find('a').attr("href");
+				return false;
+			});
 	    });
 	</script>
+
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			getImagename = function(link) {
+				var re = new RegExp("images\/(.*?)\/thumb\/(.*?)_w([0-9]*?)_h([0-9]*?)(_.*?|)([.].*?)$");
+				var m = link.match(re);
+				return m;
+			};
+
+			redproductzoom = function(element) {
+				var mainimg = element.find('img');
+				var m = getImagename(mainimg.attr('src'));
+				var newxsize = m[3];
+				var newysize = m[4];
+				var urlfull = redSHOP.RSConfig._('SITE_URL') + 'components/com_redshop/assets/images/' + m[1] + '/' + m[2] + m[6];
+
+				mainimg.attr('data-zoom-image', urlfull);
+
+				//more image
+				element.parents('.redSHOP_product_box_left').find('div[id*=additional_images]').find('.additional_image').each(function() {
+					$(this).attr('onmouseout', '');
+					$(this).attr('onmouseover', '');
+
+					$(this).find('a').attr('onmouseout', '');
+					$(this).find('a').attr('onmouseover', '');
+
+					//gl = $(this).attr('id');
+
+					var urlimg = $(this).find('img').attr('data-src');
+					if (typeof urlimg === 'undefined' || urlimg === false) {
+						urlimg = $(this).find('img').attr('src');
+					}
+
+					var m = getImagename(urlimg);
+
+					var urlthumb = redSHOP.RSConfig._('SITE_URL') + 'components/com_redshop/assets/images/' + m[1] + '/thumb/' + m[2] + '_w' + newxsize + '_h' + newysize + m[5] + m[6];
+					var urlfull = redSHOP.RSConfig._('SITE_URL') + 'components/com_redshop/assets/images/' + m[1] + '/' + m[2] + m[6];
+
+					$(this).find('a').attr('data-image', urlthumb);
+					$(this).find('a').attr('data-zoom-image', urlfull);
+
+					$(this).find('a').attr('class', 'elevatezoom-gallery');
+				});
+
+				if (mainimg.data('elevateZoom')) {
+
+					var ez = mainimg.data('elevateZoom');
+		            ez.currentImage = urlfull;
+		            ez.imageSrc = urlfull;
+		            ez.zoomImage = urlfull;
+		            ez.closeAll();
+		            ez.refresh();
+
+		            $('.zoomContainer').remove();
+
+		            //Create the image swap from the gallery
+		            $('.' + ez.options.gallery + ' a').click(function (e) {
+
+		                //Set a class on the currently active gallery image
+		                if (ez.options.galleryActiveClass) {
+		                    $('#' + ez.options.gallery + ' a').
+		                        removeClass(ez.options.galleryActiveClass)
+		                    $(this).addClass(ez.options.galleryActiveClass)
+		                }
+		                //stop any link on the a tag from working
+		                e.preventDefault()
+
+		                //call the swap image function
+		                if ($(this).data('zoom-image')) {
+		                    ez.zoomImagePre = $(this).data('zoom-image')
+		                }
+		                else {
+		                    ez.zoomImagePre = $(this).data('image')
+		                }
+
+		                ez.swaptheimage($(this).data('image'), ez.zoomImagePre)
+		                return false
+		            })
+
+				} else {
+					var gl = element.parents('.redSHOP_product_box_left').find('.redhoverImagebox').attr('id');
+
+					mainimg.elevateZoom({
+						zoomType: "inner",
+						scrollZoom : true,
+						cursor: "crosshair",
+						gallery: gl,
+						responsive:true,
+						loadingIcon: 'plugins/system/redproductzoom/js/zoomloader.gif'
+					});
+				}
+			};
+
+			$('.redImagepreview').remove();
+
+			jQuery('.quick-view').each(function(idx, el) {
+				var quick_view_id = $(this).data('target');
+	            var number = quick_view_id; // a string
+				number = number.replace(/\D/g, ''); // a string of only digits, or the empty string
+				number = parseInt(number, 10);
+
+				$(quick_view_id).find('div.product_image > .redhoverImagebox').attr('id', 'additional_images' + number);
+	        });
+
+			$('.quick-view').on('click', function() {
+				var quick_view_id = $(this).data('target');
+				redproductzoom($(quick_view_id).find('div.product_image > .redhoverImagebox'));
+			});
+
+			$('#productlist .modal').on('hidden.bs.modal', function () {
+			 	$('.zoomContainer').remove();
+			})
+
+			if ($('.pagination').length)
+			{
+				$('.pagination ul li:last-child').addClass("pagination-next");
+				$('.pagination ul li:last-child').prev('li').addClass("pagination-end");
+
+				$('.pagination ul li:first-child').addClass("pagination-start");
+				$('.pagination ul li:first-child').next('li').addClass("pagination-prev");
+			}
+			
+			//$("#orderBy").select2({ width: '200px' });
+			
+		/*	setTimeout(function() {
+			    $("#orderBy").select2('destroy'); 
+			    $("#orderBy").select2({ containerCss : {"display":"block", "width": "200px"}, width: '200px' });
+			}, 500);*/
+			/*
+			$("#orderBy").select2({ dropdownAutoWidth : true });*/
+		});
+	</script>
+
+	<style type="text/css">
+		#main-content .modal:not(a) .product .product-left .product_image img{
+			width: 310px;
+			height: 400px;
+		}
+		.modal .product .product-left .product_image a{
+			height: 400px;
+		}
+		.category_product_list .limit.pull-right
+		{
+			display: none;
+		}
+		.category_product_list .pagination .pagenav span{
+			color: #cd212a;
+    		font-family: 'ProximaNova-Bold';
+		}
+	</style>
+
+	<div class="clearfix"></div>
+	<div class="pagination">{pagination}</div>
+</div>
 </div>

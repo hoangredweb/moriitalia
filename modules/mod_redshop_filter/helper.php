@@ -203,8 +203,8 @@ abstract class ModRedshopFilter
 		
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true)
-			->select($db->qn('id'))
-			->select($db->qn('name'))
+			->select($db->qn('id', 'category_id'))
+			->select($db->qn('name', 'category_name'))
 			->from($db->qn("#__redshop_category"))
 			->where($db->qn('id') . ' IN (' . implode(',', $catList) . ')');
 

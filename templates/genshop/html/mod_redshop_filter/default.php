@@ -148,7 +148,7 @@ JText::script('COM_REDSHOP_TOTAL_PRODUCT_COUNT');
 	<input type="hidden" name="redform[cid]" value="<?php echo !empty($cid) ? $cid : 0; ?>" />
 	<input type="hidden" name="redform[mid]" value="<?php echo !empty($mid) ? $mid : 0; ?>" />
 	<input type="hidden" name="limitstart" value="0" />
-	<input type="hidden" name="limit" value="27" />
+	<input type="hidden" name="limit" value="6" />
 	<input type="hidden" name="redform[keyword]" value="<?php echo $keyword;?>" />
 	<input type="hidden" name="check_list" value="" >
 	<input type="hidden" name="order_by" value="" >
@@ -183,6 +183,7 @@ JText::script('COM_REDSHOP_TOTAL_PRODUCT_COUNT');
 			,change: function(event, ui){
 				if (callback && typeof(callback) === "function") {
 					jQuery('input[name="limitstart"]').val(0);
+					//jQuery('input[name="limit"]').val(6);
 					callback();
 				}
 			}
@@ -326,6 +327,7 @@ JText::script('COM_REDSHOP_TOTAL_PRODUCT_COUNT');
 	function submitform (argument) {
 		jQuery('#redproductfinder-form-<?php echo $module->id;?> input[type="checkbox"], select').change(function(event) {
 			jQuery('input[name="limitstart"]').val(0);
+			//jQuery('input[name="limit"]').val(6);
             submitpriceform("firstload");
 		});
 	}
@@ -337,26 +339,17 @@ JText::script('COM_REDSHOP_TOTAL_PRODUCT_COUNT');
 		 	data: jQuery('#redproductfinder-form-<?php echo $module->id;?>').serialize(),
 		 	beforeSend: function() {
 				jQuery('#wait').css('display', 'block');
-				if( opload != "firstload"){
+				/*if( opload != "firstload"){
 					jQuery('.category_header').css('display', 'none');
-				}
+				}*/
 			},
 			success: function(data) {
-				jQuery('.category_product_list #productlist').empty();
+				jQuery('.category_product_list').empty();
 				//jQuery('#main-content .category_main_toolbar').first().remove();
-				jQuery('.category_product_list #productlist').html(data);
+				jQuery('.category_product_list').html(data);
 
 				// Find and replace number products
 				var count = jQuery('.cate_redshop_products_wrapper').size();
-
-				if (count) {
-					jQuery('.total_product').show();
-					jQuery('.total_product').html( function(i,txt) {return txt.replace(/\d+/, count); });	
-				}
-				else {
-					jQuery('.total_product').hide();
-				}
-				
 
 				if( opload != "firstload"){
 					jQuery('.category_wrapper.parent .category_main_toolbar, .category_wrapper.parent .category_product_list').css('display', 'block');
