@@ -219,7 +219,6 @@ class RedshopControllerProduct_Detail extends RedshopController
 			{
 				$this->setRedirect('index.php?option=com_redshop&view=product_detail&task=add', $msg);
 			}
-
             elseif ($apply == 1)
 			{
 				$this->setRedirect('index.php?option=com_redshop&view=product_detail&task=edit&cid[]=' . $row->product_id, $msg);

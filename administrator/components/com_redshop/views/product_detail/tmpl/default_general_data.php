@@ -15,6 +15,20 @@ $priceDecimal  = Redshop::getConfig()->get('PRICE_DECIMAL', '.');
 $priceThousand = Redshop::getConfig()->get('THOUSAND_SEPERATOR', ',');
 $editor        = JFactory::getEditor();
 $calendarFormat = Redshop::getConfig()->getString('DEFAULT_DATEFORMAT', 'Y-m-d');
+
+/** @var RedshopTableMedia $mediaTable */
+$mediaTable = JTable::getInstance('Media', 'RedshopTable');
+$mediaId    = 0;
+
+if (!empty($this->detail->product_id) && $mediaTable->load(
+    array(
+        'media_section' => 'product',
+        'media_name' => $this->detail->product_full_image,
+        'section_id' => (int) $this->detail->product_id,
+        'media_type' => 'images')))
+{
+    $mediaId = $mediaTable->get('media_id');
+}
 ?>
 <script type="text/javascript">
     (function ($) {
@@ -329,7 +343,9 @@ $calendarFormat = Redshop::getConfig()->getString('DEFAULT_DATEFORMAT', 'Y-m-d')
 						$this->detail->product_id,
 						'product',
 						$this->detail->product_full_image,
-						false
+						false,
+                        false,
+                        $mediaId
 					) ?>
                 </div>
 				<?php if ($this->detail->product_id > 0) : ?>

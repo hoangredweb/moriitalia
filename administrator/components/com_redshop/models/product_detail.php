@@ -500,48 +500,6 @@ class RedshopModelProduct_Detail extends RedshopModel
 			}
 		}
 
-		if (!isset($data['copy_product']) || $data['copy_product'] != 1)
-		{
-			if ($row->product_full_image != "")
-			{
-				$media_id = 0;
-				$query    = "SELECT * FROM " . $this->table_prefix . "media AS m "
-					. "WHERE media_name='" . $data['old_image'] . "' "
-					. "AND media_section='product' ";
-				$this->_db->setQuery($query);
-				$result = $this->_db->loadObject();
-
-				if (null !== $result)
-				{
-					$media_id = $result->media_id;
-				}
-
-				/** @var Tablemedia_detail $mediaTable */
-				$mediaTable = $this->getTable('media_detail');
-				$mediaData  = array(
-					'media_id'             => $media_id,
-					'media_name'           => $row->product_full_image,
-					'media_alternate_text' => !empty($old_main_image_alternate_text) ?
-						$old_main_image_alternate_text : preg_replace('#\.[^/.]+$#', '', $row->product_name),
-					'media_section'        => 'product',
-					'section_id'           => $row->product_id,
-					'media_type'           => 'images',
-					'media_mimetype'       => !empty($file['type']) ? $file['type'] : '',
-					'published'            => 1
-				);
-
-				if (!$mediaTable->bind($mediaData))
-				{
-					return false;
-				}
-
-				if (!$mediaTable->store())
-				{
-					return false;
-				}
-			}
-		}
-
 		if (!$data['product_id'])
 		{
 			$prodid = $row->product_id;
@@ -4862,10 +4820,10 @@ class RedshopModelProduct_Detail extends RedshopModel
 	{
 		$input    = JFactory::getApplication()->input;
 		$dropzone = $input->post->get('dropzone', array(), 'array');
-		$dropzone = isset($dropzone[$mediaField]) ? $dropzone[$mediaField] : null;
+		$dropzone = $dropzone[$mediaField] ?? null;
 
 		$dropzoneAlternateText = $input->post->get('dropzone_alternate_text', array(), '');
-		$dropzoneAlternateText = isset($dropzoneAlternateText[$mediaField]) ? $dropzoneAlternateText[$mediaField] : null;
+		$dropzoneAlternateText = $dropzoneAlternateText[$mediaField] ?? null;
 
 		if (null === $dropzone || empty($dropzone))
 		{
@@ -4881,21 +4839,22 @@ class RedshopModelProduct_Detail extends RedshopModel
 
 			if (strpos($key, 'media-') !== false)
 			{
-				$mediaTable->load(str_replace('media-', '', $key));
-
-				// Delete old image.
-				$oldMediaFile = JPath::clean(REDSHOP_FRONT_IMAGES_RELPATH . 'product/' . $mediaTable->media_name);
-
-				if (JFile::exists($oldMediaFile))
+				if ($mediaTable->load(str_replace('media-', '', $key)))
 				{
-					JFile::delete($oldMediaFile);
-				}
+					// Delete old image.
+					$oldMediaFile = JPath::clean(REDSHOP_FRONT_IMAGES_RELPATH . 'product/' . $mediaTable->media_name);
 
-				if (empty($value))
-				{
-					$mediaTable->delete();
+					if (JFile::exists($oldMediaFile))
+					{
+						JFile::delete($oldMediaFile);
+					}
 
-					continue;
+					if (empty($value))
+					{
+						$mediaTable->delete();
+
+						continue;
+					}
 				}
 			}
 			else
@@ -4913,7 +4872,7 @@ class RedshopModelProduct_Detail extends RedshopModel
 				continue;
 			}
 
-			$alternateText = isset($dropzoneAlternateText[$key]) ? $dropzoneAlternateText[$key] : $row->product_name;
+			$alternateText = $dropzoneAlternateText[$key] ?? $row->product_name;
 
 			$mediaTable->set('media_alternate_text', $alternateText);
 			$mediaTable->set('media_type', 'images');
