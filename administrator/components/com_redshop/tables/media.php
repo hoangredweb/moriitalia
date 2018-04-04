@@ -91,7 +91,14 @@ class RedshopTableMedia extends RedshopTable
 	 */
 	protected function doDelete($pk = null)
 	{
-		if ($this->media_section == 'images'
+		/*echo "<pre>";
+		$folder = JPath::clean(REDSHOP_MEDIA_IMAGE_RELPATH . $this->media_section . '/' . $this->section_id . '/thumb');
+		JFolder::delete($folder);
+		var_dump($folder);
+		print_r($this);
+		echo "</pre>";
+		exit();*/
+		if ($this->media_type == 'images'
 			&& ($this->media_section == 'manufacturer' || $this->media_section == 'category'))
 		{
 			// New folder structure

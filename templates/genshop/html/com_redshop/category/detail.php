@@ -251,12 +251,35 @@ if (!$slide)
 
 	$cat_main_thumb = "";
 
-	if ($this->maincat->category_full_image && file_exists(REDSHOP_FRONT_IMAGES_RELPATH . 'category/' . $this->maincat->category_full_image))
+	$medias = RedshopEntityCategory::getInstance($this->maincat->id)->getMedia();
+
+	/** @var RedshopEntityMediaImage $fullImage */
+	$fullImage = null;
+
+	foreach ($medias->getAll() as $media)
+	{
+		/** @var RedshopEntityMedia $media */
+		if ($media->get('scope') == 'full')
+		{
+			$fullImage = RedshopEntityMediaImage::getInstance($media->getId());
+
+			break;
+		}
+	}
+
+	if (null !== $fullImage)
+	{
+		$water_cat_img = $fullImage->generateThumb($cw_thumb, $ch_thumb);
+		$cat_main_thumb = "<a href='" . $link . "' title='" . $main_cat_name .
+			"'><img src='" . $water_cat_img['abs'] . "' alt='" . $main_cat_name . "' title='" . $main_cat_name . "'></a>";
+	}
+
+	/*if ($this->maincat->category_full_image && file_exists(REDSHOP_FRONT_IMAGES_RELPATH . 'category/' . $this->maincat->category_full_image))
 	{
 		$water_cat_img  = RedshopHelperMedia::watermark('category', $this->maincat->category_full_image, $cw_thumb, $ch_thumb, Redshop::getConfig()->get('WATERMARK_CATEGORY_THUMB_IMAGE'), '0');
 		$cat_main_thumb = "<a href='" . $link . "' title='" . $main_cat_name .
 							"'><img src='" . $water_cat_img . "' alt='" . $main_cat_name . "' title='" . $main_cat_name . "'></a>";
-	}
+	}*/
 
 	$template_desc = str_replace($ctag, $cat_main_thumb, $template_desc);
 
