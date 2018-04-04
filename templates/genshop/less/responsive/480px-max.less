@@ -60,6 +60,17 @@
 }
 
 @media (max-width: 480px) {
+
+	#header #logo
+	{
+		width: 100%;
+		position: static; 
+	}
+	#header #top2
+	{
+		padding-left: 0;
+		padding-right: 0;
+	}
 	body.product h1.title,
 	h1.title,
 	.bg-category h1
@@ -138,7 +149,8 @@
 		margin-top: 55px;
 	}
 	#logo .image img{
-		max-height: 80px;
+		max-width: 80px;
+		height: auto;
 	}
 	.redSHOPSiteViewProduct .product{
 		.product_title .brand{
@@ -446,13 +458,18 @@
 	.product-list > h3{
 		text-align: center;
 	}
-}
-@media(max-width: 424px){
+	.moduletable.banner-fashion-cosmetics .banner-block
+	{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+} 
+@media (max-width: 424px){
 	.redSHOPSiteViewWedding_list .category_product_list.wishlist .cate_redshop_products_wrapper, .redSHOPSiteViewAccount .category_product_list.wishlist .cate_redshop_products_wrapper{
 		margin-bottom: 25px;
 	}
 }
-@media(max-width: 414px){
+@media (max-width: 414px){
 	#main .redcore .span12 .reditem .reditem_categories .catalogue #reditemsItems .reditemItem{
 		width: 50%;
 	}

@@ -1,11 +1,34 @@
 <?php
+/**
+ * @package     Wright
+ * @subpackage  Adapters
+ *
+ * @copyright   Copyright (C) 2005 - 2016 redCOMPONENT.com.  All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
 
+defined('_JEXEC') or die;
+
+/**
+ * Wright Adapters
+ *
+ * @package     Wright
+ * @subpackage  Adapters
+ * @since       3.0
+ */
 class WrightAdapterJoomlaNav
 {
+	/**
+	 * Render function
+	 *
+	 * @param   array  $args  Array
+	 *
+	 * @return  string
+	 */
 	public function render($args)
 	{
 		$doc = JFactory::getDocument();
-		$responsive = $doc->params->get('responsive', 1);
+		$responsive = $doc->params->get('responsive', 1); 
 
 		// Set module name
 		if (!isset($args['name']))
@@ -36,13 +59,13 @@ class WrightAdapterJoomlaNav
 
 		if ($responsive)
 		{
-			$nav .= '<div class="navbar-header">
-						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</a>
-						
+			$nav .= '<div class="navbar-header hidden-md hidden-lg hidden-sm">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-' . $args['name'] . '">
+						  <span class="sr-only">Toggle navigation</span>
+						  <span class="icon-bar"></span>
+						  <span class="icon-bar"></span>
+						  <span class="icon-bar"></span>
+						</button>
 					</div>';
 
 			$collapse = 'class="collapse navbar-collapse"';

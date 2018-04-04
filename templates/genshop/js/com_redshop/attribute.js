@@ -1528,7 +1528,10 @@ function displayAdditionalImage(product_id, accessory_id, relatedprd_id, selecte
             }
 
             document.getElementById('main_image' + product_id).src = arrResponse[4];
-            document.getElementsByClassName('product_more_videos')[0].innerHTML = arrResponse[16];
+
+            if (document.getElementById('product_more_videos') && arrResponse[16] != "") {
+                document.getElementsByClassName('product_more_videos')[0].innerHTML = arrResponse[16];
+            }
 
             if (document.getElementById('additional_images' + product_id) && arrResponse[1] != "") {
                 document.getElementById('additional_images' + product_id).innerHTML = arrResponse[1];

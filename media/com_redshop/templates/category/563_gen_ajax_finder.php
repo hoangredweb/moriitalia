@@ -249,15 +249,25 @@
 				$('.pagination ul li:first-child').addClass("pagination-start");
 				$('.pagination ul li:first-child').next('li').addClass("pagination-prev");
 			}
-			
-			//$("#orderBy").select2({ width: '200px' });
-			
-		/*	setTimeout(function() {
-			    $("#orderBy").select2('destroy'); 
-			    $("#orderBy").select2({ containerCss : {"display":"block", "width": "200px"}, width: '200px' });
-			}, 500);*/
-			/*
-			$("#orderBy").select2({ dropdownAutoWidth : true });*/
+
+            $('.product_more_images .redhoverImagebox').addClass('owl-carousel owl-theme');
+
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                margin: 5,
+                nav:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:1
+                    },
+                    1000:{
+                        items:3
+                    }
+                }
+            })
 		});
 	</script>
 
@@ -277,6 +287,10 @@
 			color: #cd212a;
     		font-family: 'ProximaNova-Bold';
 		}
+        .modal .modal-dialog .modal-content .modal-body .product-left .product_more_images .redhoverImagebox.owl-carousel >div
+        {
+            display: block;
+        }
 	</style>
 
 	<div class="clearfix"></div>

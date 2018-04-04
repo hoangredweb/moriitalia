@@ -24,11 +24,11 @@ $document->addScript('plugins/system/redproductimagedetail/js/jquery.elevateZoom
 
 JText::script('COM_REDSHOP_TOTAL_PRODUCT_COUNT');
 ?>
-<div class="<?php echo $moduleClassSfx; ?>">
+<div class="<?php echo $moduleClassSfx; ?> mod_redshop_filter_wrapper">
 	<form action="<?php echo $action; ?>" method="post" name="adminForm-<?php echo $module->id;?>" id="redproductfinder-form-<?php echo $module->id;?>" class="form-validate">
 	<div class="form-horizontal">
 		<?php if ($enableManufacturer == 1 && count($manufacturers) > 0): ?>
-			<div id='manu dropdown-div'>
+			<div id='manu' class=' dropdown-div'>
 				<h3 class="title">
 					<?php echo JText::_("MOD_REDSHOP_FILTER_MANUFACTURER_LABEL"); ?>
 					<span class="dropdown show"></span>
@@ -127,11 +127,11 @@ JText::script('COM_REDSHOP_TOTAL_PRODUCT_COUNT');
 			<div id="slider-range"></div>
 			<div id="filter-price">
 				<div id="amount-min">
-					<div><?php echo JText::_('TEXT_CURRENCY_CODE')?></div>
+					<div><?php echo Redshop::getConfig()->get('REDCURRENCY_SYMBOL') ?></div>
 					<input type="text" pattern="^\d*(\.\d{2}$)?" class="span12" name="redform[filterprice][min]" value="<?php echo $rangeMin; ?>" min="0" max="<?php echo $rangeMin; ?>" required/>
 				</div>
 				<div id="amount-max">
-					<div><?php echo JText::_('TEXT_CURRENCY_CODE')?></div>
+					<div><?php echo Redshop::getConfig()->get('REDCURRENCY_SYMBOL') ?></div>
 					<input type="text" pattern="^\d*(\.\d{2}$)?" class="span12" name="redform[filterprice][max]" value="<?php echo $rangeMax; ?>" min="0" max="<?php echo $rangeMax; ?>" required/>
 				</div>
 			</div>
@@ -152,7 +152,9 @@ JText::script('COM_REDSHOP_TOTAL_PRODUCT_COUNT');
 	<input type="hidden" name="redform[keyword]" value="<?php echo $keyword;?>" />
 	<input type="hidden" name="check_list" value="" >
 	<input type="hidden" name="order_by" value="" >
-	<input type="hidden" name="redform[product_on_sale]" value="<?php echo $productOnSale; ?>" >
+		<?php if (null !== $productOnSale): ?>
+            <input type="hidden" name="redform[product_on_sale]" value="<?php echo (int) $productOnSale ?>" />
+		<?php endif; ?>
 	<input type="hidden" name="redform[template_id]" value="<?php echo $template; ?>" />
 	<input type="hidden" name="redform[root_category]" value="<?php echo $rootCategory; ?>" />
 	<input type="hidden" name="redform[category_for_sale]" value="<?php echo $categoryForSale; ?>" />
@@ -183,7 +185,7 @@ JText::script('COM_REDSHOP_TOTAL_PRODUCT_COUNT');
 			,change: function(event, ui){
 				if (callback && typeof(callback) === "function") {
 					jQuery('input[name="limitstart"]').val(0);
-					//jQuery('input[name="limit"]').val(6);
+					jQuery('input[name="limit"]').val(6);
 					callback();
 				}
 			}
@@ -327,7 +329,7 @@ JText::script('COM_REDSHOP_TOTAL_PRODUCT_COUNT');
 	function submitform (argument) {
 		jQuery('#redproductfinder-form-<?php echo $module->id;?> input[type="checkbox"], select').change(function(event) {
 			jQuery('input[name="limitstart"]').val(0);
-			//jQuery('input[name="limit"]').val(6);
+			jQuery('input[name="limit"]').val(6);
             submitpriceform("firstload");
 		});
 	}
@@ -399,7 +401,6 @@ JText::script('COM_REDSHOP_TOTAL_PRODUCT_COUNT');
 				jQuery('[id*="quick-view-"]').each(function(index, el) {
 					jQuery(this).find('.view-full .hidden').next('a').attr('href', jQuery(this).find('.view-full .hidden a').attr('href'));
 				});
-				
 			},
 			complete: function() {
 				jQuery('#wait').css('display', 'none');
@@ -525,8 +526,8 @@ JText::script('COM_REDSHOP_TOTAL_PRODUCT_COUNT');
 			range_slide(<?php echo $rangeMin;?>, <?php echo $rangeMax;?>, parseFloat(min), parseFloat(max), submitpriceform );
 		})
 	});
-	/*window.onload = function() {
+	window.onload = function() {
 		submitpriceform("firstload");
 	};
-*/
+
 </script>

@@ -291,7 +291,7 @@ echo eval("?>" . $template_desc . "<?php ");
 			jQuery.each(arr, function(i, value){
 				new_arr[i] = [];
 				jQuery.each(value, function(k, val){
-					if (val.manufacturer_name.toLowerCase().indexOf(keyword.toLowerCase()) > -1){
+					if (val.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1){
 						var object = {};
 						object[i] = val;
 						new_arr[i].push(object);
@@ -307,7 +307,7 @@ echo eval("?>" . $template_desc . "<?php ");
 					html += '<div class="row-manufacture col-sm-3 col-xs-12">'+'<h2>'+key+'</h2>'+'<ul>';
 					jQuery.each(value, function(k, val){
 						jQuery.each(val, function(i, data){
-							html += '<li><a href="'+data.manufacturer_url+'"><b>' + data.manufacturer_name + '</b></a></li>';
+							html += '<li><a href="'+data.manufacturer_url+'"><b>' + data.name + '</b></a></li>';
 						});		
 					});
 					html += '</ul></div>';	

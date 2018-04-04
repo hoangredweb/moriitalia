@@ -4820,10 +4820,10 @@ class RedshopModelProduct_Detail extends RedshopModel
 	{
 		$input    = JFactory::getApplication()->input;
 		$dropzone = $input->post->get('dropzone', array(), 'array');
-		$dropzone = $dropzone[$mediaField] ?? null;
+		$dropzone = ($dropzone[$mediaField]) ? $dropzone[$mediaField] : null;
 
 		$dropzoneAlternateText = $input->post->get('dropzone_alternate_text', array(), '');
-		$dropzoneAlternateText = $dropzoneAlternateText[$mediaField] ?? null;
+		$dropzoneAlternateText = ($dropzoneAlternateText[$mediaField]) ? $dropzoneAlternateText[$mediaField] : null;
 
 		if (null === $dropzone || empty($dropzone))
 		{
@@ -4872,7 +4872,7 @@ class RedshopModelProduct_Detail extends RedshopModel
 				continue;
 			}
 
-			$alternateText = $dropzoneAlternateText[$key] ?? $row->product_name;
+			$alternateText = ($dropzoneAlternateText[$key]) ? $dropzoneAlternateText[$key] : $row->product_name;
 
 			$mediaTable->set('media_alternate_text', $alternateText);
 			$mediaTable->set('media_type', 'images');

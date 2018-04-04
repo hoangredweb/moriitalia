@@ -203,7 +203,6 @@ else
 
 				<?php echo RedshopHelperBilling::render($post, $is_company, $this->lists, Redshop::getConfig()->get('OPTIONAL_SHIPPING_ADDRESS'), 1, Redshop::getConfig()->get('CREATE_ACCOUNT_CHECKBOX')); ?>
             </fieldset>
-
 			<?php if (Redshop::getConfig()->get('SHIPPING_METHOD_ENABLE')) : ?>
 
 				<?php

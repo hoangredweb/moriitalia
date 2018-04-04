@@ -397,6 +397,56 @@ jQuery(document).ready(function($){
 		    	$( "#nav-menu" ).slideUp("slow");
 		  	}
 		});
+		$( '#header #top_primary .searchbox .icon_search' ).click(function () {
+			console.log('123');
+	  		if ( $( "#header #top_primary .searchbox form" ).is( ":hidden" ) ) {
+			    $( "#header #top_primary .searchbox form" ).slideDown( "slow" );
+		  	} else {
+		    	$( "#header #top_primary .searchbox form" ).slideUp("slow");
+		  	}
+		});
+
+	$( '#footer .module.colum-shop >h3' ).click(function () {
+  		if ( $( "#footer .module.colum-shop ul.menu" ).is( ":hidden" ) ) {
+  			$( '#footer .module.colum-shop >h3' ).addClass('open');
+		    $( "#footer .module.colum-shop ul.menu" ).slideDown( "slow" );
+	  	} else {
+	    	$( "#footer .module.colum-shop ul.menu" ).slideUp("slow");
+	    	$( '#footer .module.colum-shop >h3' ).removeClass('open');
+	  	}
+	});
+
+	$( '#footer .module.colum-company >h3' ).click(function () {
+  		if ( $( "#footer .module.colum-company ul.menu" ).is( ":hidden" ) ) {
+  			$( '#footer .module.colum-company >h3' ).addClass('open');
+		    $( "#footer .module.colum-company ul.menu" ).slideDown( "slow" );
+	  	} else {
+	    	$( "#footer .module.colum-company ul.menu" ).slideUp("slow");
+	    	$( '#footer .module.colum-company >h3' ).removeClass('open');
+	  	}
+	});
+
+	$( '#footer .module.my-account >h3' ).click(function () {
+  		if ( $( "#footer .module.my-account ul.menu" ).is( ":hidden" ) ) {
+  			$( '#footer .module.my-account >h3' ).addClass('open');
+		    $( "#footer .module.my-account ul.menu" ).slideDown( "slow" );
+	  	} else {
+	    	$( "#footer .module.my-account ul.menu" ).slideUp("slow");
+	    	$( '#footer .module.my-account >h3' ).removeClass('open');
+	  	}
+	});
+
+	$( '#footer .module.colum-support >h3' ).click(function () {
+  		if ( $( "#footer .module.colum-support ul.menu" ).is( ":hidden" ) ) {
+  			$( '#footer .module.colum-support >h3' ).addClass('open');
+		    $( "#footer .module.colum-support ul.menu" ).slideDown( "slow" );
+	  	} else {
+	    	$( "#footer .module.colum-support ul.menu" ).slideUp("slow");
+	    	$( '#footer .module.colum-support >h3' ).removeClass('open');
+	  	}
+	});
+
+		
 	}
 
 	/*menu responsive*/

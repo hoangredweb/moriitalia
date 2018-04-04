@@ -1,6 +1,6 @@
 <?php
 /**
- * @package     Wright
+ * @package     Wright 
  * @subpackage  Adapters
  *
  * @copyright   Copyright (C) 2005 - 2015 redCOMPONENT.com.  All rights reserved.
@@ -227,6 +227,16 @@ abstract class HtmlAdapterAbstract
 		}
 
 		$class .= " rev_" . $wright->revision;
+		$input = JFactory::getApplication()->input;
+		$view = $input->get('view'); 
+		$layout = $input->get('layout'); 
+		$class .= " view_" . $view;
+		$class .= " layout_" . $layout; 
+
+		$menu = $menu->getActive(); 
+		if (is_object($menu)){
+			$class .= $menu->params->get('pageclass_sfx');	
+		}
 
 		return '<body class="' . $class . '"' . ($style != '' ? ' style="' . $style . '"' : '') . $data . '>';
 	}

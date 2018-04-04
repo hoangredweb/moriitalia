@@ -48,8 +48,8 @@ $document->addScriptDeclaration($js);
 $option = JRequest::getVar('option');
 $view   = JRequest::getVar('view');
 $layout = JRequest::getVar('layout');
-// if ( ($option == 'com_redshop' && $view == 'product') || ($option == 'com_redshop' && $view == 'manufacturers' && $layout == null) )
-// {
-// 	$doc = Wright::getInstance();
-// 	$doc->document->params->set('columns', 'sidebar1:0;main:12;sidebar2:0');
-// }
+if ( ($option == 'com_redshop' && $view == 'product') || ($option == 'com_redshop' && $view == 'manufacturers' && $layout == null) )
+{
+	$doc = Wright::getInstance();
+	$doc->document->params->set('columns', 'sidebar1:0;main:12;sidebar2:0');
+}

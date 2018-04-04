@@ -56,24 +56,58 @@ die;*/
 <script>
 jQuery(document).ready(function($) {
 	$('.flex-control-nav a').on('mousedown', function(e) {
-		var data_index = $(this).text();
+		var data_index = parseInt($(this).text());
+		var count_index = parseInt($('.flex-control-nav a').size());
 
 		$(".slide-category nav a").removeClass('slide-selected');
 		$(".slide-category nav a[data-index='" + data_index +"']").addClass('slide-selected');
 
+		$(".slide-category nav a").removeClass('slide-selected');
+		$(".slide-category nav a").removeClass('slide-beside');
+		$(".slide-category nav a").removeAttr('id');
+		$(".slide-category nav a[data-index='" + data_index + "']").addClass('slide-selected block-shop2');
+
+		$(".slide-category nav a[data-index='" + data_index + "']").attr('id', "my2");
+
+		if (data_index > 1 && data_index < count_index)
+		{
+			var tmp1 = data_index - 1;
+			var tmp2 = data_index + 1;
+		}
+		else if (data_index == 1)
+		{
+			var tmp1 = count_index;
+			var tmp2 = data_index + 1;
+		
+		}
+		else if (data_index == count_index)
+		{
+			var tmp1 = data_index - 1;
+			var tmp2 = 1;
+		}
+
+		$(".slide-category nav a[data-index='" + tmp1 + "']").addClass('slide-beside');
+		$(".slide-category nav a[data-index='" + tmp2 + "']").addClass('slide-beside');
+
+		$(".slide-category nav a[data-index='" + tmp1 + "']").attr('id', "my1");
+		$(".slide-category nav a[data-index='" + tmp2 + "']").attr('id', "my3");
+
+		clearTimeout(myVar);
+		
 		e.preventDefault();
 		return false;
 	})
 
 	$('.slide-category nav a').on('click', function(e) {
 		var data_index = $(this).data('index');
-		console.log(data_index);
+		
 		$(".flex-control-nav a:contains(" + data_index + ")").trigger('click');
 		$(".flex-control-nav a:contains(" + data_index + ")").trigger('mousedown');	
 		e.preventDefault();
 		return false;
 	})
 
+	var myVar;
 	setSlider();
 	// Init
 	function setSlider() {
@@ -110,7 +144,7 @@ jQuery(document).ready(function($) {
 		$(".slide-category nav a[data-index='" + tmp1 + "']").attr('id', "my1");
 		$(".slide-category nav a[data-index='" + tmp2 + "']").attr('id', "my3");
 
-	    setTimeout(setSlider, 1000);
+	   	myVar =  setTimeout(setSlider, 1000);
 	}
 })
 </script>

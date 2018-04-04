@@ -12,7 +12,10 @@ defined('_JEXEC') or die;
 extract($displayData);
 ?>
 
-<img src="<?php echo REDSHOP_ADMIN_IMAGES_ABSPATH . 'star_rating/' . $avgRating . '.gif' ?>" />
+<!--<img src="<?php echo REDSHOP_ADMIN_IMAGES_ABSPATH . 'star_rating/' . $avgRating . '.gif' ?>" /> -->
 
 <?php
-echo "&nbsp;".$countRating . "  " . JText::_('COM_REDSHOP_AVG_RATINGS_2');
+echo JText::_('COM_REDSHOP_AVG_RATINGS_2').'('.$countRating.')';
+
+?>
+

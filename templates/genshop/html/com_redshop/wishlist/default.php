@@ -12,7 +12,7 @@ JHtml::_('behavior.framework');
 JHtml::_('behavior.modal');
 
 $url = JURI::base();
-$wishlist = $this->wishlist;
+$wishlist = $this->wishlists;
 $product_id = JRequest::getInt('product_id');
 $flage = ($product_id && count($wishlist) > 0) ? true : false;
 $Itemid = JRequest::getInt('Itemid', 903);

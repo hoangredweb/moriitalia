@@ -52,7 +52,7 @@ defined('_JEXEC') or die('Restricted access');
 
 				    resolution: 'standard_resolution',
 				    template: '<div class=" col-md-3 col-sm-6 col-xs-12"><div class="image_instagram"><div class="overflay"></div><a href="{{link}}" target="_blank"><img src="{{image}}" /></a></div></div>',
-				    limit: 4
+				    limit: 12
 			    });
 			    jQuery(window).on('load',function(){
 			    	feed.run();
@@ -199,13 +199,14 @@ defined('_JEXEC') or die('Restricted access');
 							</div> 
 							<?php endif; ?>
 
-							<?php if ($this->countModules('menu-phone')) : ?>
+							
+			                <w:logo name="top" /> 
+			                <?php if ($this->countModules('menu-phone')) : ?>
 								<div class="hidden-lg hidden-md hidden-sm">
 									<!-- menu -->
 									<w:nav name="menu-phone" />
 								</div>
 							<?php endif; ?>
-			                <w:logo name="top" /> 
 						</div>
 					</header>
 					<?php if ($this->countModules('toolbar')) : ?>
@@ -285,14 +286,7 @@ defined('_JEXEC') or die('Restricted access');
 					<h1 class="container"><span class="inner"></span></h1>
 				</div>
 				<?php endif;?>
-					<?php if ($this->countModules('grid-top4')) : ?>
-						<!-- grid-top4 -->
-						<div id="grid-top4" class="relative clearfix">
-							<div class="container">
-							<w:module type="row" name="grid-top4" chrome="wrightflexgrid" />
-							</div>
-						</div>
-					<?php endif; ?>
+					
 					<?php if ($this->countModules('grid-top-slider')) : ?>
 						<!-- grid-top3 -->
 						<div id="grid-top-slider" class="clearfix">
@@ -369,13 +363,18 @@ defined('_JEXEC') or die('Restricted access');
 							</div>
 						</div>
 					<?php endif; ?>
+					<?php if ($this->countModules('grid-top4')) : ?>
+						<!-- grid-top4 -->
+						<div id="grid-top4" class="relative clearfix">
+							<div class="container">
+							<w:module type="row" name="grid-top4" chrome="wrightflexgrid" />
+							</div>
+						</div>
+					<?php endif; ?>
 					<?php if ($this->countModules('instagram')) : ?>
 						<div id="instagram-main">
-							<div class="container">
-								<div class="row">
-									<w:module type="none" name="instagram" chrome="xhtml" />
-								</div>
-							</div>
+							<w:module type="none" name="instagram" chrome="xhtml" />
+								
 							
 						</div>
 					<?php endif; ?>
@@ -383,9 +382,8 @@ defined('_JEXEC') or die('Restricted access');
 					<?php if ($this->countModules('grid-bottom')) : ?>
 						<!-- grid-bottom -->
 						<div id="grid-bottom" class="relative clearfix">
-							<div class="container">
-							<w:module type="row" name="grid-bottom" chrome="wrightflexgrid" />
-							</div>
+							<w:module type="none" name="grid-bottom" chrome="wrightflexgrid" />
+							
 						</div>
 					<?php endif; ?>
 
@@ -454,7 +452,7 @@ defined('_JEXEC') or die('Restricted access');
 								</div>
 							</div>
 						<?php endif; ?>
-						<div class="container">
+						<div class="container inner_footer">
 							<a href="#" class="back-to-top"><i class="fa fa-chevron-up fa-5" aria-hidden="true"></i></a>
 							<?php if ($this->countModules('footer')) : ?>
 								<w:module type="row" name="footer" chrome="wrightflexgrid" />

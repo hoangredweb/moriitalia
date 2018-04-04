@@ -1488,7 +1488,7 @@ if (($user->id && Redshop::getConfig()->get('RATING_REVIEW_LOGIN_REQUIRED')) || 
 }
 else
 {
-	$reviewform = JText::_('COM_REDSHOP_YOU_NEED_TO_LOGIN_TO_POST_A_REVIEW');
+	$reviewform = JText::_('COM_REDSHOP_YOU_NEED_TO_LOGIN_TO_POST_A_REVIEW_LINK');
 
 	if (strstr($template_desc, "{form_rating_without_lightbox}"))
 	{

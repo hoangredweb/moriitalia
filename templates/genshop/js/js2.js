@@ -43,6 +43,15 @@ jQuery(document).ready(function($){
 			}
 	});
 
+	
+
+	$('.wrapper-quickview .oldprice-labletag ').each(function(index, el)
+	{
+		if ($(this).find('.product_price_val').text().length > 0){			
+				$(this).parent().find('.product_price_discount').addClass('red');
+			}
+	});
+
 
 	$('.category_box_inside .wishlist').click(function() {
 		window.location = jQuery(this).find('a').attr("href");
@@ -51,14 +60,16 @@ jQuery(document).ready(function($){
 
 	$(".size-guide").prependTo($(".attributes_box.size")).insertBefore('.attributes_box.size .attribute_wrapper');
 
+
+	
+
 	var showChar = 174;
 	var ellipsestext = "...";
 	var moretext = "See More";
 	var lesstext = " ";
 
-	$('.content_s_desc p').each(function() {
+	$('.wrapper-quickview .product_desc .product_desc_full p, .content_s_desc p').each(function() {
 		var content = $(this).html();
-		console.log(content);
 
 		if(content.length > showChar) {
 			var c = content.substr(0, showChar);
@@ -85,4 +96,4 @@ jQuery(document).ready(function($){
 	$('.redSHOPSiteViewProduct .product-cart-link span.pdaddtocart_link, .wrapper-quickview .cart-link span.pdaddtocart_link ').text('Add to Bag');
 	$('.quickview-quickadd .cart-link span.pdaddtocart_link').text('+ Quick Add');
 
-});
+}); 

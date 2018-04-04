@@ -125,3 +125,6 @@
 2018-03-28T15:18:11+00:00	INFO ::1	controller	Releasing edit ID com_redshop.edit.category.439 Array (     [0] => 15551     [1] => 15550 ) 
 2018-03-28T16:50:29+00:00	INFO ::1	controller	Holding edit ID com_menus.edit.item.138 Array (     [0] => 138 ) 
 2018-03-28T16:50:56+00:00	INFO ::1	controller	Releasing edit ID com_menus.edit.item.138 Array ( ) 
+2018-03-30T04:31:51+00:00	INFO ::1	controller	Holding edit ID com_modules.edit.module.219 Array (     [0] => 219 ) 
+2018-03-30T04:31:52+00:00	INFO ::1	controller	Checking edit ID com_modules.edit.module.219: 1 Array (     [0] => 219 ) 
+2018-03-30T07:06:16+00:00	INFO ::1	controller	Releasing edit ID com_modules.edit.module.219 Array ( ) 

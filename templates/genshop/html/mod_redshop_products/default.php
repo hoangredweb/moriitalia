@@ -57,6 +57,7 @@ $moduleId = "mod_" . $module->id;
 
 echo "<div class=\"mod_redshop_products_wrapper " . $moduleId . "\" >";
 
+echo "<div class=\"inner_mod_redshop_products_wrapper \" >";
 
 echo "<div class=\"slide_wrapper\" id=\"mod_products_" . $module->id . "\">";
 
@@ -278,9 +279,7 @@ for ($i = 0; $i < count($rows); $i++)
 				$productDiscountPrice = $producthelper->getProductFormattedPrice($productPrice);
 			}
 
-
-			$displyText = "<div class=\"mod_product_price_wrapper\"><div class=\"inner row\"><div class=\"mod_redshop_products_title\"><a href=\"" . $link . "\" title=\"\">" . JHTML::_('string.truncate', $row->product_name, 37) . "</a></div><div class=\"mod_redshop_products_price col-xs-12 align-left\">" . $productDiscountPrice . "</div></div><div class=\"wishlist\">" . $producthelper->replaceWishlistButton($row->product_id, '{wishlist_link}') . "</div><div class=\"mod_redshop_products_addtocart " . $outofstock . "\">" . $addtocart . $hiddenUserField . "</div></div>";
-
+			$displyText = "<div class=\"mod_product_price_wrapper\"><div class=\"inner row\"><div class=\"mod_redshop_products_title\"><a href=\"" . $link . "\" title=\"\">" . JHTML::_('string.truncate', $row->product_name, 37) . "</a></div><div class=\"mod_redshop_products_price col-xs-12 align-left\">" . $productDiscountPrice . "</div></div><div class=\"wishlist\">" . $producthelper->replaceWishlistButton($row->product_id, '{wishlist_link}') . "</div><div class=\"mod_redshop_products_addtocart " . $outofstock . "\">" . (isset($addtocart) ?? '') . (isset($hiddenUserField) ?? '') . "</div></div>";
 
 			if ($row->product_on_sale && $productPriceDiscount > 0)
 			{
@@ -305,21 +304,20 @@ for ($i = 0; $i < count($rows); $i++)
 						echo "<p><span id=\"display_product_saving_price_percentage\">" . $percentPrice . "</span><span class=\"percent\">%</span></p>";
 						echo "</div>";
 						echo "</div>";
-						echo "<div class=\"mod_redshop_products_title\"><a href=\"" . $link . "\" title=\"\">" . JHTML::_('string.truncate', $row->product_name, 37) . "</a></div>";
-						echo "<div id=\"mod_redoldprice\" class=\"mod_redoldprice col-sm-6 col-xs-6\"><span>" . $producthelper->getProductFormattedPrice($productOldPrice) . "</span></div>";
-						$productPrice = $productPriceDiscount;
-						echo "<div class=\"mod_redshop_products_price col-sm-6 col-xs-6\">" . $producthelper->getProductFormattedPrice($productPriceDiscount) . "</div>";
+						echo "<div class=\"mod_redshop_products_title\"><a href=\"" . $link . "\" title=\"\">" . JHTML::_('string.truncate', $row->product_name, 37) . "</a></div>";												$productPrice = $productPriceDiscount;
+						echo "<div class=\"mod_redshop_products_price \">" . $producthelper->getProductFormattedPrice($productPriceDiscount) . "</div>";
+						echo "<div id=\"mod_redoldprice\" class=\"mod_redoldprice \"><span>" . $producthelper->getProductFormattedPrice($productOldPrice) . "</span></div>";
 					}
 					else
 					{
 						$productPrice = $productPriceDiscount;
-						echo "<div class=\"mod_redshop_products_price col-sm-6\">" . $producthelper->getProductFormattedPrice($productPrice) . "</div>";
+						echo "<div class=\"mod_redshop_products_price \">" . $producthelper->getProductFormattedPrice($productPrice) . "</div>";
 					}
 				}
 				echo "</div>";
 
 				echo "<div class=\"wishlist\">" . $producthelper->replaceWishlistButton($row->product_id, '{wishlist_link}') . "</div>";
-				echo "<div class=\"mod_redshop_products_addtocart " . $outofstock . "\">" . $addtocart . $hiddenUserField . "</div>";
+				echo "<div class=\"mod_redshop_products_addtocart " . $outofstock . "\">" . (isset($addtocart) ?? '') . (isset($hiddenUserField) ?? '') . "</div>";
 
 				echo "</div>";
 			}
@@ -669,6 +667,7 @@ for ($i = 0; $i < count($rows); $i++)
 
 
 }
+echo "</div>";
 echo "</div>";
 echo "</div>";
 ?>

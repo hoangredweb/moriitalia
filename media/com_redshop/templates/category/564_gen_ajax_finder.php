@@ -12,7 +12,6 @@
     <div class="category_box_wrapper row grid">
         {product_loop_start}
         <div class="cate_redshop_products_wrapper col-sm-4 col-xs-6">
-
             <div class="category_box_inside">
                 <div class="product-box-info">
                     <div class="product-box-topinfo">
@@ -49,7 +48,6 @@
         <!-- Modal -->
         <div id="quick-view-{product_id}" class="modal fade wrapper-quickview" role="dialog">
             <div class="modal-dialog">
-
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -84,9 +82,10 @@
                                                 </div>
                                             </div>
                                             {product_rating_summary}
-
                                             {attribute_template:attributes}
-
+                                            <div class="size-guide">
+									            <a href="#">Size guide</a>
+								          	</div>
                                         </div>
                                     </div>
                                 </div>
@@ -241,8 +240,7 @@
                     $('.zoomContainer').remove();
                 })
 
-                if ($('.pagination').length)
-                {
+                if ($('.pagination').length) {
                     $('.pagination ul li:last-child').addClass("pagination-next");
                     $('.pagination ul li:last-child').prev('li').addClass("pagination-end");
 
@@ -250,17 +248,129 @@
                     $('.pagination ul li:first-child').next('li').addClass("pagination-prev");
                 }
 
-                //$("#orderBy").select2({ width: '200px' });
+                setTimeout(function() {
+                    $("#orderBy").select2('destroy');
+                    $("#orderBy").select2({ dropdownAutoWidth : true });
+                }, 500);
 
-                /*	setTimeout(function() {
-						$("#orderBy").select2('destroy');
-						$("#orderBy").select2({ containerCss : {"display":"block", "width": "200px"}, width: '200px' });
-					}, 500);*/
-                /*
-				$("#orderBy").select2({ dropdownAutoWidth : true });*/
+                $('.product_more_images .redhoverImagebox').wrapInner("<div class='swiper-container'></div>");
+                $('.product_more_images .redhoverImagebox .swiper-container').wrapInner("<div class='swiper-wrapper'></div>");
+                $('.additional_image').addClass('swiper-slide');
+                $('.swiper-container').append('<div class="swiper-button-next swiper-button-black"></div><div class="swiper-button-prev swiper-button-black"></div>');
+
+                var swiperInstances = {};
+                $(".swiper-container").each(function(index, element){
+                    var $this = $(this);
+                    $this.addClass("instance-" + index);
+                    $this.attr("data-index", index);
+                    $this.find(".swiper-button-prev").addClass("btn-prev-" + index);
+                    $this.find(".swiper-button-next").addClass("btn-next-" + index);
+                    swiperInstances[index] = new Swiper(".instance-" + index, {
+                        slidesPerView: 3,
+                        spaceBetween: 10,
+                        nextButton: ".btn-next-" + index,
+                        prevButton: ".btn-prev-" + index,
+                        onProgress: function(e){
+                            if (e.isBeginning){
+                                $('.btn-prev-'+index).hide();
+                                $('.btn-next-'+index).show();
+                            } else if(e.isEnd){
+                                $('.btn-next-'+index).hide();
+                                $('.btn-prev-'+index).show();
+                            } else {
+                                $('.btn-next-'+index).show();
+                                $('.btn-prev-'+index).show();
+                            }
+                        }
+                    });
+                });
+
+                $(document).on('show.bs.modal','div[id*=quick-view]', function () {
+                    var index = $(this).find("div[class*=instance-]").attr('data-index');
+
+                    setTimeout(function() {
+                        swiperInstances[index].update();
+                    }, 500);
+                })
+
+                $('.attribute_wrapper input[type="radio"]').removeAttr('onclick');
+
+                $('.attributes_box input[type="radio"]').on('change', function() {
+                    $(this).parents('.attribute_wrapper').find('input[type="radio"]').removeClass('radio-checked');
+
+                    if ($(this).is(':checked')) {
+                        $(this).next().addClass('radio-checked');
+                    }
+                });
             });
         </script>
+        <script type="text/javascript">
+	jQuery(document).ready(function($){
+		if ($('.old_price_and_stock').find('.product_old_price').text().length > 0){
 
+			$('#product_price').find('.product_r_price').addClass('red');
+		}
+
+		$('.oldprice-and-percentage').each(function(index, el)
+		{
+			if ($(this).find('.category_product_oldprice').text().length > 0){			
+					$(this).parent().find('.product_real').addClass('red');
+				}
+		});
+
+		
+
+		$('.wrapper-quickview .oldprice-labletag ').each(function(index, el)
+		{
+			if ($(this).find('.product_price_val').text().length > 0){			
+					$(this).parent().find('.product_price_discount').addClass('red');
+				}
+		});
+		$('.category_box_inside .wishlist').click(function() {
+			window.location = jQuery(this).find('a').attr("href");
+			return false;
+		});
+
+
+		$(".size-guide").prependTo($(".attributes_box.size")).insertBefore('.attributes_box.size .attribute_wrapper');
+
+
+		
+
+		var showChar = 174;
+		var ellipsestext = "...";
+		var moretext = "See More";
+		var lesstext = " ";
+
+		$('.wrapper-quickview .product_desc .product_desc_full p, .content_s_desc p').each(function() {
+			var content = $(this).html();
+
+			if(content.length > showChar) {
+				var c = content.substr(0, showChar);
+				var h = content.substr(showChar, content.length - showChar);
+				var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+
+				$(this).html(html);
+			}
+		});
+
+		$(".morelink").click(function(){
+			if($(this).hasClass("less")) {
+				$(this).removeClass("less");
+				$(this).html(moretext);
+			} else {
+				$(this).addClass("less");
+				$(this).html(lesstext);
+			}
+				$(this).parent().prev().toggle();
+				$(this).prev().toggle();
+			return false;
+		});
+
+		$('.redSHOPSiteViewProduct .product-cart-link span.pdaddtocart_link, .wrapper-quickview .cart-link span.pdaddtocart_link ').text('Add to Bag');
+		$('.quickview-quickadd .cart-link span.pdaddtocart_link').text('+ Quick Add');
+	});
+</script>
         <style type="text/css">
             #main-content .modal:not(a) .product .product-left .product_image img{
                 width: 310px;
@@ -276,6 +386,9 @@
             .category_product_list .pagination .pagenav span{
                 color: #cd212a;
                 font-family: 'ProximaNova-Bold';
+            }
+            .product_more_images {
+                width: 100%;
             }
         </style>
 

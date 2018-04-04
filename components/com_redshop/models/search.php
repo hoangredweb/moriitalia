@@ -1297,7 +1297,7 @@ class RedshopModelSearch extends RedshopModel
 			->where($db->qn('p.expired') . ' = 0')
 			->group($db->qn('p.product_id'));
 
-		$productOnSale   = !empty($pk['product_on_sale']) ? $pk['product_on_sale'] : 0;
+		$productOnSale   = isset($pk['product_on_sale']) ? (int) $pk['product_on_sale'] : null;
 		$cid             = !empty($pk['cid']) ? $pk['cid'] : 0;
 		$mid             = !empty($pk['mid']) ? $pk['mid'] : 0;
 		$rootCategory    = !empty($pk['root_category']) ? $pk['root_category'] : 0;
@@ -1450,9 +1450,9 @@ class RedshopModelSearch extends RedshopModel
 			$query->where($db->qn("p.manufacturer_id") . "=" . $db->q((int) $mid));
 		}
 
-		if (!empty($productOnSale))
+		if (null !== $productOnSale)
 		{
-			$query->where($db->qn('p.product_on_sale') . ' = ' . $db->q((int) $productOnSale));
+			$query->where($db->qn('p.product_on_sale') . ' = ' . (int) $productOnSale);
 		}
 
 		if ($orderBy)
@@ -1479,12 +1479,12 @@ class RedshopModelSearch extends RedshopModel
 		$limit      = $this->getState('list.limit');
 		$templateId = $this->getState('template_id');
 
-		$templateArr  = RedshopHelperTemplate::getTemplate("category", $templateId);
+		$templateArr  = RedshopHelperTemplate::getTemplate('category', $templateId);
 		$templateDesc = $templateArr[0]->template_desc;
 
 		if ($templateDesc)
 		{
-			if (strstr($templateDesc, "{pagination}"))
+			if (strpos($templateDesc, '{pagination}') !== false)
 			{
 				$db->setQuery($query, $start, $limit);
 			}
@@ -1497,6 +1497,11 @@ class RedshopModelSearch extends RedshopModel
 		{
 			$db->setQuery($query);
 		}
+
+		/*echo "<pre>";
+        print_r($query->dump());
+		echo "</pre>";
+		die;*/
 
 		return $db->loadColumn();
 	}

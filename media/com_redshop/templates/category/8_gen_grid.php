@@ -92,33 +92,34 @@
 											<div class="product_more_images">{more_images}</div>
 										</div>									
 									</div>
-									<div class="col-sm-7 col-xs-12 product-right">
+									<div class="col-sm-6 col-xs-12 product-right">
 										<div class="redSHOP_product_box clearfix">
 											<div class="redSHOP_product_box_right">
 												<div class="redSHOP_product_detail_box">
 													<!--<div class="brand">{manufacturer_image}</div>-->
 													<div class="brand">
-														{manufacturer_link}
+														 <h3>{manufacturer_name}</h3>
+														<div class="about_manufacture">{manufacturer_product_link}</div>
 													</div>
 													<div class="product_title clearfix">
 														<h3>{product_name}</h3>
 													</div>
 													<div id="product_price">
-														<div class="product_price_discount">{product_price}</div>
+														<div class="product_real">{product_price}</div>
 														<div class="oldprice-labletag">
 															<span class="product_price_val">{product_old_price}</span>	
 															<span class="in-stock">{producttag:rs_limit_item}</span>
 														</div>																									
 													</div>
-													{product_rating_summary}
 
 													{attribute_template:attributes}
-													
+													<div class="size-guide">
+											            <a href="#">Size guide</a>
+										          	</div>
 												</div>
 											</div>
 										</div>																	
 										<div class="product_desc">
-											<h3>{description}</h3>
 											<div class="product_desc_full">{product_s_desc}</div>
 										</div>
 										
@@ -137,21 +138,10 @@
 					</div>
 				</div>
 	{product_loop_end}
-	<script type="text/javascript">
-	    jQuery(document).ready(function($){
-	        jQuery('input[attribute_name="Color"]').each(function(idx, el){
-	            var color_text = $(this).next('label').text().trim().toLowerCase();
-	            $(this).next('label').andSelf().wrapAll("<div class='block-radio " + color_text + "'></div>");
-	        });
-
-	        jQuery('input[attribute_name="Size"]').each(function(idx, el){
-	            $(this).next('label').andSelf().wrapAll("<div class='block-radio'></div>");
-	        });
-	    });
-	</script>
-
+	
 	<div class="pagination">{pagination}</div>
 </div>
 </div>
 
 </div>
+

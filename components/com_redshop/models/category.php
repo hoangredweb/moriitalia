@@ -341,7 +341,7 @@ class RedshopModelCategory extends RedshopModel
 		// Shopper group - choose from manufactures Start
 		$shopperGroupManufactures = RedshopHelperShopper_Group::getShopperGroupManufacturers();
 
-		if ($shopperGroupManufactures != "")
+		if ($shopperGroupManufactures !== "")
 		{
 			$shopperGroupManufactures = explode(',', $shopperGroupManufactures);
 			$shopperGroupManufactures = \Joomla\Utilities\ArrayHelper::toInteger($shopperGroupManufactures);
@@ -393,12 +393,22 @@ class RedshopModelCategory extends RedshopModel
 
 		RedshopHelperUtility::getDispatcher()->trigger('onQueryCategoryProduct', array(&$query));
 
+		if (strpos($orderBy, 'p.product_price') !== false)
+		{
+			$saleTime = $db->qn('p.discount_stratdate') . ' AND ' . $db->qn('p.discount_enddate');
+			$query->select('(CASE WHEN( ' . $db->qn('p.product_on_sale') . ' = 1 AND UNIX_TIMESTAMP() BETWEEN '
+				. $saleTime . ') THEN ' . $db->qn('p.discount_price') . ' ELSE ' . $db->qn('p.product_price') . ' END )'
+				. ' AS ' . $db->qn('product_price')
+			);
+			$query->clear('order')->order(str_replace('p.product_price', 'product_price', $orderBy));
+		}
+
 		$queryCount = clone $query;
 		$queryCount->clear('select')->clear('group')
 			->select('COUNT(DISTINCT(p.product_id))');
 
 		// First steep get product ids
-		if ($minmax != 0 || $isSlider)
+		if ($minmax !== 0 || $isSlider)
 		{
 			$db->setQuery($query);
 		}
@@ -421,10 +431,11 @@ class RedshopModelCategory extends RedshopModel
 			$query = RedshopHelperProduct::getMainProductQuery($query, $user->id)
 				->select(
 					array(
-						'pc.ordering', 'c.*', 'm.*',
+						'pc.ordering', 'c.*',
 						'CONCAT_WS(' . $db->q('.') . ', p.product_id, ' . (int) $user->id . ') AS concat_id'
 					)
 				)
+				->select($db->qn('m.name', 'manufacturer_name'))
 				->leftJoin('#__redshop_category AS c ON c.id = pc.category_id')
 				->leftJoin('#__redshop_manufacturer AS m ON m.id = p.manufacturer_id')
 				->where('pc.category_id IN (' . implode(',', $categories) . ')');

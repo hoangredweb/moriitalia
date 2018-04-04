@@ -30,6 +30,7 @@ if ($modsearchitemid != "")
 }
 
 ?>
+<div class="icon_search hidden-lg hidden-sm hidden-md"><i class="fa fa-search"></i></div>
 <form action="<?php echo JRoute::_('index.php?option=com_redshop&view=search&Itemid=' . $Itemid); ?>" method="post"
       name="redSHOPSEARCH">
 	<div class="product_search">
