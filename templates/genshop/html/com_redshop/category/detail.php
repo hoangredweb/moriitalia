@@ -10,9 +10,9 @@
 defined('_JEXEC') or die;
 
 JHtml::_('behavior.modal');
+
 JHtml::stylesheet(Juri::base() . 'templates/genshop/css/swiper.css', false, true);
 JHtml::script(Juri::base() . 'templates/genshop/js/swiper.min.js', false, true);
-
 
 $url = JURI::base();
 
@@ -1387,7 +1387,7 @@ if ($slide)
             $('.zoomContainer').remove();
         })
 
-        $('.redhoverImagebox > div').addClass('swiper-container');
+       /* $('.redhoverImagebox > div').addClass('swiper-container');
         $('.redhoverImagebox > div.swiper-container').wrapInner("<div class='swiper-wrapper'></div>");
         $('.additional_image').addClass('swiper-slide');
         $('.swiper-container').append('<div class="swiper-button-next swiper-button-black"></div><div class="swiper-button-prev swiper-button-black"></div>');
@@ -1425,7 +1425,7 @@ if ($slide)
             setTimeout(function() {
                 swiperInstances[index].update();
             }, 500);
-        })
+        })*/
 
         $('.attribute_wrapper input[type="radio"]').removeAttr('onclick');
     });

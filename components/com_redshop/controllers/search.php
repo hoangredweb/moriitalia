@@ -164,11 +164,11 @@ class RedshopControllerSearch extends RedshopController
 		}
 
 		// Get layout HTML
-		if (empty($list))
+		/*if (empty($list))
 		{
 			echo JText::_('COM_REDSHOP_MSG_SORRY_NO_RESULT_FOUND');
 			$app->close();
-		}
+		}*/
 		
 		echo RedshopLayoutHelper::render(
 			'filter.result',

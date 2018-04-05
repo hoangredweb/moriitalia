@@ -23,6 +23,7 @@ $document = JFactory::getDocument();
 $document->addScript('plugins/system/redproductimagedetail/js/jquery.elevateZoom.min.js');
 
 JText::script('COM_REDSHOP_TOTAL_PRODUCT_COUNT');
+JText::script('COM_REDSHOP_MSG_SORRY_NO_RESULT_FOUND');
 ?>
 <div class="<?php echo $moduleClassSfx; ?> mod_redshop_filter_wrapper">
 	<form action="<?php echo $action; ?>" method="post" name="adminForm-<?php echo $module->id;?>" id="redproductfinder-form-<?php echo $module->id;?>" class="form-validate">
@@ -366,14 +367,17 @@ JText::script('COM_REDSHOP_TOTAL_PRODUCT_COUNT');
 
 				// remove use html if there have no product found
 				if( jQuery(data).find('.cate_redshop_products_wrapper').length == 0 && opload == "firstload" ){
-					jQuery('#sidebar1').remove();
+					/*jQuery('#sidebar1').remove();
 					jQuery('#main').addClass('col-sm-12').removeClass('col-sm-9');
 					jQuery('.nav.features-menu li').css('width','33.33%');
 					jQuery('.all-product').css('display','none');
 					var window_width = jQuery(window).innerWidth();
 					if(window_width<=1024){
 						jQuery('.nav.features-menu li').css('width','50%');
-					}
+					}*/
+
+                    var htmlEmptyProduct = '<?php echo JText::_("COM_REDSHOP_MSG_SORRY_NO_RESULT_FOUND");?>';
+                    jQuery('.category_box_wrapper').append("<p class='empty-product'>" + htmlEmptyProduct + "</p>");
 				}
 
 				if( opload == "firstload" && jQuery('.all-product').length ){

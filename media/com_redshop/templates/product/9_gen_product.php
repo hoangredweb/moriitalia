@@ -1,3 +1,4 @@
+
 <div class="product row">
     <div class="col-sm-7 col-xs-12 product-left">
         <div class="redSHOP_product_box_left col-xs-12">
@@ -115,42 +116,3 @@
     <h3 class="head-title"><span class="title">{custom_also_viewed}</span></h3>
      {module 152}
  </div>
-
-<script type="text/javascript">
-    jQuery(document).ready(function($){
-        jQuery('input[attribute_name="Color"]').each(function(idx, el){
-            var color_text = $(this).next('label').text().trim().toLowerCase();
-            $(this).next('label').andSelf().wrapAll("<div class='block-radio " + color_text + "'></div>");
-        });
-
-        jQuery('input[attribute_name="Size"]').each(function(idx, el){
-            $(this).next('label').andSelf().wrapAll("<div class='block-radio'></div>");
-        });
-
-        $('.attribute_wrapper input[type="radio"]').removeAttr('onclick');
-
-        $('.redSHOP_product_box_left .redhoverImagebox > div').addClass('v-swiper-container');
-        $('.redSHOP_product_box_left .redhoverImagebox > div.v-swiper-container').wrapInner("<div class='swiper-wrapper'></div>");
-        $('.redSHOP_product_box_left .additional_image').addClass('swiper-slide');
-        $('.redSHOP_product_box_left .v-swiper-container').append('<div class="swiper-pagination"></div>');
-
-
-        var img_height = $('.product-left .inner_product_image').height();
-        $('.v-swiper-container').css('max-height', img_height + 'px');
-
-        var mySwiper = new Swiper('.v-swiper-container', {
-            slidesPerView: 5,
-            spaceBetween: 10,
-            direction: 'vertical',
-            autoHeight: true
-        });
-
-        $('#main .redshop.redSHOPSiteViewProduct .product .product-left .product_more_images .redhoverImagebox .additional_image').css('height', img_height/4 + 'px');
-    });
-</script>
-
-<style>
-    .v-swiper-container {
-        overflow: hidden;
-    }
-</style>

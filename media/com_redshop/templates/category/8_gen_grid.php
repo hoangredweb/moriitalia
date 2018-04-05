@@ -41,16 +41,18 @@
 		<div class="category_box_inside">
 			<div class="product-box-info">
 				<div class="product-box-topinfo">
-					<div class="product_image">{product_category_thumb_image}
-					<!-- <div class="product_more_images">{more_images}</div>		 -->			
-					</div>
-					<div class="wishlist">
-						<span>{wishlist_link}</span>
-					</div>
-					<div class="quickview-quickadd">						
-						<div class="quickadd">{form_addtocart:gen_add_to_cart1}</div>
-						<div class="quickview">
-							<button type="button" class="btn btn-info btn-lg quick-view" data-toggle="modal" data-target="#quick-view-{product_id}">{Quickview}</button>
+					<div class="inner_product_box_topinfo">
+						<div class="product_image">{product_category_thumb_image}
+						<!-- <div class="product_more_images">{more_images}</div>		 -->			
+						</div>
+						<div class="wishlist">
+							<span>{wishlist_link}</span>
+						</div>
+						<div class="quickview-quickadd">						
+							<div class="quickadd">{form_addtocart:gen_add_to_cart1}</div>
+							<div class="quickview">
+								<button type="button" class="btn btn-info btn-lg quick-view" data-toggle="modal" data-target="#quick-view-{product_id}">{Quickview}</button>
+							</div>
 						</div>
 					</div>
 				</div>

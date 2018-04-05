@@ -11,18 +11,20 @@
 <div id="productlist">
     <div class="category_box_wrapper row grid">
         {product_loop_start}
-        <div class="cate_redshop_products_wrapper col-sm-4 col-xs-6">
+        <div class="category_box_outside col-sm-4 col-xs-6">
             <div class="category_box_inside">
                 <div class="product-box-info">
                     <div class="product-box-topinfo">
-                        <div class="product_image">{product_thumb_image}</div>
-                        <div class="wishlist">
-                            <span>{wishlist_link}</span>
-                        </div>
-                        <div class="quickview-quickadd">
-                            <div class="quickadd">{form_addtocart:gen_add_to_cart1}</div>
-                            <div class="quickview">
-                                <button type="button" class="btn btn-info btn-lg quick-view" data-toggle="modal" data-target="#quick-view-{product_id}">{Quickview}</button>
+                        <div class="inner_product_box_topinfo">
+                            <div class="product_image">{product_thumb_image}</div>
+                            <div class="wishlist">
+                                <span>{wishlist_link}</span>
+                            </div>
+                            <div class="quickview-quickadd">
+                                <div class="quickadd">{form_addtocart:gen_add_to_cart1}</div>
+                                <div class="quickview">
+                                    <button type="button" class="btn btn-info btn-lg quick-view" data-toggle="modal" data-target="#quick-view-{product_id}">{Quickview}</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -266,7 +268,7 @@
                     $this.find(".swiper-button-prev").addClass("btn-prev-" + index);
                     $this.find(".swiper-button-next").addClass("btn-next-" + index);
                     swiperInstances[index] = new Swiper(".instance-" + index, {
-                        slidesPerView: 3,
+                        slidesPerView: 4,
                         spaceBetween: 10,
                         nextButton: ".btn-next-" + index,
                         prevButton: ".btn-prev-" + index,
@@ -313,16 +315,16 @@
 
 		$('.oldprice-and-percentage').each(function(index, el)
 		{
-			if ($(this).find('.category_product_oldprice').text().length > 0){			
+			if ($(this).find('.category_product_oldprice').text().length > 0){
 					$(this).parent().find('.product_real').addClass('red');
 				}
 		});
 
-		
+
 
 		$('.wrapper-quickview .oldprice-labletag ').each(function(index, el)
 		{
-			if ($(this).find('.product_price_val').text().length > 0){			
+			if ($(this).find('.product_price_val').text().length > 0){
 					$(this).parent().find('.product_price_discount').addClass('red');
 				}
 		});
@@ -335,7 +337,7 @@
 		$(".size-guide").prependTo($(".attributes_box.size")).insertBefore('.attributes_box.size .attribute_wrapper');
 
 
-		
+
 
 		var showChar = 174;
 		var ellipsestext = "...";

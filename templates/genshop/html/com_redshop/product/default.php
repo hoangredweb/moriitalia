@@ -18,6 +18,9 @@ JHtml::script(Juri::base() . 'templates/genshop/js/swiper.min.js', false, true);
 JHtml::script(Juri::base() . 'templates/genshop/js/functionswiper.js', false, true);
 JHtml::script(Juri::base() . 'media/com_reditem/js/jquery.colorbox.min.js', false, true);
 
+JHtml::script(Juri::base() . 'templates/genshop/js/slick.js');
+JHtml::stylesheet(Juri::base() . 'templates/genshop/css/slick.css');
+
 $url             = JURI::base();
 $u               = JURI::getInstance();
 $Scheme          = $u->getScheme();
@@ -1853,25 +1856,39 @@ echo eval("?>" . $template_desc . "<?php ");
 ?>
 
 <script type="text/javascript">
-
-function setsendImagepath(elm) {
-	var path = document.getElementById('<?php echo "main_image" . $this->pid;?>').src;
-	var filenamepath = path.replace(/\\/g, '/').replace(/.*\//, '');
-	var imageName = filenamepath.split('&');
-	elm.href = elm + '&imageName=' + imageName[0];
-}
-
-</script>
-
-<script type="text/javascript">
 		jQuery('#mod_products_related').prepend('<div class=\'chevron-box\'><div class=\'prevbtn\'><b class=\'icon icon-angle-left\'></b></div><div class=\'nextbtn\'><b class=\'icon icon-angle-right\'></b></div></div>');
-		makeswiper('#mod_products_related','.mod_redshop_products');
-		reponSwiper_mostproduct('#mod_products_related', '#mod_products_related .nextbtn', '#mod_products_related .prevbtn');
 </script>
 <script>
     jQuery(document).ready(function($) {
         $(".product_more_images .additional_video").colorbox({inline:true, width:"854px", height:"520px", iframe:false});
 
+    });
+</script>
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+        jQuery('input[attribute_name="Color"]').each(function(idx, el){
+            var color_text = $(this).next('label').text().trim().toLowerCase();
+            $(this).next('label').andSelf().wrapAll("<div class='block-radio " + color_text + "'></div>");
+        });
+
+        jQuery('input[attribute_name="Size"]').each(function(idx, el){
+            $(this).next('label').andSelf().wrapAll("<div class='block-radio'></div>");
+        });
+
+        $('.attribute_wrapper input[type="radio"]').removeAttr('onclick');
+
+        $('.redSHOP_product_box_left .redhoverImagebox > div').addClass('v-swiper-container');
+         $('.v-swiper-container').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            vertical: true,
+            verticalSwiping: true,
+            arrows: true,
+            prevArrow:"<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-up' aria-hidden='true'></i></button>",
+            nextArrow:"<button type='button' class='slick-next pull-right'><i class='fa fa-angle-down' aria-hidden='true'></i></button>"
+        });
     });
 </script>
 

@@ -110,7 +110,7 @@ abstract class JHtmlRedshopcalendar
 			// Hide button using inline styles for readonly/disabled fields
 			return '<div class="input-group" id="' . $id . '_wrapper">'
 				. '<span class="input-group-addon" id="' . $id . '_img"><i class="fa fa-calendar"></i></span>'
-				. '<input type="text" title="' . ($inputvalue ? JHtml::_('date', $value, null, null) : '') . '"'
+				. '<input type="text" title="' . ($inputvalue ? JHtml::_('date', $value, $format, null) : '') . '"'
 				. ' name="' . $name . '" id="' . $id . '" ' . $attribs . ' />'
 				. '<span class="input-group-addon"><strong>' . strtolower($format) . '</strong></span>'
 				. '</div>';
@@ -118,7 +118,7 @@ abstract class JHtmlRedshopcalendar
 
 		// Hide button using inline styles for readonly/disabled fields
 		return '<div class="input-group" id="' . $id . '_wrapper">'
-			. '<input type="hidden" title="' . ($inputvalue ? JHtml::_('date', $value, null, null) : '') . '"'
+			. '<input type="hidden" title="' . ($inputvalue ? JHtml::_('date', $value, $format, null) : '') . '"'
 			. ' name="' . $name . '" id="' . $id . '" ' . $attribs . ' />'
 			. '</div>';
 	}
