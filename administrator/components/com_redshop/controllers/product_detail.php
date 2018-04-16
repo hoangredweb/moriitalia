@@ -150,8 +150,26 @@ class RedshopControllerProduct_Detail extends RedshopController
 			$post ['publish_date'] = date("Y-m-d H:i:s");
 		}
 
-		$post['discount_stratdate'] = ($post['discount_stratdate'] === '0000-00-00 00:00:00') ? '' : date('Y-m-d H:i:s', strtotime(strtr($post['discount_stratdate'], '/', '-')));
-		$post['discount_enddate']   = ($post['discount_enddate'] === '0000-00-00 00:00:00') ? '' : date('Y-m-d H:i:s', strtotime(strtr($post['discount_enddate'], '/', '-')));
+		//$post['discount_stratdate'] = ($post['discount_stratdate'] === '0000-00-00 00:00:00') ? '' : date('Y-m-d H:i:s', strtotime(strtr($post['discount_stratdate'], '/', '-')));
+		//$post['discount_enddate']   = ($post['discount_enddate'] === '0000-00-00 00:00:00') ? '' : date('Y-m-d H:i:s', strtotime(strtr($post['discount_enddate'], '/', '-')));
+
+		if (($post['discount_stratdate'] === '0000-00-00 00:00:00') || empty($post['discount_stratdate']))
+        {
+	        $post['discount_stratdate'] = '';
+        }
+        else
+        {
+	        $post['discount_stratdate'] =date('Y-m-d H:i:s', strtotime(strtr($post['discount_stratdate'], '/', '-')));
+        }
+
+		if (($post['discount_enddate'] === '0000-00-00 00:00:00') || empty($post['discount_enddate']))
+		{
+			$post['discount_enddate'] = '';
+		}
+		else
+		{
+			$post['discount_enddate'] =date('Y-m-d H:i:s', strtotime(strtr($post['discount_enddate'], '/', '-')));
+		}
 		
 		if ($post['discount_stratdate'])
 		{

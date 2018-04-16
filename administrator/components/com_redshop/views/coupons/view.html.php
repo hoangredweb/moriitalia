@@ -63,8 +63,8 @@ class RedshopViewCoupons extends RedshopViewList
 				{
 					return '';
 				}
-
-				return JFactory::getDate($value)->format(Redshop::getConfig()->get('DEFAULT_DATEFORMAT', 'Y-m-d'));
+				// Because "2016-06-26 23:59:59"
+				return JFactory::getDate($value . '+1 day')->format(Redshop::getConfig()->get('DEFAULT_DATEFORMAT', 'Y-m-d'));
 
 			default:
 				return parent::onRenderColumn($config, $index, $row);

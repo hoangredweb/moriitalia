@@ -23,12 +23,12 @@ class PlgRedshop_ImportManufacturer extends AbstractImportPlugin
 	/**
 	 * @var string
 	 */
-	protected $primaryKey = 'manufacturer_id';
+	protected $primaryKey = 'id';
 
 	/**
 	 * @var string
 	 */
-	protected $nameKey = 'manufacturer_name';
+	protected $nameKey = 'name';
 
 	/**
 	 * Event run when user load config for export this data.
@@ -74,7 +74,7 @@ class PlgRedshop_ImportManufacturer extends AbstractImportPlugin
 	{
 		JTable::addIncludePath(JPATH_ADMINISTRATOR . '/components/com_redshop/tables');
 
-		return JTable::getInstance('Manufacturer_Detail', 'Table');
+		return RedshopTable::getInstance('Manufacturer', 'RedshopTable');
 	}
 
 	/**
@@ -89,12 +89,11 @@ class PlgRedshop_ImportManufacturer extends AbstractImportPlugin
 	 */
 	public function processImport($table, $data)
 	{
-		$isNew = false;
 		$db    = $this->db;
 
 		if (array_key_exists($this->primaryKey, $data) && $data[$this->primaryKey])
 		{
-			$isNew = $table->load($data[$this->primaryKey]);
+			$table->load($data[$this->primaryKey]);
 		}
 
 		if (!$table->bind($data))
@@ -102,7 +101,7 @@ class PlgRedshop_ImportManufacturer extends AbstractImportPlugin
 			return false;
 		}
 
-		if ((!$isNew && !$db->insertObject('#__redshop_manufacturer', $table, $this->primaryKey)) || !$table->store())
+		if (!$table->bind($data) || !$table->check() || !$table->store())
 		{
 			return false;
 		}

@@ -355,7 +355,25 @@ $template_desc = str_replace("{product_id_lbl}", JText::_('COM_REDSHOP_PRODUCT_I
 $template_desc = str_replace("{product_number_lbl}", JText::_('COM_REDSHOP_PRODUCT_NUMBER_LBL'), $template_desc);
 $template_desc = str_replace("{product_id}", $this->data->product_id, $template_desc);
 
-$template_desc = str_replace("{product_s_desc}", htmlspecialchars_decode($this->data->product_s_desc), $template_desc);
+
+if (strstr($template_desc, "{product_s_desc}"))
+{
+    if (strlen($this->data->product_s_desc) > 200)
+    {
+	   /* $story_desc = substr($this->data->product_s_desc,0, 200);
+	    $story_desc = substr($story_desc,0,strrpos($story_desc,' '));
+
+	    $story_full = substr($this->data->product_s_desc, strlen($story_desc));
+
+	    $story_desc = '<p>' . strip_tags($story_desc) . '<span class="moreellipses"> ... ' . ' </span><p class="morecontent hidden">' . $story_full . '</p><a href="#" class="morelink">' . "See More" . '</a></p>';*/
+
+	   // $this->data->product_s_desc = $story_desc;
+    }
+
+	$template_desc = str_replace("{product_s_desc}", htmlspecialchars_decode($this->data->product_s_desc), $template_desc);
+}
+
+
 $template_desc = str_replace("{product_desc}", htmlspecialchars_decode($this->data->product_desc), $template_desc);
 $template_desc = str_replace("{view_full_size_image_lbl}", JText::_('COM_REDSHOP_VIEW_FULL_SIZE_IMAGE_LBL'), $template_desc);
 
@@ -1852,11 +1870,12 @@ if (strstr($template_desc, '{form_rating_without_link}'))
 $this->dispatcher->trigger('onAfterDisplayProduct', array(&$template_desc, $this->params, $this->data));
 
 echo eval("?>" . $template_desc . "<?php ");
-
 ?>
 
 <script type="text/javascript">
 		jQuery('#mod_products_related').prepend('<div class=\'chevron-box\'><div class=\'prevbtn\'><b class=\'icon icon-angle-left\'></b></div><div class=\'nextbtn\'><b class=\'icon icon-angle-right\'></b></div></div>');
+		makeswiper('#mod_products_related','.mod_redshop_products');
+		reponSwiper_related('#mod_products_related', '#mod_products_related .nextbtn', '#mod_products_related .prevbtn');
 </script>
 <script>
     jQuery(document).ready(function($) {
@@ -1879,17 +1898,48 @@ echo eval("?>" . $template_desc . "<?php ");
 
         $('.attribute_wrapper input[type="radio"]').removeAttr('onclick');
 
-        $('.redSHOP_product_box_left .redhoverImagebox > div').addClass('v-swiper-container');
+        //$('.redSHOP_product_box_left .redhoverImagebox').wrapInner( "<div class='v-swiper-container'></div>");
+
+        if ($('.redSHOP_product_box_left .redhoverImagebox').children().first().hasClass('additional_image')) {
+
+            $('.redSHOP_product_box_left .redhoverImagebox').wrapInner( "<div class='v-swiper-container'></div>");
+        }
+        else
+        {
+            $('.redSHOP_product_box_left .redhoverImagebox > div').addClass('v-swiper-container');
+        }
+
          $('.v-swiper-container').slick({
             slidesToShow: 4,
             slidesToScroll: 1,
             vertical: true,
             verticalSwiping: true,
             arrows: true,
+
             prevArrow:"<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-up' aria-hidden='true'></i></button>",
             nextArrow:"<button type='button' class='slick-next pull-right'><i class='fa fa-angle-down' aria-hidden='true'></i></button>"
+        });
+    });
+
+    jQuery(document).ready(function($) {
+        $('#system-readmore').replaceWith('<a href="#" class="morelink">' + "See More" + '</a>');
+
+        $('.morelink').each(function(){
+            $(this).nextAll().addClass('morecontent');
         });
     });
 </script>
 
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-520494e250ff1ce9"></script>
+
+<style>
+    .content_s_desc #system-readmore + p,  .content_s_desc  .morelink + p{
+        display: none;
+    }
+    .content_s_desc .morelink + p.show {
+        display: block;
+    }
+    .content_s_desc hr {
+        border: none;
+    }
+</style>

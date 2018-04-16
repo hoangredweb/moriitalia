@@ -352,7 +352,7 @@ JText::script('COM_REDSHOP_MSG_SORRY_NO_RESULT_FOUND');
 				jQuery('.category_product_list').html(data);
 
 				// Find and replace number products
-				var count = jQuery('.cate_redshop_products_wrapper').size();
+				var count = jQuery('.category_box_wrapper .category_box_outside').size();
 
 				if( opload != "firstload"){
 					jQuery('.category_wrapper.parent .category_main_toolbar, .category_wrapper.parent .category_product_list').css('display', 'block');
@@ -366,7 +366,7 @@ JText::script('COM_REDSHOP_MSG_SORRY_NO_RESULT_FOUND');
 				}
 
 				// remove use html if there have no product found
-				if( jQuery(data).find('.cate_redshop_products_wrapper').length == 0 && opload == "firstload" ){
+				if (count == 0 && opload == "firstload" ){
 					/*jQuery('#sidebar1').remove();
 					jQuery('#main').addClass('col-sm-12').removeClass('col-sm-9');
 					jQuery('.nav.features-menu li').css('width','33.33%');
@@ -377,7 +377,7 @@ JText::script('COM_REDSHOP_MSG_SORRY_NO_RESULT_FOUND');
 					}*/
 
                     var htmlEmptyProduct = '<?php echo JText::_("COM_REDSHOP_MSG_SORRY_NO_RESULT_FOUND");?>';
-                    jQuery('.category_box_wrapper').append("<p class='empty-product'>" + htmlEmptyProduct + "</p>");
+                    jQuery('.category_box_wrapper').append("<div class='empty-product'>" + htmlEmptyProduct + "</div>");
 				}
 
 				if( opload == "firstload" && jQuery('.all-product').length ){
@@ -529,6 +529,38 @@ JText::script('COM_REDSHOP_MSG_SORRY_NO_RESULT_FOUND');
 			var max = jQuery('input[name="redform[filterprice][max]"]').val();
 			range_slide(<?php echo $rangeMin;?>, <?php echo $rangeMax;?>, parseFloat(min), parseFloat(max), submitpriceform );
 		})
+
+        var fill_min = jQuery("input[name='redform[filterprice][min]'").val();
+        var fill_max = jQuery("input[name='redform[filterprice][max]'").val();
+
+        jQuery("input[name='redform[filterprice][min]'").focusin(
+        function(){
+            jQuery(this).val('');
+        }).focusout(
+        function(){
+            var tmp_fill_min = jQuery("input[name='redform[filterprice][min]'").val();
+
+            if (tmp_fill_min != '') fill_min = tmp_fill_min;
+            jQuery(this).val(fill_min);
+        });
+
+        jQuery("input[name='redform[filterprice][max]'").focusin(
+            function(){
+                jQuery(this).val('');
+            }).focusout(
+            function(){
+                var tmp_fill_max = jQuery("input[name='redform[filterprice][max]'").val();
+
+                if (tmp_fill_max != '') fill_max = tmp_fill_max;
+                jQuery(this).val(fill_max);
+            });
+
+        jQuery("input[name*='redform[filterprice]'").on("keypress keyup blur",function (event) {
+            jQuery(this).val(jQuery(this).val().replace(/[^\d].+/, ""));
+            if ((event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
 	});
 	window.onload = function() {
 		submitpriceform("firstload");

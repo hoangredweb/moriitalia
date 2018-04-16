@@ -105,12 +105,15 @@ abstract class JHtmlRedshopcalendar
 			})(jQuery);'
 		);
 
+		$value = str_replace('/', '-', $value);
+		$value = date('Y-m-d H:i:s', strtotime($value));
+
 		if (!$inline)
 		{
 			// Hide button using inline styles for readonly/disabled fields
 			return '<div class="input-group" id="' . $id . '_wrapper">'
 				. '<span class="input-group-addon" id="' . $id . '_img"><i class="fa fa-calendar"></i></span>'
-				. '<input type="text" title="' . ($inputvalue ? JHtml::_('date', $value, $format, null) : '') . '"'
+				. '<input type="text" title="' . ($inputvalue ? JHtml::_('date', $value, $format, null): '') . '"'
 				. ' name="' . $name . '" id="' . $id . '" ' . $attribs . ' />'
 				. '<span class="input-group-addon"><strong>' . strtolower($format) . '</strong></span>'
 				. '</div>';

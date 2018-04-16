@@ -2898,11 +2898,15 @@ class RedshopModelProduct_Detail extends RedshopModel
 			else
 			{
 				// Now remove the type associations
+				if (!empty($asscid))
+				{
+					$cids  = 'association_id=' . implode(' OR association_id=', $asscid);
+					$query = "DELETE FROM #__redproductfinder_association_tag WHERE (" . $cids . ")";
 
-				$cids  = 'association_id=' . implode(' OR association_id=', $asscid);
-				$query = "DELETE FROM #__redproductfinder_association_tag WHERE (" . $cids . ")";
-				$database->setQuery($query);
-				$database->execute();
+					//var_dump($cids);die;
+					$database->setQuery($query);
+					$database->execute();
+				}
 			}
 		}
 

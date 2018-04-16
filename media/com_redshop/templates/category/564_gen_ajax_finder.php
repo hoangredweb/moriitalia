@@ -77,13 +77,13 @@
                                                 <h3>{product_name}</h3>
                                             </div>
                                             <div id="product_price">
-                                                <div class="product_price_discount">{product_price}</div>
+                                                <div class="product_real">{product_price}</div>
                                                 <div class="oldprice-labletag">
                                                     <span class="product_price_val">{product_old_price}</span>
                                                     <span class="in-stock">{producttag:rs_limit_item}</span>
                                                 </div>
                                             </div>
-                                            {product_rating_summary}
+                                            
                                             {attribute_template:attributes}
                                             <div class="size-guide">
 									            <a href="#">Size guide</a>
@@ -91,13 +91,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product_desc">
-                                    <h3>{description}</h3>
-                                    <div class="product_desc_full">{product_s_desc}</div>
-                                </div>
+                                <div class="block_group">
+                                    <div class="product_desc">
+                                        <div class="product_desc_full">{product_s_desc}</div>
+                                    </div>
 
-                                <div class="product_addtocart">
-                                    <div id="add_to_cart_all">{form_addtocart:gen_add_to_cart1}</div>
+                                    <div class="product_addtocart">
+                                        <div id="add_to_cart_all">{form_addtocart:gen_add_to_cart1}</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -297,87 +298,88 @@
 
                 $('.attribute_wrapper input[type="radio"]').removeAttr('onclick');
 
-                $('.attributes_box input[type="radio"]').on('change', function() {
-                    $(this).parents('.attribute_wrapper').find('input[type="radio"]').removeClass('radio-checked');
+                // $('.attributes_box input[type="radio"]').on('change', function() {
+                //     $(this).parents('.attribute_wrapper').find('input[type="radio"]').removeClass('radio-checked');
 
-                    if ($(this).is(':checked')) {
-                        $(this).next().addClass('radio-checked');
-                    }
+                //     if ($(this).is(':checked')) {
+                //         $(this).next().addClass('radio-checked');
+                //     }
+                // });
+
+                $('.attributes_box [type="radio"]').change(function(){
+
+                    $('.attributes_box [type="radio"]').each(function(){
+                        if( $(this).is(':checked')){
+                            $(this).next().addClass('radio-checked');
+                        }else{
+                            $(this).next().removeClass('radio-checked');
+                        }
+                    });
                 });
+                            
             });
         </script>
         <script type="text/javascript">
-	jQuery(document).ready(function($){
-		if ($('.old_price_and_stock').find('.product_old_price').text().length > 0){
+        	jQuery(document).ready(function($){
+        		if ($('.old_price_and_stock').find('.product_old_price').text().length > 0){
 
-			$('#product_price').find('.product_r_price').addClass('red');
-		}
+        			$('#product_price').find('.product_r_price').addClass('red');
+        		}
 
-		$('.oldprice-and-percentage').each(function(index, el)
-		{
-			if ($(this).find('.category_product_oldprice').text().length > 0){
-					$(this).parent().find('.product_real').addClass('red');
-				}
-		});
-
-
-
-		$('.wrapper-quickview .oldprice-labletag ').each(function(index, el)
-		{
-			if ($(this).find('.product_price_val').text().length > 0){
-					$(this).parent().find('.product_price_discount').addClass('red');
-				}
-		});
-		$('.category_box_inside .wishlist').click(function() {
-			window.location = jQuery(this).find('a').attr("href");
-			return false;
-		});
-
-
-		$(".size-guide").prependTo($(".attributes_box.size")).insertBefore('.attributes_box.size .attribute_wrapper');
+        		$('.oldprice-and-percentage').each(function(index, el)
+        		{
+        			if ($(this).find('.category_product_oldprice').text().length > 0){
+        					$(this).parent().find('.product_real').addClass('red');
+        				}
+        		});
 
 
 
+        		$('.wrapper-quickview .oldprice-labletag ').each(function(index, el)
+        		{
+        			if ($(this).find('.product_price_val').text().length > 0){
+        					$(this).parent().find('.product_real').addClass('red');
+        				}
+        		});
 
-		var showChar = 174;
-		var ellipsestext = "...";
-		var moretext = "See More";
-		var lesstext = " ";
+        		$('.category_box_inside .wishlist').click(function() {
+        			window.location = jQuery(this).find('a').attr("href");
+        			return false;
+        		});
 
-		$('.wrapper-quickview .product_desc .product_desc_full p, .content_s_desc p').each(function() {
-			var content = $(this).html();
+        		if ($('.attributes_box').hasClass('size'))
+                {
+                    $(".size-guide").prependTo($(".attributes_box.size")).insertBefore('.attributes_box.size .attribute_wrapper');
+                } else
+                {
+                    $(".size-guide").addClass('hidden');
+                }
 
-			if(content.length > showChar) {
-				var c = content.substr(0, showChar);
-				var h = content.substr(showChar, content.length - showChar);
-				var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+                $('#system-readmore').replaceWith('<a href="#" class="morelink">' + "See More" + '</a>');
 
-				$(this).html(html);
-			}
-		});
+                $('.morelink').each(function(){
+                    $(this).nextAll().addClass('morecontent');
+                });
 
-		$(".morelink").click(function(){
-			if($(this).hasClass("less")) {
-				$(this).removeClass("less");
-				$(this).html(moretext);
-			} else {
-				$(this).addClass("less");
-				$(this).html(lesstext);
-			}
-				$(this).parent().prev().toggle();
-				$(this).prev().toggle();
-			return false;
-		});
+                $(".morelink").click(function(e) {
+                    $(this).addClass("less");
+                    $(this).html("");
+                    $(this).parents('.product_desc_full').find('.morecontent').toggleClass('show');
 
-		$('.redSHOPSiteViewProduct .product-cart-link span.pdaddtocart_link, .wrapper-quickview .cart-link span.pdaddtocart_link ').text('Add to Bag');
-		$('.quickview-quickadd .cart-link span.pdaddtocart_link').text('+ Quick Add');
-	});
-</script>
+                    e.preventDefault();
+                    return false;
+                });
+
+        		$('.redSHOPSiteViewProduct .product-cart-link span.pdaddtocart_link, .wrapper-quickview .cart-link span.pdaddtocart_link ').text('Add to Bag');
+        		$('.quickview-quickadd .cart-link span.pdaddtocart_link').text('+ Quick Add');
+
+            
+                    $('.not-found-item').addClass('hidden');
+                
+        	});
+        </script>
         <style type="text/css">
-            #main-content .modal:not(a) .product .product-left .product_image img{
-                width: 310px;
-                height: 400px;
-            }
+          
             .modal .product .product-left .product_image a{
                 height: 400px;
             }
@@ -385,12 +387,18 @@
             {
                 display: none;
             }
-            .category_product_list .pagination .pagenav span{
-                color: #cd212a;
-                font-family: 'ProximaNova-Bold';
-            }
+           
             .product_more_images {
                 width: 100%;
+            }
+            .product_desc_full #system-readmore + p,  .product_desc_full  .morelink + p{
+                display: none;
+            }
+            .product_desc_full .morelink + p.show {
+                display: block;
+            }
+            .product_desc_full hr {
+                border: none;
             }
         </style>
 

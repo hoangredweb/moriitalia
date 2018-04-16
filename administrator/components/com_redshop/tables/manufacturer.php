@@ -133,13 +133,13 @@ class RedshopTableManufacturer extends RedshopTable
 			return false;
 		}
 
-		// Check product per page
-		if (!$this->product_per_page)
+		// Check product per page /** @scrutinizer ignore-deprecated */
+		/*if (!$this->product_per_page)
 		{
-			/** @scrutinizer ignore-deprecated */ $this->setError(JText::_('COM_REDSHOP_MANUFACTURER_ERROR_PRODUCT_PER_PAGE'));
+			$this->setError(JText::_('COM_REDSHOP_MANUFACTURER_ERROR_PRODUCT_PER_PAGE'));
 
 			return false;
-		}
+		}*/
 
 		return true;
 	}

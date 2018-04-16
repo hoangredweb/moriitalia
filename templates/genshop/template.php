@@ -49,7 +49,6 @@ defined('_JEXEC') or die('Restricted access');
 				    userId: '3990872003',
 				    clientId: 'de0d45ba4d6b47aba3c086f2ef84aa23',
 				    accessToken:'3983090256.ba4c844.f897bdee2d994d34b5fbfd43ed0e23d6',
-
 				    resolution: 'standard_resolution',
 				    template: '<div class=" col-md-3 col-sm-6 col-xs-12"><div class="image_instagram"><div class="overflay"></div><a href="{{link}}" target="_blank"><img src="{{image}}" /></a></div></div>',
 				    limit: 12
@@ -392,6 +391,7 @@ defined('_JEXEC') or die('Restricted access');
 						<div id="manufacture" class="clearfix">
 							<div class="container">
 								<w:module type="none" name="manufacture" chrome="xhtml" />
+								<a href="#" class="back-to-top"><i class="fa fa-chevron-up fa-5" aria-hidden="true"></i></a>
 							</div>
 						</div>
 					<?php endif; ?>
@@ -452,12 +452,14 @@ defined('_JEXEC') or die('Restricted access');
 								</div>
 							</div>
 						<?php endif; ?>
-						<div class="container inner_footer">
-							<a href="#" class="back-to-top"><i class="fa fa-chevron-up fa-5" aria-hidden="true"></i></a>
-							<?php if ($this->countModules('footer')) : ?>
-								<w:module type="row" name="footer" chrome="wrightflexgrid" />
-							<?php endif; ?>
-						</div>
+						<div class="inner_footer">
+							<div class="container ">
+								
+								<?php if ($this->countModules('footer')) : ?>
+									<w:module type="row" name="footer" chrome="wrightflexgrid" />
+								<?php endif; ?>
+							</div>
+
 						<?php if ($this->countModules('footer-bellow')) : ?>
 							<div class="container">
 								<div class="container-inner">
@@ -465,6 +467,7 @@ defined('_JEXEC') or die('Restricted access');
 								</div>
 							</div>
 						<?php endif; ?>
+						</div>
 						<?php if ($this->countModules('footer-info')) : ?>
 						<div class="site-info">
 							<w:module type="row" name="footer-info" chrome="xhtml" />

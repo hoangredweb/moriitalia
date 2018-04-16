@@ -217,3 +217,4 @@
 2018-04-04T12:58:30+00:00	INFO ::1	controller	Holding edit ID com_redshop.edit.category.15550 Array (     [0] => 15550 ) 
 2018-04-04T12:59:26+00:00	INFO ::1	controller	Checking edit ID com_redshop.edit.category.15550: 1 Array (     [0] => 15550 ) 
 2018-04-04T12:59:27+00:00	INFO ::1	controller	Holding edit ID com_redshop.edit.category.15550 Array (     [0] => 15550 ) 
+2018-04-06T10:42:11+00:00	INFO ::1	controller	Holding edit ID com_redshop.edit.category.15550 Array (     [0] => 15550 ) 

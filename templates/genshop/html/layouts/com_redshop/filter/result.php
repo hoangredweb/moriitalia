@@ -157,7 +157,7 @@ if (strpos($templateDesc, "{product_loop_start}") !== false && strpos($templateD
 			$dataAdd = str_replace("{read_more_link}", $link, $dataAdd);
 		}
 
-		if (strstr($dataAdd, '{product_s_desc}'))
+		/*if (strstr($dataAdd, '{product_s_desc}'))
 		{
 			$p_s_desc = $redConfiguration->maxchar($product->product_s_desc, Redshop::getConfig()->get('CATEGORY_PRODUCT_SHORT_DESC_MAX_CHARS'), Redshop::getConfig()->get('CATEGORY_PRODUCT_SHORT_DESC_END_SUFFIX'));
 
@@ -167,6 +167,30 @@ if (strpos($templateDesc, "{product_loop_start}") !== false && strpos($templateD
 			}
 
 			$dataAdd = str_replace("{product_s_desc}", $p_s_desc, $dataAdd);
+		}*/
+
+		if (strstr($dataAdd, '{product_s_desc}'))
+		{
+			if (strlen($product->product_s_desc) > 200)
+			{
+				$p_s_desc = $redConfiguration->maxchar($product->product_s_desc, Redshop::getConfig()->get('CATEGORY_PRODUCT_SHORT_DESC_MAX_CHARS'), Redshop::getConfig()->get('CATEGORY_PRODUCT_SHORT_DESC_END_SUFFIX'));
+
+				if (!empty($keyword))
+				{
+					$p_s_desc = str_ireplace($keyword, "<b class='search_hightlight'>" . $keyword . "</b>", $p_s_desc);
+				}
+
+				/*$story_desc = substr($p_s_desc,0, 200);
+				$story_desc = substr($story_desc,0,strrpos($story_desc,' '));
+
+				$story_full = substr($p_s_desc, strlen($story_desc));
+
+				$story_desc = $story_desc . '<span class="moreellipses"> ... ' . ' </span><div class="morecontent hidden">' . $story_full . '</div><a href="#" class="morelink">' . Jtext::_('COM_REDSHOP_TEXT_READMORE') . '</a>';
+
+				$p_s_desc = $story_desc;*/
+			}
+
+			$dataAdd = str_replace("{product_s_desc}", ($p_s_desc), $dataAdd);
 		}
 
 		if (strstr($dataAdd, '{product_desc}'))

@@ -91,6 +91,7 @@ class AbstractExportPlugin extends \JPlugin
 		if (null === $handle)
 		{
 			$fileHandle = fopen($this->getFilePath(), $mode);
+			fputs($fileHandle, $bom =( chr(0xEF) . chr(0xBB) . chr(0xBF) ));
 			fwrite($fileHandle, implode($separator, $row) . "\r\n");
 			fclose($fileHandle);
 		}

@@ -43,7 +43,12 @@ jQuery(document).ready(function($){
 			}
 	});
 
-	
+	$('.mod_related .inner').each(function(index, el)
+	{
+		if ($(this).find('.mod_redoldprice').text().length > 0){			
+				$(this).find('.mod_redshop_products_price').addClass('red');
+			}
+	});
 
 	$('.wrapper-quickview .oldprice-labletag ').each(function(index, el)
 	{
@@ -61,14 +66,14 @@ jQuery(document).ready(function($){
 	$(".size-guide").prependTo($(".attributes_box.size")).insertBefore('.attributes_box.size .attribute_wrapper');
 
 
-	
 
-	var showChar = 174;
+
+	/*var showChar = 174;
 	var ellipsestext = "...";
 	var moretext = "See More";
-	var lesstext = " ";
+	var lesstext = " ";*/
 
-	$('.wrapper-quickview .product_desc .product_desc_full p, .content_s_desc p').each(function() {
+	/*$('.wrapper-quickview .product_desc .product_desc_full p, .content_s_desc p ').each(function() {
 		var content = $(this).html();
 
 		if(content.length > showChar) {
@@ -78,22 +83,32 @@ jQuery(document).ready(function($){
 
 			$(this).html(html);
 		}
-	});
+	});*/
 
-	$(".morelink").click(function(){
-		if($(this).hasClass("less")) {
-			$(this).removeClass("less");
-			$(this).html(moretext);
-		} else {
-			$(this).addClass("less");
-			$(this).html(lesstext);
-		}
-			$(this).parent().prev().toggle();
-			$(this).prev().toggle();
+	$(".morelink").click(function(e){
+		/*if($(this).hasClass("less")) {
+            $(this).removeClass("less");
+            $(this).html(moretext);
+        } else {
+            $(this).addClass("less");
+            $(this).html(lesstext);
+        }*/
+
+		//$(this).parents('.content_s_desc').find('.moreellipses').toggleClass('hidden');
+        $(this).addClass("less");
+        $(this).html("");
+        $(this).parents('.content_s_desc').find('.morecontent').toggleClass('show');
+
+		e.preventDefault();
 		return false;
 	});
 
 	$('.redSHOPSiteViewProduct .product-cart-link span.pdaddtocart_link, .wrapper-quickview .cart-link span.pdaddtocart_link ').text('Add to Bag');
 	$('.quickview-quickadd .cart-link span.pdaddtocart_link').text('+ Quick Add');
 
+
+
+		$('.not-found-item').addClass('hidden');
+
+	
 }); 
