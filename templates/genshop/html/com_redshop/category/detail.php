@@ -1294,7 +1294,7 @@ if ($slide)
 
 <script type="text/javascript">
     jQuery(document).ready(function($) {
-        getImagename = function(link) {
+        /*getImagename = function(link) {
             var re = new RegExp("images\/(.*?)\/thumb\/(.*?)_w([0-9]*?)_h([0-9]*?)(_.*?|)([.].*?)$");
             var m = link.match(re);
             return m;
@@ -1385,7 +1385,7 @@ if ($slide)
 
         $('#productlist .modal').on('hidden.bs.modal', function () {
             $('.zoomContainer').remove();
-        })
+        })*/
 
        /* $('.redhoverImagebox > div').addClass('swiper-container');
         $('.redhoverImagebox > div.swiper-container').wrapInner("<div class='swiper-wrapper'></div>");
@@ -1427,20 +1427,20 @@ if ($slide)
             }, 500);
         })*/
 
-        $('.attribute_wrapper input[type="radio"]').removeAttr('onclick');
+        //$('.attribute_wrapper input[type="radio"]').removeAttr('onclick');
     });
 </script>
 
 <script type="text/javascript">
     jQuery(document).ready(function($){
-        jQuery('input[attribute_name="Color"]').each(function(idx, el){
+       /* jQuery('input[attribute_name="Color"]').each(function(idx, el){
             var color_text = $(this).next('label').text().trim().toLowerCase();
             $(this).next('label').andSelf().wrapAll("<div class='block-radio " + color_text + "'></div>");
         });
 
         jQuery('input[attribute_name="Size"]').each(function(idx, el){
             $(this).next('label').andSelf().wrapAll("<div class='block-radio'></div>");
-        });
+        });*/
     });
 </script>
 
